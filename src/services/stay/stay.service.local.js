@@ -2,7 +2,6 @@
 import { storageService } from '../async-storage.service'
 import { makeId } from '../util.service'
 
-
 const STORAGE_KEY = 'stay'
 
 export const stayService = {
@@ -16,27 +15,43 @@ window.cs = stayService
 
 
 async function query(filterBy = { txt: '', price: 0 }) {
-    var stays = await storageService.query(STORAGE_KEY)
-    const { txt, minSpeed, maxPrice, sortField, sortDir } = filterBy
+    try {
+        const res = await fetch('/data/stays(1).json')
+        console.log('/data/stays(1).json')
+        if (!res.ok) throw new Error(`Failed to fetch: ${res.statusText}`)
+        let stays = await res.json()
 
-    if (txt) {
-        const regex = new RegExp(filterBy.txt, 'i')
-        stays = stays.filter(stay => regex.test(stay.vendor) || regex.test(stay.description))
+        if (filterBy.txt) {
+            const regex = new RegExp(filterBy.txt, 'i')
+            stays = stays.filter(stay => regex.test(stay.vendor) || regex.test(stay.description))
+        }
+
+        return stays
+    } catch (err) {
+        console.error('Failed to load stays:', err)
+        return []  // מחזירה מערך ריק במקום לקרוס
     }
-    if (minSpeed) {
-        stays = stays.filter(stay => stay.speed >= minSpeed)
-    }
-    if(sortField === 'vendor' || sortField === 'owner'){
-        stays.sort((stay1, stay2) => 
-            stay1[sortField].localeCompare(stay2[sortField]) * +sortDir)
-    }
-    if(sortField === 'price' || sortField === 'speed'){
-        stays.sort((stay1, stay2) => 
-            (stay1[sortField] - stay2[sortField]) * +sortDir)
-    }
-    
-    stays = stays.map(({ _id, vendor, price, speed, owner }) => ({ _id, vendor, price, speed, owner }))
-    return stays
+    // var stays = await storageService.query(STORAGE_KEY)
+    // const { txt, minSpeed, maxPrice, sortField, sortDir } = filterBy
+
+    // if (txt) {
+    //     const regex = new RegExp(filterBy.txt, 'i')
+    //     stays = stays.filter(stay => regex.test(stay.vendor) || regex.test(stay.description))
+    // }
+    // if (minSpeed) {
+    //     stays = stays.filter(stay => stay.speed >= minSpeed)
+    // }
+    // if(sortField === 'vendor' || sortField === 'owner'){
+    //     stays.sort((stay1, stay2) => 
+    //         stay1[sortField].localeCompare(stay2[sortField]) * +sortDir)
+    // }
+    // if(sortField === 'price' || sortField === 'speed'){
+    //     stays.sort((stay1, stay2) => 
+    //         (stay1[sortField] - stay2[sortField]) * +sortDir)
+    // }
+
+    // stays = stays.map(({ _id, vendor, price, speed, owner }) => ({ _id, vendor, price, speed, owner }))
+    // return stays
 }
 
 function getById(stayId) {

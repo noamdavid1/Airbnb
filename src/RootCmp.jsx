@@ -2,7 +2,6 @@ import React from 'react'
 import { Routes, Route } from 'react-router'
 
 import { StayIndex } from './pages/StayIndex.jsx'
-
 import { StayDetails } from './pages/StayDetails.jsx'
 
 import { AppHeader } from './cmps/AppHeader'

@@ -27,16 +27,16 @@ export function StayIndex() {
         }
     }
 
-    async function onAddStay() {
-        const stay = stayService.getEmptyStay()
-        stay.vendor = prompt('Vendor?')
-        try {
-            const savedStay = await addStay(stay)
-            showSuccessMsg(`Stay added (id: ${savedStay._id})`)
-        } catch (err) {
-            showErrorMsg('Cannot add stay')
-        }        
-    }
+    // async function onAddStay() {
+    //     const stay = stayService.getEmptyStay()
+    //     stay.vendor = prompt('Vendor?')
+    //     try {
+    //         const savedStay = await addStay(stay)
+    //         showSuccessMsg(`Stay added (id: ${savedStay._id})`)
+    //     } catch (err) {
+    //         showErrorMsg('Cannot add stay')
+    //     }        
+    // }
 
     async function onUpdateStay(stay) {
         const speed = +prompt('New speed?', stay.speed)

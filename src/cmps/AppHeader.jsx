@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import logo from '../assets/img/Airbnb-Logo.wine.png';
 
 
 export function AppHeader() {
@@ -7,12 +8,8 @@ export function AppHeader() {
 		<header className="app-header full">
 			<nav>
 				<NavLink to="/" className="logo">
-					E2E Demo
+					<img src={logo} alt="app logo" />
 				</NavLink>
-				<NavLink to="about">About</NavLink>
-				<NavLink to="stay">Stays</NavLink>
-				<NavLink to="chat">Chat</NavLink>
-				<NavLink to="review">Review</NavLink>
 			</nav>
 		</header>
 	)
