@@ -16,10 +16,13 @@ window.cs = stayService
 
 async function query(filterBy = { txt: '', price: 0 }) {
     try {
-        const res = await fetch('/data/stays(1).json')
-        console.log('/data/stays(1).json')
+        console.log("stayService local query");
+        
+        const res = await fetch('/data/stay.json')
+        const resJson = await res.json()
+        console.log('resJson:', resJson)
         if (!res.ok) throw new Error(`Failed to fetch: ${res.statusText}`)
-        let stays = await res.json()
+        let stays = await resJson
 
         if (filterBy.txt) {
             const regex = new RegExp(filterBy.txt, 'i')

@@ -9,6 +9,7 @@ export const stayService = {
 }
 
 async function query(filterBy = { txt: '', price: 0 }) {
+    console.log("stayService remote query");
     // return httpService.get(`stay`, filterBy)
 }
 
