@@ -11,6 +11,7 @@ export const stayService = {
     remove,
     addStayMsg
 }
+
 window.cs = stayService
 
 
