@@ -1,62 +1,79 @@
 
 import { storageService } from '../async-storage.service'
-import { makeId } from '../util.service'
+import { makeId , loadFromStorage, saveToStorage} from '../util.service'
 
-const STORAGE_KEY = 'stay'
+const STORAGE_KEY = 'stayDB'
+_createStays()
 
 export const stayService = {
     query,
     getById,
     save,
     remove,
-    addStayMsg
+    addStayMsg,
+    getStayTypes
 }
 
 window.cs = stayService
 
 
 async function query(filterBy = { txt: '', price: 0 }) {
-    try {
-        console.log("stayService local query");
-        
-        const res = await fetch('/data/stay.json')
-        const resJson = await res.json()
-        console.log('resJson:', resJson)
-        if (!res.ok) throw new Error(`Failed to fetch: ${res.statusText}`)
-        let stays = await resJson
-
-        if (filterBy.txt) {
-            const regex = new RegExp(filterBy.txt, 'i')
-            stays = stays.filter(stay => regex.test(stay.vendor) || regex.test(stay.description))
+    try{
+        let stays= await storageService.query(STORAGE_KEY)
+        //console.log('qurey:' ,stays)
+        if (filterBy.category) {
+            console.log('service, query, filter type:', filterBy.category);
+            stays = stays.filter(stay => stay.type === filterBy.category)
         }
 
         return stays
     } catch (err) {
         console.error('Failed to load stays:', err)
-        return []  // מחזירה מערך ריק במקום לקרוס
+        return []
     }
-    // var stays = await storageService.query(STORAGE_KEY)
-    // const { txt, minSpeed, maxPrice, sortField, sortDir } = filterBy
-
-    // if (txt) {
-    //     const regex = new RegExp(filterBy.txt, 'i')
-    //     stays = stays.filter(stay => regex.test(stay.vendor) || regex.test(stay.description))
-    // }
-    // if (minSpeed) {
-    //     stays = stays.filter(stay => stay.speed >= minSpeed)
-    // }
-    // if(sortField === 'vendor' || sortField === 'owner'){
-    //     stays.sort((stay1, stay2) => 
-    //         stay1[sortField].localeCompare(stay2[sortField]) * +sortDir)
-    // }
-    // if(sortField === 'price' || sortField === 'speed'){
-    //     stays.sort((stay1, stay2) => 
-    //         (stay1[sortField] - stay2[sortField]) * +sortDir)
-    // }
-
-    // stays = stays.map(({ _id, vendor, price, speed, owner }) => ({ _id, vendor, price, speed, owner }))
-    // return stays
 }
+
+async function _createStays() {
+    let stays = loadFromStorage(STORAGE_KEY)
+    if (!stays) {
+        // JSON.parse(localStorage.getItem(STORAGE_KEY))
+        const res = await fetch('/data/stay.json') // keep in local 
+        if (!res.ok) throw new Error(`Failed to fetch: ${res.statusText}`)
+        stays = await res.json()
+        localStorage.saveToStorage(STORAGE_KEY, stays) // שמירת הנתונים ב-localStorage
+    }
+}
+
+function getStayTypes() {
+    const stays = loadFromStorage(STORAGE_KEY) || [];
+    console.log([...new Set(stays.map(stay => stay.type))])
+    //console.log('get stays types',stays.map(stay => stay.type))
+    // return []
+    return stays.length ? [...new Set(stays.map(stay => stay.type))] : [];
+}
+
+// var stays = await storageService.query(STORAGE_KEY)
+// const { txt, minSpeed, maxPrice, sortField, sortDir } = filterBy
+
+// if (txt) {
+//     const regex = new RegExp(filterBy.txt, 'i')
+//     stays = stays.filter(stay => regex.test(stay.vendor) || regex.test(stay.description))
+// }
+// if (minSpeed) {
+//     stays = stays.filter(stay => stay.speed >= minSpeed)
+// }
+// if(sortField === 'vendor' || sortField === 'owner'){
+//     stays.sort((stay1, stay2) => 
+//         stay1[sortField].localeCompare(stay2[sortField]) * +sortDir)
+// }
+// if(sortField === 'price' || sortField === 'speed'){
+//     stays.sort((stay1, stay2) => 
+//         (stay1[sortField] - stay2[sortField]) * +sortDir)
+// }
+
+// stays = stays.map(({ _id, vendor, price, speed, owner }) => ({ _id, vendor, price, speed, owner }))
+// return stays
+//}
 
 function getById(stayId) {
     return storageService.get(STORAGE_KEY, stayId)

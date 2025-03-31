@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import logo from '../assets/img/Airbnb-Logo.wine.png';
+import logo from '../assets/img/newLogo.jpeg';
 
 
 export function AppHeader() {
