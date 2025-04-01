@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 import { loadStays, addStay, updateStay, removeStay, addStayMsg } from '../store/actions/stay.actions'
 
@@ -13,6 +14,7 @@ export function StayIndex() {
 
     const [ filterBy, setFilterBy ] = useState(stayService.getDefaultFilter())
     const stays = useSelector(storeState => storeState.stayModule.stays)
+    const navigate = useNavigate()
 
     useEffect(() => {
         loadStays(filterBy)
@@ -51,6 +53,12 @@ export function StayIndex() {
         }        
     }
 
+    function onDisplayStay(stay) {
+        console.log(stay);
+        
+        navigate(`/stay/${stay._id}`)
+    }
+
     return (
         <main className="stay-index">
             <header>
@@ -60,6 +68,7 @@ export function StayIndex() {
             <StayFilter filterBy={filterBy} setFilterBy={setFilterBy} />
             <StayList 
                 stays={stays}
+                onDisplayStay={onDisplayStay}
                 onRemoveStay={onRemoveStay} 
                 onUpdateStay={onUpdateStay}/>
         </main>
