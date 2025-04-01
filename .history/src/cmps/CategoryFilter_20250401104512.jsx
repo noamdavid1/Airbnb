@@ -31,7 +31,11 @@ export function CategoryFilter({ filterBy, setFilterBy }) {
                 {typeCategory.map((type) => (
                     <div key={type} className="carrousel-item">
                         <button onClick={() => changeFilter(type)}>
+<<<<<<< HEAD
                             <img src={`/filter by icon/${type}.jpg`} alt="" />
+=======
+                            <img src={/filter by icon/${type}.jpg} alt="" />
+>>>>>>> main
                             <span>{type}</span>
                         </button>
                     </div>
@@ -39,4 +43,8 @@ export function CategoryFilter({ filterBy, setFilterBy }) {
             </Carousel>
         </section>
     );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main
