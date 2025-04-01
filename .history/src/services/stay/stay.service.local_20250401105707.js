@@ -51,7 +51,7 @@ function getStayTypes() {
     // return []
     return stays.length ? [...new Set(stays.map(stay => stay.type))] : [];
 }
-console.log('cheack')
+
 // var stays = await storageService.query(STORAGE_KEY)
 // const { txt, minSpeed, maxPrice, sortField, sortDir } = filterBy
 
