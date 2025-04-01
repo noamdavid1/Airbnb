@@ -9,6 +9,7 @@ import { stayService } from '../services/stay'
 
 import { StayList } from '../cmps/StayList'
 import { StayFilter } from '../cmps/StayFilter'
+import { CategoryFilter } from '../cmps/CategoryFilter'
 
 export function StayIndex() {
 
@@ -17,6 +18,7 @@ export function StayIndex() {
     const navigate = useNavigate()
 
     useEffect(() => {
+        console.log('use effect stay index');
         loadStays(filterBy)
     }, [filterBy])
 
@@ -28,6 +30,8 @@ export function StayIndex() {
             showErrorMsg('Cannot remove stay')
         }
     }
+
+    // onsetfilterby
 
     // async function onAddStay() {
     //     const stay = stayService.getEmptyStay()
@@ -62,10 +66,11 @@ export function StayIndex() {
     return (
         <main className="stay-index">
             <header>
-                <h2>Stays</h2>
+                {/* <h2>Stays</h2> */}
                 {/* {userService.getLoggedinUser() && <button onClick={onAddStay}>Add a Stay</button>} */}
             </header>
-            <StayFilter filterBy={filterBy} setFilterBy={setFilterBy} />
+            <CategoryFilter filterBy={filterBy} setFilterBy={setFilterBy}/>
+            {/* <StayFilter filterBy={filterBy} setFilterBy={setFilterBy} /> */}
             <StayList 
                 stays={stays}
                 onDisplayStay={onDisplayStay}

@@ -15,10 +15,7 @@ function getEmptyStay() {
 
 function getDefaultFilter() {
     return {
-        txt: '',
-        minSpeed: '',
-        sortField: '',
-        sortDir: '',
+      category: ''
     }
 }
 const service = local
