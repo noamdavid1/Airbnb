@@ -40,7 +40,7 @@ async function _createStays() {
         const res = await fetch('/data/stay.json') // keep in local 
         if (!res.ok) throw new Error(`Failed to fetch: ${res.statusText}`)
         stays = await res.json()
-        localStorage.saveToStorage(STORAGE_KEY, stays) // שמירת הנתונים ב-localStorage
+        saveToStorage(STORAGE_KEY, stays) // שמירת הנתונים ב-localStorage
     }
 }
 
