@@ -3,23 +3,88 @@
     line-height: 19px;
     background-color: white;
     color: $clr7;
-    font-family: 'cereal-medium', sans-serif;
+    // font-family: 'cereal-medium', sans-serif;
+    // font-family: 'airBnbCereal', sans-serif;
     font-size: 15px;
+    position: relative;
+    font-family:cereal-regular-vf;
 
-    span {
-        font-weight: bold;
-    }
-
-    h2 {
+    .gray-class {
         color: $gray5;
     }
 
-    img {
-        border-radius: 10px;
-        aspect-ratio: 0.51 / 0.49;
+    .preview-info {
+        position: relative;
+        margin-top: 12px;
     }
 
+    .location {
+        padding-bottom: 1px;
+    }
 
+    .roomType {
+        padding-bottom: 8px;
+    }
+
+    span {
+        // font-family:cereal-regular-lite;
+    }
+
+    h2 {
+        // font-family:cereal-regular-lite;
+        color: $gray5;
+    }
+
+    h1 {
+        // font-family:cereal-regular-lite;
+    }
+
+    p {
+        // font-family:cereal-regular-lite;
+    }
+
+    img {
+        // border-radius: 10px;
+        aspect-ratio: 0.51 / 0.49;
+        object-fit: cover;
+    }
+
+    .heart-svg-container {
+        width: 32px;
+        height: 32px;
+        // background-color: pink;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        svg {
+        }
+        &:hover {
+            transform: scale(1.08);
+            cursor: pointer;
+        }
+    }
+
+    .star-svg-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        top:0;
+        right: 0;
+        color: $clr7;
+        align-items: center;
+        gap: 4px;
+        svg {
+        }
+    }
+
+    .carousel {
+               border-radius: 10px;
+            //    aspect-ratio: 0.51 / 0.49; 
+    }
     // .coursel
 
     // :global(.react-responsive-carousel .control-dots .dot){
