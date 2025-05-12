@@ -1,26 +1,31 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useSearchParams, useNavigate } from 'react-router-dom'
 
 import { loadStays, addStay, updateStay, removeStay, addStayMsg } from '../store/actions/stay.actions'
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
-import { stayService } from '../services/stay'
 
 import { StayList } from '../cmps/StayList'
-import { StayFilter } from '../cmps/StayFilter'
 import { CategoryFilter } from '../cmps/CategoryFilter'
 
 export function StayIndex() {
 
-    const [ filterBy, setFilterBy ] = useState(stayService.getDefaultFilter())
+    const [searchParams] = useSearchParams()
+    const category = searchParams.get('category') || ''
+
     const stays = useSelector(storeState => storeState.stayModule.stays)
     const navigate = useNavigate()
 
+    const filterBy = {
+        category,
+        txt: '',
+        price: 0
+    }
+
     useEffect(() => {
-        console.log('use effect stay index');
         loadStays(filterBy)
-    }, [filterBy])
+    }, [category])
 
     async function onRemoveStay(stayId) {
         try {
@@ -31,7 +36,11 @@ export function StayIndex() {
         }
     }
 
-    // onsetfilterby
+    function onSetFilterBy(newFilter) {
+        const newQueryParams = new URLSearchParams()
+        if (newFilter.category) newQueryParams.set('category', newFilter.category)
+        navigate({ search: newQueryParams.toString() })
+    }
 
     // async function onAddStay() {
     //     const stay = stayService.getEmptyStay()
@@ -59,8 +68,6 @@ export function StayIndex() {
 
     function onDisplayStay(stay) {
         console.log(stay);
-        
-        // navigate(`/stay/${stay._id}`)
     }
 
     return (
@@ -69,7 +76,7 @@ export function StayIndex() {
                 {/* <h2>Stays</h2> */}
                 {/* {userService.getLoggedinUser() && <button onClick={onAddStay}>Add a Stay</button>} */}
             </header>
-            <CategoryFilter filterBy={filterBy} setFilterBy={setFilterBy}/>
+            <CategoryFilter filterBy={filterBy} setFilterBy={onSetFilterBy}/>
             {/* <StayFilter filterBy={filterBy} setFilterBy={setFilterBy} /> */}
             <StayList 
                 stays={stays}

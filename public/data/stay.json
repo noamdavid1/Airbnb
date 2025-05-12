@@ -186,7 +186,18 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.58
+    "rating": 4.58,
+    "categories": [
+      "Luxe",
+      "Campers",
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "Amazing pools",
+      "Mansions",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aaaf9",
@@ -283,7 +294,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.91
+    "rating": 4.91,
+    "categories": []
   },
   {
     "_id": "622f337a75c7d36e498aaafa",
@@ -559,7 +571,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.34
+    "rating": 4.34,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aaafb",
@@ -821,7 +837,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.53
+    "rating": 4.53,
+    "categories": []
   },
   {
     "_id": "622f337a75c7d36e498aaafc",
@@ -894,7 +911,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.58
+    "rating": 4.58,
+    "categories": []
   },
   {
     "_id": "622f337a75c7d36e498aaafd",
@@ -1154,7 +1172,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.51
+    "rating": 4.51,
+    "categories": [
+      "Top cities",
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aaafe",
@@ -1423,7 +1447,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.96
+    "rating": 4.96,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aaaff",
@@ -1696,7 +1725,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.03
+    "rating": 4.03,
+    "categories": [
+      "National parks",
+      "Amazing views",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab00",
@@ -1807,7 +1842,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.73
+    "rating": 4.73,
+    "categories": [
+      "Top cities",
+      "National parks",
+      "Beach"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab01",
@@ -2060,7 +2100,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.1
+    "rating": 4.1,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab02",
@@ -2331,7 +2374,15 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.65
+    "rating": 4.65,
+    "categories": [
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "Amazing pools",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab03",
@@ -2591,7 +2642,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.47
+    "rating": 4.47,
+    "categories": [
+      "Historical homes",
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab04",
@@ -2853,7 +2910,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.97
+    "rating": 4.97,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab05",
@@ -3147,7 +3208,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.5
+    "rating": 4.5,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab06",
@@ -3413,7 +3479,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.52
+    "rating": 4.52,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab07",
@@ -3670,7 +3739,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.86
+    "rating": 4.86,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab08",
@@ -3834,7 +3906,17 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.12
+    "rating": 4.12,
+    "categories": [
+      "Luxe",
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "Amazing pools",
+      "Islands",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab09",
@@ -3900,7 +3982,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.93
+    "rating": 4.93,
+    "categories": [
+      "Top cities",
+      "National parks",
+      "Shared homes"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab0a",
@@ -4059,7 +4146,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.65
+    "rating": 4.65,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab0b",
@@ -4157,7 +4248,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.45
+    "rating": 4.45,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab0c",
@@ -4317,7 +4412,18 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.43
+    "rating": 4.43,
+    "categories": [
+      "Luxe",
+      "Campers",
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "Amazing pools",
+      "Mansions",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab0d",
@@ -4578,7 +4684,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.75
+    "rating": 4.75,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab0e",
@@ -4852,7 +4961,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.61
+    "rating": 4.61,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab0f",
@@ -5000,7 +5113,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.71
+    "rating": 4.71,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Campers"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab10",
@@ -5265,7 +5383,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.51
+    "rating": 4.51,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab11",
@@ -5531,7 +5652,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.83
+    "rating": 4.83,
+    "categories": []
   },
   {
     "_id": "622f337a75c7d36e498aab12",
@@ -5798,7 +5920,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.61
+    "rating": 4.61,
+    "categories": [
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab13",
@@ -5895,7 +6021,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.79
+    "rating": 4.79,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab14",
@@ -6152,7 +6283,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.28
+    "rating": 4.28,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab15",
@@ -6437,7 +6572,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.01
+    "rating": 4.01,
+    "categories": [
+      "Amazing pools",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab16",
@@ -6621,7 +6760,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.16
+    "rating": 4.16,
+    "categories": [
+      "Desing",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab17",
@@ -6688,7 +6831,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.72
+    "rating": 4.72,
+    "categories": []
   },
   {
     "_id": "622f337a75c7d36e498aab18",
@@ -6954,7 +7098,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.29
+    "rating": 4.29,
+    "categories": [
+      "Trending",
+      "Campers"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab19",
@@ -7222,7 +7370,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.97
+    "rating": 4.97,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab1a",
@@ -7526,7 +7678,16 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.44
+    "rating": 4.44,
+    "categories": [
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "Amazing pools",
+      "Islands",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab1b",
@@ -7777,7 +7938,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.87
+    "rating": 4.87,
+    "categories": [
+      "Mansions",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab1c",
@@ -7844,7 +8010,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.5
+    "rating": 4.5,
+    "categories": [
+      "National parks",
+      "Campers"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab1d",
@@ -8037,7 +8207,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.75
+    "rating": 4.75,
+    "categories": [
+      "Amazing pools",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab1e",
@@ -8113,7 +8287,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.7
+    "rating": 4.7,
+    "categories": [
+      "National parks",
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab1f",
@@ -8368,7 +8546,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.29
+    "rating": 4.29,
+    "categories": [
+      "Amazing views",
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab20",
@@ -8468,7 +8650,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.18
+    "rating": 4.18,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Beach"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab21",
@@ -8581,7 +8768,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.07
+    "rating": 4.07,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab22",
@@ -8866,7 +9056,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.04
+    "rating": 4.04,
+    "categories": [
+      "National parks",
+      "Amazing views",
+      "Desing",
+      "Beach"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab23",
@@ -8967,7 +9163,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.11
+    "rating": 4.11,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab24",
@@ -9117,7 +9316,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.1
+    "rating": 4.1,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab25",
@@ -9399,7 +9601,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.3
+    "rating": 4.3,
+    "categories": [
+      "Historical homes",
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab26",
@@ -9549,7 +9757,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.51
+    "rating": 4.51,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab27",
@@ -9627,7 +9839,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.55
+    "rating": 4.55,
+    "categories": [
+      "Luxe",
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab28",
@@ -9737,7 +9953,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.38
+    "rating": 4.38,
+    "categories": [
+      "Amazing pools",
+      "Islands",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab29",
@@ -9848,7 +10069,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.43
+    "rating": 4.43,
+    "categories": [
+      "Amazing pools",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab2a",
@@ -10118,7 +10343,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.55
+    "rating": 4.55,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab2b",
@@ -10320,7 +10548,16 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.32
+    "rating": 4.32,
+    "categories": [
+      "Luxe",
+      "Trending",
+      "Top cities",
+      "Beach",
+      "Amazing pools",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab2c",
@@ -10398,7 +10635,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.4
+    "rating": 4.4,
+    "categories": [
+      "Shared homes"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab2d",
@@ -10669,7 +10909,14 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.94
+    "rating": 4.94,
+    "categories": [
+      "Trending",
+      "Top cities",
+      "Ski in-out",
+      "Shared homes",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab2e",
@@ -10943,7 +11190,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.52
+    "rating": 4.52,
+    "categories": [
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab2f",
@@ -11213,7 +11465,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.91
+    "rating": 4.91,
+    "categories": [
+      "Luxe",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab30",
@@ -11376,7 +11633,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.85
+    "rating": 4.85,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab31",
@@ -11658,7 +11919,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.59
+    "rating": 4.59,
+    "categories": [
+      "National parks",
+      "Beachfront",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab32",
@@ -11917,7 +12184,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.66
+    "rating": 4.66,
+    "categories": [
+      "Amazing views",
+      "Beach"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab33",
@@ -12140,7 +12411,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.95
+    "rating": 4.95,
+    "categories": [
+      "Trending",
+      "National parks",
+      "Top cities",
+      "OMG!"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab34",
@@ -12411,7 +12688,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.25
+    "rating": 4.25,
+    "categories": [
+      "National parks",
+      "Amazing views",
+      "Desert",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab35",
@@ -12630,7 +12913,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.92
+    "rating": 4.92,
+    "categories": []
   },
   {
     "_id": "622f337a75c7d36e498aab36",
@@ -12893,7 +13177,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.58
+    "rating": 4.58,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab37",
@@ -12966,7 +13254,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.18
+    "rating": 4.18,
+    "categories": [
+      "National parks",
+      "Desing",
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab38",
@@ -13040,7 +13333,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.52
+    "rating": 4.52,
+    "categories": [
+      "National parks"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab39",
@@ -13184,7 +13480,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.57
+    "rating": 4.57,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab3a",
@@ -13459,7 +13759,18 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.6
+    "rating": 4.6,
+    "categories": [
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "OMG!",
+      "Amazing pools",
+      "Top cities",
+      "Islands",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab3b",
@@ -13716,7 +14027,14 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.18
+    "rating": 4.18,
+    "categories": [
+      "Campers",
+      "Cabins",
+      "Top cities",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab3c",
@@ -13878,7 +14196,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.1
+    "rating": 4.1,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab3d",
@@ -14153,7 +14475,16 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.73
+    "rating": 4.73,
+    "categories": [
+      "Luxe",
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "Amazing pools",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab3e",
@@ -14417,7 +14748,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.32
+    "rating": 4.32,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab3f",
@@ -14702,7 +15037,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.31
+    "rating": 4.31,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab40",
@@ -14773,7 +15114,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.67
+    "rating": 4.67,
+    "categories": [
+      "National parks",
+      "Islands",
+      "Beach"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab41",
@@ -15038,7 +15384,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.97
+    "rating": 4.97,
+    "categories": [
+      "Boats",
+      "Ski in-out",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab42",
@@ -15297,7 +15648,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.6
+    "rating": 4.6,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab43",
@@ -15564,7 +15918,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.01
+    "rating": 4.01,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab44",
@@ -15741,7 +16099,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.34
+    "rating": 4.34,
+    "categories": [
+      "National parks",
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab45",
@@ -15868,7 +16230,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.33
+    "rating": 4.33,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab46",
@@ -16179,7 +16544,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.4
+    "rating": 4.4,
+    "categories": [
+      "National parks",
+      "Amazing views",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab47",
@@ -16312,7 +16682,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.58
+    "rating": 4.58,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab48",
@@ -16576,7 +16949,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.5
+    "rating": 4.5,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab49",
@@ -16854,7 +17232,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.85
+    "rating": 4.85,
+    "categories": [
+      "Desing",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab4a",
@@ -17126,7 +17509,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.02
+    "rating": 4.02,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab4b",
@@ -17410,7 +17798,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.05
+    "rating": 4.05,
+    "categories": [
+      "National parks",
+      "Desing",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab4c",
@@ -17680,7 +18073,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.07
+    "rating": 4.07,
+    "categories": [
+      "Historical homes",
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab4d",
@@ -17952,7 +18350,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.76
+    "rating": 4.76,
+    "categories": [
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab4e",
@@ -18215,7 +18618,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.57
+    "rating": 4.57,
+    "categories": [
+      "National parks"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab4f",
@@ -18477,7 +18883,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.94
+    "rating": 4.94,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab50",
@@ -18552,7 +18963,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.25
+    "rating": 4.25,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Top cities",
+      "Campers"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab51",
@@ -18826,7 +19243,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.72
+    "rating": 4.72,
+    "categories": [
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab52",
@@ -18899,7 +19321,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.84
+    "rating": 4.84,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab53",
@@ -19176,7 +19601,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.97
+    "rating": 4.97,
+    "categories": [
+      "National parks",
+      "Amazing views",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab54",
@@ -19448,7 +19879,14 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.81
+    "rating": 4.81,
+    "categories": [
+      "Trending",
+      "Top cities",
+      "Desing",
+      "Shared homes",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab55",
@@ -19731,7 +20169,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.17
+    "rating": 4.17,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab56",
@@ -19844,7 +20286,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.49
+    "rating": 4.49,
+    "categories": [
+      "National parks",
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab57",
@@ -20104,7 +20550,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.39
+    "rating": 4.39,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab58",
@@ -20368,7 +20818,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.07
+    "rating": 4.07,
+    "categories": [
+      "National parks"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab59",
@@ -20638,7 +21091,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.57
+    "rating": 4.57,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab5a",
@@ -20906,7 +21364,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.22
+    "rating": 4.22,
+    "categories": [
+      "National parks",
+      "Desing",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337a75c7d36e498aab5b",
@@ -21067,7 +21530,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.49
+    "rating": 4.49,
+    "categories": [
+      "National parks"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab5c",
@@ -21351,7 +21817,15 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.95
+    "rating": 4.95,
+    "categories": [
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "Amazing pools",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab5d",
@@ -21617,7 +22091,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.28
+    "rating": 4.28,
+    "categories": [
+      "Historical homes",
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab5e",
@@ -21782,7 +22262,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.85
+    "rating": 4.85,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Shared homes",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab5f",
@@ -22047,7 +22533,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.61
+    "rating": 4.61,
+    "categories": [
+      "Amazing views",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab60",
@@ -22320,7 +22810,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.27
+    "rating": 4.27,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab61",
@@ -22432,7 +22927,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.4
+    "rating": 4.4,
+    "categories": [
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab62",
@@ -22496,7 +22995,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.9
+    "rating": 4.9,
+    "categories": []
   },
   {
     "_id": "622f337b75c7d36e498aab63",
@@ -22760,7 +23260,15 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.58
+    "rating": 4.58,
+    "categories": [
+      "Trending",
+      "Top cities",
+      "Beach",
+      "Amazing pools",
+      "Lakefront",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab64",
@@ -22842,7 +23350,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.77
+    "rating": 4.77,
+    "categories": [
+      "National parks",
+      "Amazing views",
+      "Beach"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab65",
@@ -23039,7 +23552,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.56
+    "rating": 4.56,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab66",
@@ -23313,7 +23829,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.57
+    "rating": 4.57,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab67",
@@ -23584,7 +24105,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.9
+    "rating": 4.9,
+    "categories": [
+      "Mansions",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab68",
@@ -23877,7 +24403,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.56
+    "rating": 4.56,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab69",
@@ -24159,7 +24689,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.42
+    "rating": 4.42,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab6a",
@@ -24286,7 +24819,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.39
+    "rating": 4.39,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab6b",
@@ -24581,7 +25117,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.3
+    "rating": 4.3,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab6c",
@@ -24683,7 +25223,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.73
+    "rating": 4.73,
+    "categories": [
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab6d",
@@ -24939,7 +25483,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.2
+    "rating": 4.2,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab6e",
@@ -25010,7 +25558,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.9
+    "rating": 4.9,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab6f",
@@ -25287,7 +25839,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.9
+    "rating": 4.9,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab70",
@@ -25364,7 +25921,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.64
+    "rating": 4.64,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab71",
@@ -25470,7 +26033,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.39
+    "rating": 4.39,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Amazing views",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab72",
@@ -25562,7 +26131,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.11
+    "rating": 4.11,
+    "categories": [
+      "National parks"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab73",
@@ -25845,7 +26417,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.34
+    "rating": 4.34,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab74",
@@ -26128,7 +26705,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.28
+    "rating": 4.28,
+    "categories": [
+      "Trending",
+      "National parks",
+      "Campers"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab75",
@@ -26417,7 +26999,14 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.53
+    "rating": 4.53,
+    "categories": [
+      "Trending",
+      "Top cities",
+      "Beach",
+      "Desing",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab76",
@@ -26511,7 +27100,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.67
+    "rating": 4.67,
+    "categories": [
+      "Islands",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab77",
@@ -26598,7 +27192,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.37
+    "rating": 4.37,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab78",
@@ -26856,7 +27455,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.67
+    "rating": 4.67,
+    "categories": []
   },
   {
     "_id": "622f337b75c7d36e498aab79",
@@ -27120,7 +27720,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.0
+    "rating": 4.0,
+    "categories": [
+      "Amazing views",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab7a",
@@ -27399,7 +28004,17 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.74
+    "rating": 4.74,
+    "categories": [
+      "Luxe",
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "Amazing pools",
+      "Islands",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab7b",
@@ -27457,7 +28072,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.74
+    "rating": 4.74,
+    "categories": [
+      "National parks"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab7c",
@@ -27729,7 +28347,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.0
+    "rating": 4.0,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab7d",
@@ -28012,7 +28633,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.7
+    "rating": 4.7,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab7e",
@@ -28109,7 +28734,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.51
+    "rating": 4.51,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab7f",
@@ -28365,7 +28995,14 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.99
+    "rating": 4.99,
+    "categories": [
+      "Trending",
+      "Top cities",
+      "Beach",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab80",
@@ -28525,7 +29162,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.58
+    "rating": 4.58,
+    "categories": []
   },
   {
     "_id": "622f337b75c7d36e498aab81",
@@ -28781,7 +29419,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.68
+    "rating": 4.68,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab82",
@@ -29046,7 +29687,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.84
+    "rating": 4.84,
+    "categories": [
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab83",
@@ -29314,7 +29960,14 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.64
+    "rating": 4.64,
+    "categories": [
+      "Trending",
+      "Amazing pools",
+      "Lakefront",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab84",
@@ -29411,7 +30064,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.43
+    "rating": 4.43,
+    "categories": [
+      "Mansions"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab85",
@@ -29529,7 +30185,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.85
+    "rating": 4.85,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab86",
@@ -29826,7 +30487,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.8
+    "rating": 4.8,
+    "categories": [
+      "Historical homes",
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab87",
@@ -30028,7 +30694,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.66
+    "rating": 4.66,
+    "categories": [
+      "Beach"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab88",
@@ -30286,7 +30955,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.54
+    "rating": 4.54,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab89",
@@ -30355,7 +31027,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.45
+    "rating": 4.45,
+    "categories": []
   },
   {
     "_id": "622f337b75c7d36e498aab8a",
@@ -30643,7 +31316,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.22
+    "rating": 4.22,
+    "categories": [
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab8b",
@@ -30921,7 +31599,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.46
+    "rating": 4.46,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab8c",
@@ -31001,7 +31683,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.04
+    "rating": 4.04,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab8d",
@@ -31280,7 +31966,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.98
+    "rating": 4.98,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab8e",
@@ -31540,7 +32230,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.47
+    "rating": 4.47,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab8f",
@@ -31679,7 +32372,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.84
+    "rating": 4.84,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab90",
@@ -31952,7 +32649,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.82
+    "rating": 4.82,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab91",
@@ -32076,7 +32777,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.76
+    "rating": 4.76,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab92",
@@ -32324,7 +33029,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.92
+    "rating": 4.92,
+    "categories": [
+      "Shared homes"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab93",
@@ -32578,7 +33286,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.13
+    "rating": 4.13,
+    "categories": [
+      "National parks",
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab94",
@@ -32842,7 +33554,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.66
+    "rating": 4.66,
+    "categories": [
+      "National parks",
+      "Amazing views",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab95",
@@ -33116,7 +33834,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.49
+    "rating": 4.49,
+    "categories": [
+      "Trending",
+      "National parks",
+      "Beach",
+      "Campers"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab96",
@@ -33258,7 +33982,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.06
+    "rating": 4.06,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab97",
@@ -33528,7 +34256,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.99
+    "rating": 4.99,
+    "categories": [
+      "Amazing views",
+      "Beachfront",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab98",
@@ -33762,7 +34496,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.95
+    "rating": 4.95,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab99",
@@ -34028,7 +34768,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.84
+    "rating": 4.84,
+    "categories": [
+      "National parks"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab9a",
@@ -34319,7 +35062,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.06
+    "rating": 4.06,
+    "categories": [
+      "Amazing views",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab9b",
@@ -34585,7 +35333,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.53
+    "rating": 4.53,
+    "categories": [
+      "National parks",
+      "Desing",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab9c",
@@ -34768,7 +35522,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.86
+    "rating": 4.86,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab9d",
@@ -34830,7 +35590,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.08
+    "rating": 4.08,
+    "categories": []
   },
   {
     "_id": "622f337b75c7d36e498aab9e",
@@ -35107,7 +35868,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.33
+    "rating": 4.33,
+    "categories": [
+      "Historical homes",
+      "National parks",
+      "Shared homes",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aab9f",
@@ -35384,7 +36151,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.13
+    "rating": 4.13,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aaba0",
@@ -35647,7 +36418,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.03
+    "rating": 4.03,
+    "categories": [
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aaba1",
@@ -35925,7 +36700,17 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.09
+    "rating": 4.09,
+    "categories": [
+      "Campers",
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "Top cities",
+      "Amazing pools",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aaba2",
@@ -36096,7 +36881,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.7
+    "rating": 4.7,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Beach",
+      "Campers"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aaba3",
@@ -36370,7 +37161,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.04
+    "rating": 4.04,
+    "categories": [
+      "National parks",
+      "Mansions",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aaba4",
@@ -36462,7 +37258,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.01
+    "rating": 4.01,
+    "categories": [
+      "National parks",
+      "Beach"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aaba5",
@@ -36645,7 +37445,15 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.35
+    "rating": 4.35,
+    "categories": [
+      "Trending",
+      "Campers",
+      "Amazing pools",
+      "Islands",
+      "National parks",
+      "Boats"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aaba6",
@@ -36924,7 +37732,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 5.0
+    "rating": 5.0,
+    "categories": []
   },
   {
     "_id": "622f337b75c7d36e498aaba7",
@@ -37139,7 +37948,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.41
+    "rating": 4.41,
+    "categories": [
+      "National parks",
+      "Amazing views",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aaba8",
@@ -37414,7 +38229,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.51
+    "rating": 4.51,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aaba9",
@@ -37680,7 +38500,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.71
+    "rating": 4.71,
+    "categories": [
+      "Trending",
+      "National parks",
+      "Campers"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aabaa",
@@ -37938,7 +38763,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.91
+    "rating": 4.91,
+    "categories": [
+      "National parks"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aabab",
@@ -38200,7 +39028,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.99
+    "rating": 4.99,
+    "categories": []
   },
   {
     "_id": "622f337b75c7d36e498aabac",
@@ -38390,7 +39219,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.24
+    "rating": 4.24,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aabad",
@@ -38625,7 +39458,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.03
+    "rating": 4.03,
+    "categories": []
   },
   {
     "_id": "622f337b75c7d36e498aabae",
@@ -38905,7 +39739,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.6
+    "rating": 4.6,
+    "categories": [
+      "National parks",
+      "Shared homes",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aabaf",
@@ -39194,7 +40033,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.15
+    "rating": 4.15,
+    "categories": [
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aabb0",
@@ -39444,7 +40288,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.98
+    "rating": 4.98,
+    "categories": [
+      "Amazing views",
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aabb1",
@@ -39518,7 +40366,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.41
+    "rating": 4.41,
+    "categories": [
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aabb2",
@@ -39774,7 +40627,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.44
+    "rating": 4.44,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aabb3",
@@ -40037,7 +40893,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.32
+    "rating": 4.32,
+    "categories": [
+      "Tropical",
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aabb4",
@@ -40305,7 +41167,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.48
+    "rating": 4.48,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aabb5",
@@ -40426,7 +41293,18 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.43
+    "rating": 4.43,
+    "categories": [
+      "Luxe",
+      "Campers",
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "Amazing pools",
+      "Mansions",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aabb6",
@@ -40498,7 +41376,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.76
+    "rating": 4.76,
+    "categories": []
   },
   {
     "_id": "622f337b75c7d36e498aabb7",
@@ -40707,7 +41586,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.61
+    "rating": 4.61,
+    "categories": [
+      "Trending",
+      "Campers"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aabb8",
@@ -40976,7 +41859,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.67
+    "rating": 4.67,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aabb9",
@@ -41251,7 +42137,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.82
+    "rating": 4.82,
+    "categories": [
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aabba",
@@ -41516,7 +42406,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.13
+    "rating": 4.13,
+    "categories": [
+      "National parks",
+      "Desing",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aabbb",
@@ -41680,7 +42575,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.3
+    "rating": 4.3,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aabbc",
@@ -41945,7 +42845,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.99
+    "rating": 4.99,
+    "categories": []
   },
   {
     "_id": "622f337b75c7d36e498aabbd",
@@ -42205,7 +43106,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.96
+    "rating": 4.96,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aabbe",
@@ -42485,7 +43389,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.01
+    "rating": 4.01,
+    "categories": [
+      "Top cities",
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337b75c7d36e498aabbf",
@@ -42549,7 +43459,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.58
+    "rating": 4.58,
+    "categories": []
   },
   {
     "_id": "622f337c75c7d36e498aabc0",
@@ -42668,7 +43579,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.29
+    "rating": 4.29,
+    "categories": [
+      "National parks",
+      "Beach"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabc1",
@@ -42922,7 +43837,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.25
+    "rating": 4.25,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabc2",
@@ -43197,7 +44115,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.87
+    "rating": 4.87,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabc3",
@@ -43324,7 +44247,14 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.24
+    "rating": 4.24,
+    "categories": [
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "Amazing pools",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabc4",
@@ -43588,7 +44518,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.82
+    "rating": 4.82,
+    "categories": [
+      "Shared homes"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabc5",
@@ -43734,7 +44667,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.54
+    "rating": 4.54,
+    "categories": [
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabc6",
@@ -43995,7 +44933,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.3
+    "rating": 4.3,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabc7",
@@ -44263,7 +45204,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.46
+    "rating": 4.46,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabc8",
@@ -44447,7 +45392,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.22
+    "rating": 4.22,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Luxe",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabc9",
@@ -44712,7 +45663,14 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.68
+    "rating": 4.68,
+    "categories": [
+      "Amazing pools",
+      "Mansions",
+      "Tropical",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabca",
@@ -44981,7 +45939,15 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.38
+    "rating": 4.38,
+    "categories": [
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "Amazing pools",
+      "Tropical",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabcb",
@@ -45243,7 +46209,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.79
+    "rating": 4.79,
+    "categories": [
+      "Beach"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabcc",
@@ -45510,7 +46479,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.29
+    "rating": 4.29,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabcd",
@@ -45781,7 +46755,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.09
+    "rating": 4.09,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabce",
@@ -45867,7 +46846,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.29
+    "rating": 4.29,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabcf",
@@ -45944,7 +46929,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.44
+    "rating": 4.44,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabd0",
@@ -46138,7 +47128,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.23
+    "rating": 4.23,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabd1",
@@ -46416,7 +47409,14 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.5
+    "rating": 4.5,
+    "categories": [
+      "Luxe",
+      "Trending",
+      "Beach",
+      "Amazing pools",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabd2",
@@ -46531,7 +47531,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.57
+    "rating": 4.57,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabd3",
@@ -46801,7 +47806,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.37
+    "rating": 4.37,
+    "categories": [
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabd4",
@@ -47093,7 +48103,14 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.02
+    "rating": 4.02,
+    "categories": [
+      "Trending",
+      "Campers",
+      "Beachfront",
+      "Beach",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabd5",
@@ -47172,7 +48189,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.4
+    "rating": 4.4,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabd6",
@@ -47440,7 +48462,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.71
+    "rating": 4.71,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabd7",
@@ -47594,7 +48621,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.29
+    "rating": 4.29,
+    "categories": [
+      "Trending",
+      "National parks",
+      "Beach",
+      "Campers"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabd8",
@@ -47850,7 +48883,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.03
+    "rating": 4.03,
+    "categories": [
+      "Luxe"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabd9",
@@ -47963,7 +48999,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.08
+    "rating": 4.08,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabda",
@@ -48112,7 +49152,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.79
+    "rating": 4.79,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabdb",
@@ -48385,7 +49428,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.24
+    "rating": 4.24,
+    "categories": [
+      "National parks",
+      "Desing",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabdc",
@@ -48665,7 +49713,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.81
+    "rating": 4.81,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabdd",
@@ -48945,7 +49998,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.52
+    "rating": 4.52,
+    "categories": [
+      "National parks",
+      "Desert",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabde",
@@ -49205,7 +50263,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.12
+    "rating": 4.12,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabdf",
@@ -49433,7 +50494,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.73
+    "rating": 4.73,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabe0",
@@ -49714,7 +50781,15 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.22
+    "rating": 4.22,
+    "categories": [
+      "Trending",
+      "Beach",
+      "Amazing pools",
+      "Islands",
+      "Tropical",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabe1",
@@ -49992,7 +51067,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.11
+    "rating": 4.11,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Amazing views",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabe2",
@@ -50268,7 +51349,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.68
+    "rating": 4.68,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabe3",
@@ -50546,7 +51632,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.95
+    "rating": 4.95,
+    "categories": [
+      "Top cities",
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabe4",
@@ -50815,7 +51907,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.03
+    "rating": 4.03,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabe5",
@@ -51081,7 +52177,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.72
+    "rating": 4.72,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Amazing views",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabe6",
@@ -51151,7 +52253,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.65
+    "rating": 4.65,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabe7",
@@ -51441,7 +52546,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.25
+    "rating": 4.25,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabe8",
@@ -51528,7 +52638,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.37
+    "rating": 4.37,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabe9",
@@ -51805,7 +52918,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.46
+    "rating": 4.46,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabea",
@@ -52035,7 +53152,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.73
+    "rating": 4.73,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabeb",
@@ -52301,7 +53423,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.29
+    "rating": 4.29,
+    "categories": [
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabec",
@@ -52460,7 +53587,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.71
+    "rating": 4.71,
+    "categories": [
+      "Top cities",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabed",
@@ -52735,7 +53867,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.05
+    "rating": 4.05,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabee",
@@ -52909,7 +54045,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.87
+    "rating": 4.87,
+    "categories": []
   },
   {
     "_id": "622f337c75c7d36e498aabef",
@@ -53187,7 +54324,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.32
+    "rating": 4.32,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabf0",
@@ -53472,7 +54613,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.48
+    "rating": 4.48,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabf1",
@@ -53653,7 +54798,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.63
+    "rating": 4.63,
+    "categories": [
+      "Beachfront",
+      "Beach"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabf2",
@@ -53921,7 +55070,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.45
+    "rating": 4.45,
+    "categories": [
+      "Trending",
+      "Desing",
+      "Beach",
+      "Campers"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabf3",
@@ -54007,7 +55162,14 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.33
+    "rating": 4.33,
+    "categories": [
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "Amazing pools",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabf4",
@@ -54078,7 +55240,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.58
+    "rating": 4.58,
+    "categories": [
+      "Amazing views",
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabf5",
@@ -54333,7 +55499,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.23
+    "rating": 4.23,
+    "categories": [
+      "Shared homes",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabf6",
@@ -54429,7 +55600,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.93
+    "rating": 4.93,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabf7",
@@ -54502,7 +55678,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.91
+    "rating": 4.91,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabf8",
@@ -54752,7 +55933,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.17
+    "rating": 4.17,
+    "categories": [
+      "National parks",
+      "Desing",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabf9",
@@ -54826,7 +56013,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.79
+    "rating": 4.79,
+    "categories": [
+      "Desing",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabfa",
@@ -55108,7 +56300,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.37
+    "rating": 4.37,
+    "categories": [
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabfb",
@@ -55231,7 +56428,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.82
+    "rating": 4.82,
+    "categories": [
+      "National parks",
+      "Boats",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabfc",
@@ -55494,7 +56696,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.09
+    "rating": 4.09,
+    "categories": [
+      "Trending",
+      "National parks",
+      "Top cities",
+      "Campers"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabfd",
@@ -55773,7 +56981,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.48
+    "rating": 4.48,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabfe",
@@ -56050,7 +57262,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.8
+    "rating": 4.8,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aabff",
@@ -56311,7 +57528,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.95
+    "rating": 4.95,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac00",
@@ -56605,7 +57826,14 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.02
+    "rating": 4.02,
+    "categories": [
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "Amazing pools",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac01",
@@ -56853,7 +58081,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.65
+    "rating": 4.65,
+    "categories": [
+      "Trending",
+      "National parks",
+      "Top cities",
+      "Campers"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac02",
@@ -56980,7 +58214,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.87
+    "rating": 4.87,
+    "categories": [
+      "National parks"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac03",
@@ -57184,7 +58421,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.17
+    "rating": 4.17,
+    "categories": [
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac04",
@@ -57343,7 +58583,15 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.02
+    "rating": 4.02,
+    "categories": [
+      "Luxe",
+      "Trending",
+      "Beach",
+      "Amazing pools",
+      "Mansions",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac05",
@@ -57597,7 +58845,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.96
+    "rating": 4.96,
+    "categories": [
+      "National parks"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac06",
@@ -57674,7 +58925,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.86
+    "rating": 4.86,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac07",
@@ -57936,7 +59192,14 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.82
+    "rating": 4.82,
+    "categories": [
+      "Luxe",
+      "Campers",
+      "Beachfront",
+      "Beach",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac08",
@@ -58020,7 +59283,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.96
+    "rating": 4.96,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac09",
@@ -58302,7 +59568,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.02
+    "rating": 4.02,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac0a",
@@ -58558,7 +59829,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.51
+    "rating": 4.51,
+    "categories": [
+      "Amazing views",
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac0b",
@@ -58833,7 +60108,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.65
+    "rating": 4.65,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac0c",
@@ -59106,7 +60386,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.92
+    "rating": 4.92,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac0d",
@@ -59375,7 +60660,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.62
+    "rating": 4.62,
+    "categories": [
+      "National parks",
+      "Desing",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac0e",
@@ -59579,7 +60870,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.79
+    "rating": 4.79,
+    "categories": [
+      "National parks",
+      "Shared homes",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac0f",
@@ -59837,7 +61133,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.25
+    "rating": 4.25,
+    "categories": []
   },
   {
     "_id": "622f337c75c7d36e498aac10",
@@ -59969,7 +61266,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.88
+    "rating": 4.88,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac11",
@@ -60216,7 +61518,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.61
+    "rating": 4.61,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac12",
@@ -60498,7 +61805,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.07
+    "rating": 4.07,
+    "categories": [
+      "Amazing views",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac13",
@@ -60790,7 +62102,15 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.39
+    "rating": 4.39,
+    "categories": [
+      "Trending",
+      "Top cities",
+      "Beach",
+      "Shared homes",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac14",
@@ -61050,7 +62370,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.78
+    "rating": 4.78,
+    "categories": []
   },
   {
     "_id": "622f337c75c7d36e498aac15",
@@ -61312,7 +62633,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.19
+    "rating": 4.19,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac16",
@@ -61585,7 +62909,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.52
+    "rating": 4.52,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac17",
@@ -61859,7 +63187,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.66
+    "rating": 4.66,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac18",
@@ -61924,7 +63257,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.94
+    "rating": 4.94,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac19",
@@ -62199,7 +63535,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.0
+    "rating": 4.0,
+    "categories": [
+      "Historical homes",
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac1a",
@@ -62456,7 +63797,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.39
+    "rating": 4.39,
+    "categories": [
+      "National parks",
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac1b",
@@ -62718,7 +64063,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.36
+    "rating": 4.36,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac1c",
@@ -62882,7 +64230,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.23
+    "rating": 4.23,
+    "categories": [
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac1d",
@@ -62979,7 +64330,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.92
+    "rating": 4.92,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Trending",
+      "Campers"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac1e",
@@ -63046,7 +64403,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.48
+    "rating": 4.48,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac1f",
@@ -63324,7 +64684,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.61
+    "rating": 4.61,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac20",
@@ -63423,7 +64787,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.55
+    "rating": 4.55,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac21",
@@ -63688,7 +65057,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.43
+    "rating": 4.43,
+    "categories": [
+      "Historical homes",
+      "Desing",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac22",
@@ -63975,7 +65350,14 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.73
+    "rating": 4.73,
+    "categories": [
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "Amazing pools",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337c75c7d36e498aac23",
@@ -64253,7 +65635,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.52
+    "rating": 4.52,
+    "categories": [
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac24",
@@ -64528,7 +65914,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.2
+    "rating": 4.2,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac25",
@@ -64639,7 +66029,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.8
+    "rating": 4.8,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac26",
@@ -64923,7 +66317,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.55
+    "rating": 4.55,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac27",
@@ -65216,7 +66614,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.38
+    "rating": 4.38,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac28",
@@ -65336,7 +66739,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.83
+    "rating": 4.83,
+    "categories": [
+      "Mansions"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac29",
@@ -65402,7 +66808,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.14
+    "rating": 4.14,
+    "categories": [
+      "Amazing pools"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac2a",
@@ -65703,7 +67112,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.23
+    "rating": 4.23,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac2b",
@@ -65930,7 +67343,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.03
+    "rating": 4.03,
+    "categories": [
+      "Trending",
+      "National parks",
+      "Campers"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac2c",
@@ -66109,7 +67527,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.34
+    "rating": 4.34,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac2d",
@@ -66370,7 +67793,15 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.92
+    "rating": 4.92,
+    "categories": [
+      "Luxe",
+      "Trending",
+      "Top cities",
+      "Desing",
+      "Historical homes",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac2e",
@@ -66660,7 +68091,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.43
+    "rating": 4.43,
+    "categories": [
+      "Historical homes",
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac2f",
@@ -66875,7 +68312,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.45
+    "rating": 4.45,
+    "categories": [
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac30",
@@ -67129,7 +68571,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.39
+    "rating": 4.39,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac31",
@@ -67413,7 +68859,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.83
+    "rating": 4.83,
+    "categories": [
+      "Amazing pools",
+      "Shared homes",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac32",
@@ -67686,7 +69137,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.88
+    "rating": 4.88,
+    "categories": [
+      "Trending",
+      "National parks",
+      "Amazing views",
+      "OMG!"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac33",
@@ -67808,7 +69265,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.39
+    "rating": 4.39,
+    "categories": [
+      "Amazing pools"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac34",
@@ -68068,7 +69528,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.43
+    "rating": 4.43,
+    "categories": [
+      "Top cities",
+      "Campers"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac35",
@@ -68353,7 +69817,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.28
+    "rating": 4.28,
+    "categories": [
+      "Top cities",
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac36",
@@ -68611,7 +70081,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.34
+    "rating": 4.34,
+    "categories": [
+      "National parks",
+      "Amazing views",
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac37",
@@ -68698,7 +70173,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.19
+    "rating": 4.19,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac38",
@@ -68837,7 +70315,18 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.08
+    "rating": 4.08,
+    "categories": [
+      "Luxe",
+      "Campers",
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "Amazing pools",
+      "Mansions",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac39",
@@ -68923,7 +70412,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.18
+    "rating": 4.18,
+    "categories": []
   },
   {
     "_id": "622f337d75c7d36e498aac3a",
@@ -69201,7 +70691,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.58
+    "rating": 4.58,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac3b",
@@ -69424,7 +70917,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.28
+    "rating": 4.28,
+    "categories": [
+      "Historical homes",
+      "National parks",
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac3c",
@@ -69618,7 +71116,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.73
+    "rating": 4.73,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac3d",
@@ -69692,7 +71194,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.5
+    "rating": 4.5,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac3e",
@@ -69996,7 +71502,16 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.77
+    "rating": 4.77,
+    "categories": [
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "Amazing pools",
+      "Tropical",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac3f",
@@ -70163,7 +71678,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.34
+    "rating": 4.34,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac40",
@@ -70366,7 +71886,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.75
+    "rating": 4.75,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac41",
@@ -70565,7 +72089,14 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.33
+    "rating": 4.33,
+    "categories": [
+      "Trending",
+      "Top cities",
+      "Beach",
+      "Amazing pools",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac42",
@@ -70842,7 +72373,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.19
+    "rating": 4.19,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac43",
@@ -71120,7 +72654,14 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.32
+    "rating": 4.32,
+    "categories": [
+      "Trending",
+      "Top cities",
+      "Islands",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac44",
@@ -71335,7 +72876,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.12
+    "rating": 4.12,
+    "categories": [
+      "National parks",
+      "Beachfront",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac45",
@@ -71600,7 +73147,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.02
+    "rating": 4.02,
+    "categories": [
+      "Top cities",
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac46",
@@ -71662,7 +73215,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.66
+    "rating": 4.66,
+    "categories": [
+      "Campers"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac47",
@@ -71806,7 +73362,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.03
+    "rating": 4.03,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac48",
@@ -72068,7 +73627,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.73
+    "rating": 4.73,
+    "categories": [
+      "National parks",
+      "Beachfront",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac49",
@@ -72325,7 +73890,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.52
+    "rating": 4.52,
+    "categories": [
+      "National parks",
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac4a",
@@ -72602,7 +74171,16 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.26
+    "rating": 4.26,
+    "categories": [
+      "Trending",
+      "Beachfront",
+      "Beach",
+      "Top cities",
+      "Amazing pools",
+      "National parks",
+      "Amazing views"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac4b",
@@ -72674,7 +74252,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.88
+    "rating": 4.88,
+    "categories": [
+      "Amazing pools",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac4c",
@@ -72971,7 +74553,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.58
+    "rating": 4.58,
+    "categories": [
+      "Amazing pools",
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac4d",
@@ -73245,7 +74832,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.03
+    "rating": 4.03,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac4e",
@@ -73443,7 +75034,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.93
+    "rating": 4.93,
+    "categories": [
+      "National parks",
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac4f",
@@ -73583,7 +75178,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.28
+    "rating": 4.28,
+    "categories": [
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac50",
@@ -73850,7 +75449,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.72
+    "rating": 4.72,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac51",
@@ -73914,7 +75518,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.81
+    "rating": 4.81,
+    "categories": []
   },
   {
     "_id": "622f337d75c7d36e498aac52",
@@ -74168,7 +75773,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.76
+    "rating": 4.76,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac53",
@@ -74428,7 +76038,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.4
+    "rating": 4.4,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac54",
@@ -74711,7 +76324,14 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.9
+    "rating": 4.9,
+    "categories": [
+      "Trending",
+      "Beach",
+      "Amazing pools",
+      "Islands",
+      "National parks"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac55",
@@ -74825,7 +76445,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.56
+    "rating": 4.56,
+    "categories": [
+      "National parks",
+      "Beach",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac56",
@@ -75099,7 +76724,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.68
+    "rating": 4.68,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac57",
@@ -75364,7 +76992,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.58
+    "rating": 4.58,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac58",
@@ -75624,7 +77255,12 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.27
+    "rating": 4.27,
+    "categories": [
+      "National parks",
+      "Top cities",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac59",
@@ -75689,7 +77325,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.5
+    "rating": 4.5,
+    "categories": []
   },
   {
     "_id": "622f337d75c7d36e498aac5a",
@@ -75761,7 +77398,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.43
+    "rating": 4.43,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac5b",
@@ -75897,7 +77537,11 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.47
+    "rating": 4.47,
+    "categories": [
+      "National parks",
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac5c",
@@ -76170,7 +77814,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.69
+    "rating": 4.69,
+    "categories": [
+      "Trending"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac5d",
@@ -76231,7 +77878,8 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.14
+    "rating": 4.14,
+    "categories": []
   },
   {
     "_id": "622f337d75c7d36e498aac5e",
@@ -76309,7 +77957,10 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.62
+    "rating": 4.62,
+    "categories": [
+      "Top cities"
+    ]
   },
   {
     "_id": "622f337d75c7d36e498aac5f",
@@ -76576,6 +78227,13 @@
       }
     ],
     "likedByUsers": [],
-    "rating": 4.28
+    "rating": 4.28,
+    "categories": [
+      "Trending",
+      "Beach",
+      "Amazing pools",
+      "Islands",
+      "National parks"
+    ]
   }
 ]
