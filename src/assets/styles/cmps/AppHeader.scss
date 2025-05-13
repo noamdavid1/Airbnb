@@ -1,61 +1,42 @@
 .app-header {
-    display: flex;
-    min-height: 3.5rem;
+	padding: 1rem 2rem;
+	background-color: white;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	position: sticky;
+	top: 0;
+	z-index: 100;
 
-    padding: rem(10px) 1rem;
-    
-    nav {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        gap: 1em;
-        
-        font-size: .8em;
+	.header-nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0.5rem 1.5rem;
+	}
 
-        .active {
-            color: $clr1;
-        }
+	.header-left,
+	.header-center,
+	.header-right {
+		flex: 1;
+	}
 
-        .logo {
-            img {
-                width: 150px;
-                height: auto;
-            }
-        }
+	.header-left {
+		display: flex;
+		align-items: center;
 
-        .login-link {
-            margin-inline-start: auto;
-        }
+		.logo img {
+			height: 6rem;
+			object-fit: contain;
+		}
+	}
 
-        button {
-            margin-inline-end: 0;
-        }
-    }
+	.header-center {
+		display: flex;
+		justify-content: center;
+	}
 
-    .user-info {
-        display: flex;
-        align-items: center;
-        margin-inline-start: auto;
-
-        color: $clr1;
-
-        .score {
-            padding: 8px;
-            background-color: $clr2;
-            border-radius: 50%;
-            margin: 10px;
-
-            color: $clr6;
-        }
-
-        // img {
-        //     width: 32px;
-        //     aspect-ratio: 1;
-        //     border-radius: 50%;
-        // }
-        
-        .btn-link {
-            color: $clr2;
-        }
-    }
+	.header-right {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
 }

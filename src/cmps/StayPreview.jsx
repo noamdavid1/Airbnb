@@ -10,7 +10,6 @@ export function StayPreview({ stay }) {
         console.log("onDotClick")
         ev.preventDefault()
     }
-
     return (
         <article className="stay-preview">
 
