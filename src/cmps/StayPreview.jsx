@@ -5,7 +5,7 @@ import { stayPreviewSvgs } from './Svgs';
 
 export function StayPreview({ stay }) {
 
-
+    
     function onDotClick(ev) {
         console.log("onDotClick")
         ev.preventDefault()

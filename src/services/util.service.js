@@ -51,3 +51,44 @@ export function loadFromStorage(key) {
     const data = localStorage.getItem(key)
     return (data) ? JSON.parse(data) : undefined
 }
+
+export function convertDateToTxt(date){
+    const dateNow = Date.now()
+    const dateTimestamp = new Date(date).getTime()
+    // console.log(dateTimestamp);
+    // console.log(dateNow);
+    
+    const MINUTE = 1000 * 60
+    const HOUR = MINUTE * 60
+    const DAY = 24 * HOUR
+    const YEAR = 365 * DAY
+
+    const diff = dateNow - dateTimestamp
+
+    if (diff < MINUTE)
+    {
+        const diffInSeconds = Math.floor(diff / 1000);  // Convert to seconds
+        return diffInSeconds + " seconds ago";
+    }
+
+    if (diff < HOUR)
+    {
+        const diffInMinutes = Math.floor(diff / MINUTE);  // Convert to minutes
+        return diffInMinutes + " minutes ago";
+    }
+
+    if(diff < DAY)
+    {
+        const diffInHours = Math.floor(diff / HOUR);  // Convert to hours
+        return diffInHours + " hours ago";
+    }
+
+    if(diff < YEAR)
+    {
+        const diffInDays = Math.floor(diff / DAY);  // Convert to days
+        return diffInDays + " days ago";
+    }
+
+    const diffInYears = Math.floor(diff / YEAR);  // Convert to years
+    return diffInYears + " years ago";
+}

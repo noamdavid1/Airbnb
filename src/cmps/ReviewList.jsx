@@ -4,7 +4,7 @@ import { ReviewPreview } from './ReviewPreview.jsx'
 export function ReviewList({ reviews, onRemoveReview }) {
     
     return <section>
-        <ul className="list review-list">
+        {reviews && reviews.length ? <ul className="list review-list">
             {reviews.map(review =>
                 <li key={review._id}>
                     <ReviewPreview review={review}/>
@@ -13,6 +13,9 @@ export function ReviewList({ reviews, onRemoveReview }) {
                     </div>}
                 </li>)
             }
-        </ul>
+        </ul> 
+        :
+        <div>No reviews (yet)</div>}
+
     </section>
 }

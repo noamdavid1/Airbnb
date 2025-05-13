@@ -60,7 +60,7 @@ export function StayIndex() {
     function onDisplayStay(stay) {
         console.log(stay);
         
-        // navigate(`/stay/${stay._id}`)
+        navigate(`/stay/${stay._id}`)
     }
 
     return (
