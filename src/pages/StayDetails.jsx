@@ -9,6 +9,7 @@ import { StayImgs } from '../cmps/StayImgs'
 import { StayAmenities } from '../cmps/StayAmenities'
 import { removeReview } from '../store/actions/review.actions'
 import { ReviewList } from '../cmps/ReviewList'
+import { StayReservation } from '../cmps/StayOrder'
 
 
 export function StayDetails() {
@@ -44,9 +45,9 @@ export function StayDetails() {
       <Link to="/">Back to list</Link>
       <h1>{stay.name}</h1>
 
-
       <StayImgs stay={stay} />
-      <div>{stay.roomType} in {stay.loc.address}</div>
+
+      {/* <div>{stay.roomType} in {stay.loc.address}</div>
       <div className='stay-info'>
         <div>{stay.bedrooms} bedrooms</div> *
         <div>{stay.bathrooms} bathrooms</div> *
@@ -64,8 +65,38 @@ export function StayDetails() {
         <pre> {JSON.stringify(stay, null, 2)} </pre>
       </div>
       }
-      <button onClick={() => { onAddStayMsg(stay._id) }}>Add stay msg</button>
+      <button onClick={() => { onAddStayMsg(stay._id) }}>Add stay msg</button> */}
+      <div className="stay-details-layout">
+        <div className="stay-info-left">
+          <div>{stay.roomType} in {stay.loc.address}</div>
+          <div className='stay-info'>
+            <div>{stay.bedrooms} bedrooms</div>
+            <div>{stay.bathrooms} bathrooms</div>
+          </div>
 
+          <StayAmenities stayAmenities={stay.amenities} />
+
+          <ReviewList
+            reviews={stay.reviews}
+            onRemoveReview={onRemoveReview}
+          />
+
+          <div className="vendor-price">
+            <h3>Hosted by: {stay.vendor}</h3>
+            <h4>${stay.price} / night</h4>
+          </div>
+
+          <button onClick={() => onAddStayMsg(stay._id)}>
+            Add stay msg
+          </button>
+
+          <pre>{JSON.stringify(stay, null, 2)}</pre>
+        </div>
+
+        <div className="stay-info-right">
+          <StayReservation stay={stay} />
+        </div>
+      </div>
     </section>
   )
 }

@@ -4,10 +4,18 @@ export const REMOVE_STAY = 'REMOVE_STAY'
 export const ADD_STAY = 'ADD_STAY'
 export const UPDATE_STAY = 'UPDATE_STAY'
 export const ADD_STAY_MSG = 'ADD_STAY_MSG'
+export const SET_FILTER = 'SET_FILTER'
 
 const initialState = {
     stays: [],
-    stay: null
+    stay: null,
+    filterBy: {
+        category: '',
+        location: '',
+        checkIn: '',
+        checkOut: '',
+        guests: ''
+    }
 }
 
 export function stayReducer(state = initialState, action) {
@@ -35,6 +43,16 @@ export function stayReducer(state = initialState, action) {
         case ADD_STAY_MSG:
             newState = { ...state, stay: { ...state.stay, msgs: [...state.stay.msgs || [], action.msg] } }
             break
+
+        case SET_FILTER:
+            newState = { ...state, filterBy: { ...action.filterBy } }
+            console.log('reducer:', newState.filterBy)
+            break
+
+        // case SET_FILTER:
+        //     newState = {...state, filterBy: { ...action.filterBy }}
+        //     console.log('reducer:', newState.filterBy)
+        //     break
         default:
     }
     return newState

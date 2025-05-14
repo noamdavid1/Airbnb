@@ -1,29 +1,98 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
+// import { setFilterBy } from "../../store/actions/stay.actions"
+
 import { Anywhere } from "./Anywhere"
 import { AnyWeek } from "./AnyWeek"
 import { AddGuests } from "./AddGuests"
+import { useSelector } from "react-redux"
 
 
 export function SearchBar() {
 
+    const navigate = useNavigate()
+
     const [modalType, setModalType] = useState('')
+    const [draftFilterBy, setDraftFilterBy] = useState({
+        location: '',
+        checkIn: '',
+        checkOut: '',
+        guests: ''
+    })
+
+    const filterBy = useSelector(storeState => storeState.stayModule.filterBy)
 
     const handleClick = (type) => {
         setModalType(prev => prev === type ? '' : type)
     }
 
+    const handleChange = ({ target }) => {
+        const field = target.name
+        const value = target.type === 'number' ? +target.value : target.value
+        setDraftFilterBy(prev => ({ ...prev, [field]: value }))
+    }
+
+    const onSubmitFilter = () => {
+        const params = new URLSearchParams()
+        for (const key in draftFilterBy) {
+          if (draftFilterBy[key]) params.set(key, draftFilterBy[key])
+        }
+        navigate({ search: params.toString() })
+      }
+   
+      const onSetGuests = ({ adults, children, infants, pets }) => {
+        const totalGuests = adults + children + infants + pets
+        const guestStr = totalGuests === 0 ? '' : `${totalGuests} guest${totalGuests > 1 ? 's' : ''}`
+        setDraftFilterBy(prev => ({ ...prev, guests: guestStr }))
+      }
+
     return (
         <section className="search-bar">
-            <div className="search-bar-text" onClick={() => handleClick('Anywhere')}>
-                Anywhere
+            <div className="search-bar-text" onClick={() => handleClick('where')}>
+                <span className="title">Where</span>
+                <input
+                    type="text"
+                    className="search-bar-input"
+                    placeholder="Search destinations"
+                    value={filterBy.location}
+                    onChange={handleChange}
+                    readOnly
+                />
             </div>
-            <div className="search-bar-text" onClick={() => handleClick('Anyweek')}>
-                Any week
+            <div className="search-bar-text" onClick={() => handleClick('check-in')}>
+                <span className="title">Check in</span>
+                <input
+                    type="text"
+                    className="search-bar-input"
+                    placeholder="Add dates"
+                    value={filterBy.checkIn}
+                    onChange={handleChange}
+                    readOnly
+                />
             </div>
-            <div className="search-bar-text2" onClick={() => handleClick('AddGuests')}>
-                Add guests
+            <div className="search-bar-text" onClick={() => handleClick('check-out')}>
+                <span className="title">Check out</span>
+                <input
+                    type="text"
+                    className="search-bar-input"
+                    placeholder="Add dates"
+                    value={filterBy.checkOut}
+                    onChange={handleChange}
+                    readOnly
+                />
             </div>
-            <div className="search-icon-div">
+            <div className="search-bar-text" onClick={() => handleClick('who')}>
+                <span className="title">Who</span>
+                <input
+                    type="text"
+                    className="search-bar-input"
+                    placeholder="Add guests"
+                    value={draftFilterBy.guests}
+                    onChange={handleChange}
+                    readOnly
+                />
+            </div>
+            <div className="search-icon-div" onClick={onSubmitFilter}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 32 32"
@@ -41,9 +110,10 @@ export function SearchBar() {
             </div>
 
             <div className="search-bar-modal">
-                {modalType === 'Anywhere' && <Anywhere onClose={() => setModalType('')}/>}
-                {modalType === 'Anyweek' && <AnyWeek onClose={() => setModalType('')}/>}
-                {modalType === 'AddGuests' &&  <AddGuests onClose={() => setModalType('')}/>}
+                {modalType === 'where' && <Anywhere onClose={() => setModalType('')} />}
+                {modalType === 'check-in' && <AnyWeek onClose={() => setModalType('')} />}
+                {/* {modalType === 'check-out' && <AnyWeek onClose={() => setModalType('')}/>} */}
+                {modalType === 'who' && <AddGuests onClose={() => setModalType('')} onSetGuests={onSetGuests} />}
             </div>
         </section>
     )
