@@ -3,7 +3,7 @@ import logo from '../assets/img/newLogo.jpeg';
 import { SearchBar } from './search-bar/SearchBar'
 import { SearchBarScroll } from './search-bar/SearchBarScroll';
 
-import { useSearchParams, useNavigate } from 'react-router-dom'
+// import { useSearchParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { login, logout, signup } from '../store/actions/user.actions';
