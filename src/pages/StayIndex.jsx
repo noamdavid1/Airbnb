@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useSearchParams, useNavigate } from 'react-router-dom'
 
-import { loadStays, addStay, updateStay, removeStay, addStayMsg } from '../store/actions/stay.actions'
+import { loadStays, addStay, updateStay, removeStay, addStayMsg, setFilterBy } from '../store/actions/stay.actions'
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 
@@ -12,34 +12,42 @@ import { CategoryFilter } from '../cmps/CategoryFilter'
 export function StayIndex() {
 
     const [searchParams] = useSearchParams()
-    const category = searchParams.get('category') || ''
 
     const stays = useSelector(storeState => storeState.stayModule.stays)
+    const filterBy = useSelector(storeState => storeState.stayModule.filterBy)
+
     const navigate = useNavigate()
 
-    const filterBy = {
-        category,
-        txt: '',
-        price: 0
+    const defaultFilter = {
+        category: '',
+        location: '',
+        checkIn: '',
+        checkOut: '',
+        guests: ''
     }
 
     useEffect(() => {
+        const newFilter = {}
+        for (const [key, value] of searchParams.entries()) {
+            newFilter[key] = value
+        }
+        const mergedFilter = { ...defaultFilter, ...newFilter }
+        setFilterBy(mergedFilter)
+    }, [searchParams])
+
+
+    
+    useEffect(() => {
         loadStays(filterBy)
-    }, [category])
+    }, [filterBy])
 
     async function onRemoveStay(stayId) {
         try {
             await removeStay(stayId)
-            showSuccessMsg('Stay removed')            
+            showSuccessMsg('Stay removed')
         } catch (err) {
             showErrorMsg('Cannot remove stay')
         }
-    }
-
-    function onSetFilterBy(newFilter) {
-        const newQueryParams = new URLSearchParams()
-        if (newFilter.category) newQueryParams.set('category', newFilter.category)
-        navigate({ search: newQueryParams.toString() })
     }
 
     // async function onAddStay() {
@@ -55,7 +63,7 @@ export function StayIndex() {
 
     async function onUpdateStay(stay) {
         const speed = +prompt('New speed?', stay.speed)
-        if(speed === 0 || speed === stay.speed) return
+        if (speed === 0 || speed === stay.speed) return
 
         const stayToSave = { ...stay, speed }
         try {
@@ -63,7 +71,7 @@ export function StayIndex() {
             showSuccessMsg(`Stay updated, new speed: ${savedStay.speed}`)
         } catch (err) {
             showErrorMsg('Cannot update stay')
-        }        
+        }
     }
 
 
@@ -73,9 +81,9 @@ export function StayIndex() {
                 {/* <h2>Stays</h2> */}
                 {/* {userService.getLoggedinUser() && <button onClick={onAddStay}>Add a Stay</button>} */}
             </header>
-            <CategoryFilter filterBy={filterBy} setFilterBy={onSetFilterBy}/>
+            <CategoryFilter filterBy={filterBy} />
             {/* <StayFilter filterBy={filterBy} setFilterBy={setFilterBy} /> */}
-            <StayList 
+            <StayList
                 stays={stays}
                 onRemoveStay={onRemoveStay} 
                 onUpdateStay={onUpdateStay}/>

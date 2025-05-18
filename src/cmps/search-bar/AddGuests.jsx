@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Typography, IconButton } from '@mui/material'
 import { Add, Remove } from '@mui/icons-material'
 
-export function AddGuests({ onClose }) {
+export function AddGuests({ onClose, onSetGuests }) {
   const [adults, setAdults] = useState(0)
   const [children, setChildren] = useState(0)
   const [infants, setInfants] = useState(0)
@@ -21,6 +21,10 @@ export function AddGuests({ onClose }) {
       document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [onClose])
+
+  useEffect(() => {
+    onSetGuests?.({ adults, children, infants, pets })
+  }, [adults, children, infants, pets])
 
   const iconButtonStyle = (disabled) => ({
     border: '1px solid #ccc',
