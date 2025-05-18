@@ -1,6 +1,6 @@
 
 import { storageService } from '../async-storage.service'
-import { makeId , loadFromStorage, saveToStorage} from '../util.service'
+import { makeId, loadFromStorage, saveToStorage } from '../util.service'
 
 const STORAGE_KEY = 'stayDB'
 _createStays()
@@ -17,12 +17,17 @@ export const stayService = {
 window.cs = stayService
 
 
-async function query(filterBy = {category: '', txt: '', price: 0 }) {
-    try{
-        let stays= await storageService.query(STORAGE_KEY)
+async function query(filterBy = { category: '', txt: '', price: 0 }) {
+    try {
+        let stays = await storageService.query(STORAGE_KEY)
+
         if (filterBy.category) {
             console.log('service, query, filter type:', filterBy.category);
             stays = stays.filter(stay => (Array.isArray(stay.categories) && stay.categories.includes(filterBy.category)))
+        }
+
+        if (filterBy.wishlist) {
+            stays = stays.filter(stay => filterBy.wishlist.includes(stay._id))
         }
 
         return stays

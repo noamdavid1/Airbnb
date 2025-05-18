@@ -8,7 +8,7 @@ import { LoginSignup } from './LoginSignup';
 export function AppHeader() {
 
 	const loggedinUser = useSelector(storeState => storeState.userModule.loggedinUser)
-	// const navigate = useNavigate()
+	const navigate = useNavigate()
 
 	async function onLogout() {
 		try {
@@ -48,6 +48,7 @@ export function AppHeader() {
 		console.log('logout');
 		try {
 			logout()
+			navigate('/')
 			// setLoggedinUser(null)
 		} catch (err) {
 			console.log('can not logout');
@@ -55,8 +56,11 @@ export function AppHeader() {
 		// add logout
 	}
 
-	console.log({loggedinUser});
-	
+	// console.log({ loggedinUser });
+
+	function onWishlistsClick() {
+		navigate('/wishlist')
+	}
 
 	return (
 		<header className="app-header full">
@@ -81,6 +85,10 @@ export function AppHeader() {
 							<button onClick={onLogout}>Logout</button>
 						</div>}
 					</section>
+
+					<button className='wishlists' onClick={onWishlistsClick}>
+						Wishlists
+					</button>
 					{/* אפשר להוסיף כאן תפריט משתמש, אייקונים וכו׳ */}
 				</div>
 			</nav>

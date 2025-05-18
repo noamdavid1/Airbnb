@@ -15,6 +15,7 @@ export const userService = {
     update,
     getLoggedinUser,
     saveLoggedinUser,
+    updateWishlist
 }
 
 
@@ -23,16 +24,16 @@ export const userService = {
 async function getUsers() {
     const users = await storageService.query(STORAGE_KEY)
     console.log("get users:", users);
-    
+
     return users.map(user => {
         delete user.password
         return user
     })
 }
 
-async function query(filterBy = {category: '', txt: '', price: 0 }) {
-    try{
-        let stays= await storageService.query(STORAGE_KEY)
+async function query(filterBy = { category: '', txt: '', price: 0 }) {
+    try {
+        let stays = await storageService.query(STORAGE_KEY)
         if (filterBy.category) {
             console.log('service, query, filter type:', filterBy.category);
             stays = stays.filter(stay => (Array.isArray(stay.categories) && stay.categories.includes(filterBy.category)))
@@ -68,7 +69,7 @@ async function update({ _id, score }) {
     user.score = score
     await storageService.put(STORAGE_KEY, user)
 
-	// When admin updates other user's details, do not update loggedinUser
+    // When admin updates other user's details, do not update loggedinUser
     const loggedinUser = getLoggedinUser()
     if (loggedinUser._id === user._id) saveLoggedinUser(user)
 
@@ -76,13 +77,13 @@ async function update({ _id, score }) {
 }
 
 async function login(userCred) {
-    console.log("user service:", {userCred});
-    
+    console.log("user service:", { userCred });
+
     const users = await storageService.query(STORAGE_KEY)
     const user = users.find(user => user.username === userCred.username)
 
     console.log(user);
-    
+
     if (user) return saveLoggedinUser(user)
 }
 
@@ -103,17 +104,19 @@ function getLoggedinUser() {
 }
 
 function saveLoggedinUser(user) {
-	user = { 
-        _id: user._id, 
-        fullname: user.fullname, 
-        imgUrl: user.imgUrl, 
-        score: user.score, 
-        isAdmin: user.isAdmin 
+    const miniUser = {
+        _id: user._id,
+        fullname: user.fullname,
+        imgUrl: user.imgUrl,
+        score: user.score,
+        isAdmin: user.isAdmin,
+        wishlist: user.wishlist
     }
-	sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
-    console.log("saveLoggedinUser", user);
-    
-	return user
+
+    sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(miniUser))
+    console.log("saveLoggedinUser", miniUser);
+
+    return miniUser
 }
 
 // To quickly create an admin user, uncomment the next line
@@ -129,4 +132,25 @@ async function _createAdmin() {
 
     const newUser = await storageService.post('user', userCred)
     console.log('newUser: ', newUser)
+}
+
+export async function updateWishlist(stayId) {
+    const loggedInUser = getLoggedinUser()
+    if (!loggedInUser) {
+        return
+    }
+
+    if (!loggedInUser.wishlist) {
+        loggedInUser.wishlist = []
+    }
+
+    if (loggedInUser.wishlist.includes(stayId)) {
+        loggedInUser.wishlist = loggedInUser.wishlist.filter(wishlistStayId => wishlistStayId !== stayId)
+    }
+    else {
+        loggedInUser.wishlist.push(stayId)
+    }
+
+    const updatedUser = await storageService.put(STORAGE_KEY, loggedInUser)
+    return saveLoggedinUser(updatedUser)
 }

@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -9,16 +9,29 @@ import { StayImgs } from '../cmps/StayImgs'
 import { StayAmenities } from '../cmps/StayAmenities'
 import { removeReview } from '../store/actions/review.actions'
 import { ReviewList } from '../cmps/ReviewList'
+import SvgIcon from '../cmps/SvgIcon'
+import { updateWishlist } from '../store/actions/user.actions'
+import { LoginModal } from '../cmps/LoginModal'
 
 
 export function StayDetails() {
 
   const { stayId } = useParams()
   const stay = useSelector(storeState => storeState.stayModule.stay)
+  const loggedinUser = useSelector(storeState => storeState.userModule.loggedinUser)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
 
   useEffect(() => {
     loadStay(stayId)
   }, [stayId])
+
+  function isInWishlist(stayId) {
+    if (loggedinUser && loggedinUser.wishlist) {
+      return loggedinUser.wishlist.includes(stayId)
+    }
+    return false
+  }
 
   async function onAddStayMsg(stayId) {
     try {
@@ -39,11 +52,25 @@ export function StayDetails() {
     }
   }
 
-  return (
-    stay && <section className="stay-details">
-      <Link to="/">Back to list</Link>
-      <h1>{stay.name}</h1>
+  function onHeartClick(ev) {
+    if (loggedinUser) {
+      updateWishlist(stay._id)
+    } else {
+      setIsModalOpen(true)
+    }
+  }
 
+  const isWishlist = isInWishlist(stayId)
+  return (
+    stay && <section className={`stay-details ${isWishlist ? 'wishlist' : ''}`}>
+      <Link to="/">Back to list</Link>
+      <div className='title'>
+        <h1>{stay.name}</h1>
+        <div className='heart-svg-container' onClick={onHeartClick}>
+          <SvgIcon iconName={"heart"} />
+          {isWishlist ? 'Saved' : 'Save'}
+        </div>
+      </div>
 
       <StayImgs stay={stay} />
       <div>{stay.roomType} in {stay.loc.address}</div>
@@ -65,7 +92,7 @@ export function StayDetails() {
       </div>
       }
       <button onClick={() => { onAddStayMsg(stay._id) }}>Add stay msg</button>
-
+      <LoginModal show={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   )
 }

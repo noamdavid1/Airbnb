@@ -1,8 +1,14 @@
 
+import { useNavigate } from 'react-router-dom';
 import { StayPreview } from './StayPreview'
 
-export function StayList({ stays, onDisplayStay, onRemoveStay, onUpdateStay }) {
+export function StayList({ stays, onRemoveStay, onUpdateStay }) {
     
+    const navigate = useNavigate()
+
+    function onDisplayStay(stay) {        
+        navigate(`/stay/${stay._id}`)
+    }
 
     return <section>
         <ul className="stay-list">
