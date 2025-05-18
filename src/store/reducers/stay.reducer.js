@@ -8,6 +8,7 @@ export const SET_FILTER = 'SET_FILTER'
 
 const initialState = {
     stays: [],
+    // cities: [],
     stay: null,
     filterBy: {
         category: '',

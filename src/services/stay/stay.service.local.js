@@ -1,9 +1,12 @@
 
 import { storageService } from '../async-storage.service'
-import { makeId , loadFromStorage, saveToStorage} from '../util.service'
+import { makeId, loadFromStorage, saveToStorage } from '../util.service'
 
 const STORAGE_KEY = 'stayDB'
+const CITIES_LIST = 'citiesDB'
+
 _createStays()
+_initializeCities()
 
 export const stayService = {
     query,
@@ -11,15 +14,16 @@ export const stayService = {
     save,
     remove,
     addStayMsg,
-    getStayCategories
+    getStayCategories,
+    getCitiesList
 }
 
 window.cs = stayService
 
 
-async function query(filterBy = {category: '', txt: '', price: 0 }) {
-    try{
-        let stays= await storageService.query(STORAGE_KEY)
+async function query(filterBy = { category: '', txt: '', price: 0 }) {
+    try {
+        let stays = await storageService.query(STORAGE_KEY)
         if (filterBy.category) {
             console.log('service, query, filter type:', filterBy.category);
             stays = stays.filter(stay => (Array.isArray(stay.categories) && stay.categories.includes(filterBy.category)))
@@ -31,6 +35,17 @@ async function query(filterBy = {category: '', txt: '', price: 0 }) {
         return []
     }
 }
+
+async function _initializeCities() {
+    let cities = loadFromStorage(CITIES_LIST)
+    if (!cities) {
+        const res = await fetch('/data/cities.json')
+        if (!res.ok) throw new Error(`Failed to fetch: ${res.statusText}`)
+        stays = await res.json()
+        saveToStorage(CITIES_LIST, cities)
+    }
+}
+
 
 async function _createStays() {
     let stays = loadFromStorage(STORAGE_KEY)
@@ -48,6 +63,21 @@ function getStayCategories() {
     const uniqueCategories = [...new Set(allCategories)];
 
     return uniqueCategories;
+}
+
+async function getCitiesList() {
+    try {
+        let cities = await storageService.query(CITIES_LIST)
+        // if (filterBy.category) {
+        //     console.log('service, query, filter type:', filterBy.category);
+        //     stays = stays.filter(stay => (Array.isArray(stay.categories) && stay.categories.includes(filterBy.category)))
+        // }
+
+        return cities
+    } catch (err) {
+        console.error('Failed to load cities:', err)
+        return []
+    }
 }
 
 function getById(stayId) {

@@ -27,6 +27,7 @@ export function StayIndex() {
     }
 
     useEffect(() => {
+        //console.log(Object.fromEntries(searchParams))
         const newFilter = {}
         for (const [key, value] of searchParams.entries()) {
             newFilter[key] = value

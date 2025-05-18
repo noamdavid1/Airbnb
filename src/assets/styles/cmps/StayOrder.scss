@@ -1,0 +1,118 @@
+.stay-order {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--grey);
+  border-radius: 2rem;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+  background-color: white;
+  max-width: 400px;
+}
+
+.price-per-night {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.date-and-guests {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.check-dates {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.search-bar-text {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--grey);
+  border-radius: 10px;
+  padding: 0.5rem;
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.search-bar-text input.search-bar-input {
+  all: unset;
+  font-weight: 400;
+  font-size: 14px;
+  color: #717171;
+  max-width: 100%;
+}
+
+.search-bar-text.guests {
+  align-items: center;
+  border: 1px solid var(--grey);
+  border-radius: 10px;
+  padding: 0.5rem 12px;
+  width: fit-content;
+}
+
+.search-bar-text.guests .title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #222;
+}
+
+.search-bar-text.guests .value {
+  font-size: 14px;
+  font-weight: 400;
+  color: #717171;
+}
+
+.reserve-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #ff385c;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reserve-btn:hover {
+  background-color: #e0274c;
+}
+
+.price-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 14px;
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span:first-child {
+      text-align: left;
+    }
+
+    span:last-child {
+      text-align: right;
+      min-width: 60px;
+    }
+  }
+
+  .total {
+    font-weight: bold;
+    border-top: 1px solid var(--grey);
+    padding-top: 0.5rem;
+  }
+}

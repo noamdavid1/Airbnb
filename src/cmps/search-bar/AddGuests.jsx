@@ -2,13 +2,18 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Typography, IconButton } from '@mui/material'
 import { Add, Remove } from '@mui/icons-material'
 
-export function AddGuests({ onClose, onSetGuests }) {
-  const [adults, setAdults] = useState(0)
+export function AddGuests({ onClose, onSetGuests, defaultAdults = 0 }) {
+  const [adults, setAdults] = useState(defaultAdults)
   const [children, setChildren] = useState(0)
   const [infants, setInfants] = useState(0)
   const [pets, setPets] = useState(0)
 
   const modalRef = useRef()
+
+  useEffect(() => {
+    onSetGuests(adults)
+  }, [adults])
+
 
   useEffect(() => {
     const handleClickOutside = (event) => {

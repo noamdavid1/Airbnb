@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import TextField from '@mui/material/TextField'
 // import { setFilterBy } from "../../store/actions/stay.actions"
-
+import dayjs from 'dayjs'
 import { Anywhere } from "./Anywhere"
 import { AnyWeek } from "./AnyWeek"
 import { AddGuests } from "./AddGuests"
@@ -19,6 +20,7 @@ export function SearchBar() {
         checkOut: '',
         guests: ''
     })
+    const [selectedCity, setSelectedCity] = useState(null);
 
     const filterBy = useSelector(storeState => storeState.stayModule.filterBy)
 
@@ -35,16 +37,34 @@ export function SearchBar() {
     const onSubmitFilter = () => {
         const params = new URLSearchParams()
         for (const key in draftFilterBy) {
-          if (draftFilterBy[key]) params.set(key, draftFilterBy[key])
+            if (draftFilterBy[key]) params.set(key, draftFilterBy[key])
         }
         navigate({ search: params.toString() })
-      }
-   
-      const onSetGuests = ({ adults, children, infants, pets }) => {
+    }
+
+    const onSetGuests = ({ adults, children, infants, pets }) => {
         const totalGuests = adults + children + infants + pets
         const guestStr = totalGuests === 0 ? '' : `${totalGuests} guest${totalGuests > 1 ? 's' : ''}`
         setDraftFilterBy(prev => ({ ...prev, guests: guestStr }))
-      }
+    }
+
+    const onSetDates = (checkIn, checkOut) => {
+        setDraftFilterBy(prev => ({
+            ...prev,
+            checkIn: checkIn ? checkIn.toDate().toISOString() : '',
+            checkOut: checkOut ? checkOut.toDate().toISOString() : ''
+        }))
+    }
+
+    const formatDate = (dateStr) => {
+        if (!dateStr) return ''
+        const date = new Date(dateStr)
+        if (!(date instanceof Date) || isNaN(date)) return ''
+        return date.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+        })
+    }
 
     return (
         <section className="search-bar">
@@ -54,19 +74,36 @@ export function SearchBar() {
                     type="text"
                     className="search-bar-input"
                     placeholder="Search destinations"
-                    value={filterBy.location}
+                    value={
+                        selectedCity
+                            ? `${selectedCity.city}, ${selectedCity.country}`
+                            : draftFilterBy.location || ''
+                    }
                     onChange={handleChange}
                     readOnly
                 />
             </div>
+            {/* <TextField
+                label="Where"
+                variant="outlined"
+                fullWidth
+                value={
+                    selectedCity
+                        ? `${selectedCity.city}, ${selectedCity.country}`
+                        : draftFilterBy.location || ''
+                }
+                onClick={() => handleClick('where')}
+                InputProps={{
+                    readOnly: true,
+                }}
+            /> */}
             <div className="search-bar-text" onClick={() => handleClick('check-in')}>
                 <span className="title">Check in</span>
                 <input
                     type="text"
                     className="search-bar-input"
                     placeholder="Add dates"
-                    value={filterBy.checkIn}
-                    onChange={handleChange}
+                    value={formatDate(draftFilterBy.checkIn)}
                     readOnly
                 />
             </div>
@@ -76,8 +113,7 @@ export function SearchBar() {
                     type="text"
                     className="search-bar-input"
                     placeholder="Add dates"
-                    value={filterBy.checkOut}
-                    onChange={handleChange}
+                    value={formatDate(draftFilterBy.checkOut)}
                     readOnly
                 />
             </div>
@@ -110,10 +146,30 @@ export function SearchBar() {
             </div>
 
             <div className="search-bar-modal">
-                {modalType === 'where' && <Anywhere onClose={() => setModalType('')} />}
-                {modalType === 'check-in' && <AnyWeek onClose={() => setModalType('')} />}
-                {/* {modalType === 'check-out' && <AnyWeek onClose={() => setModalType('')}/>} */}
-                {modalType === 'who' && <AddGuests onClose={() => setModalType('')} onSetGuests={onSetGuests} />}
+                {modalType === 'where' && (
+                    <Anywhere
+                        selectedCity={selectedCity}
+                        onSelect={(cityObj) => {
+                            setSelectedCity(cityObj)
+                            setDraftFilterBy(prev => ({
+                                ...prev,
+                                location: cityObj.city  // שומר רק את שם העיר, כפי שהיה
+                            }))
+                            setModalType('')
+                        }}
+                    />
+                )}
+                {/* {modalType === 'where' && <Anywhere onClose={() => setModalType('')} />} */}
+                {/* {modalType === 'check-in' && <AnyWeek onClose={() => setModalType('')} />} */}
+                {modalType === 'check-in' && (
+                    <AnyWeek
+                        onClose={() => setModalType('')}
+                        onSetDates={onSetDates}
+                        checkInDate={draftFilterBy.checkIn ? dayjs(draftFilterBy.checkIn) : null}
+                        checkOutDate={draftFilterBy.checkOut ? dayjs(draftFilterBy.checkOut) : null}
+                    />
+                )}
+                {modalType === 'who' && <AddGuests onClose={() => setModalType('')} onSetGuests={onSetGuests} defaultAdults={0} />}
             </div>
         </section>
     )

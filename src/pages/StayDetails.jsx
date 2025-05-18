@@ -9,7 +9,7 @@ import { StayImgs } from '../cmps/StayImgs'
 import { StayAmenities } from '../cmps/StayAmenities'
 import { removeReview } from '../store/actions/review.actions'
 import { ReviewList } from '../cmps/ReviewList'
-import { StayReservation } from '../cmps/StayOrder'
+import { StayOrder } from '../cmps/StayOrder'
 
 
 export function StayDetails() {
@@ -80,21 +80,10 @@ export function StayDetails() {
             reviews={stay.reviews}
             onRemoveReview={onRemoveReview}
           />
-
-          <div className="vendor-price">
-            <h3>Hosted by: {stay.vendor}</h3>
-            <h4>${stay.price} / night</h4>
-          </div>
-
-          <button onClick={() => onAddStayMsg(stay._id)}>
-            Add stay msg
-          </button>
-
-          <pre>{JSON.stringify(stay, null, 2)}</pre>
         </div>
 
         <div className="stay-info-right">
-          <StayReservation stay={stay} />
+          <StayOrder stay={stay} />
         </div>
       </div>
     </section>
