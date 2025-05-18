@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -10,16 +10,29 @@ import { StayAmenities } from '../cmps/StayAmenities'
 import { removeReview } from '../store/actions/review.actions'
 import { ReviewList } from '../cmps/ReviewList'
 import { StayOrder } from '../cmps/StayOrder'
+import SvgIcon from '../cmps/SvgIcon'
+import { updateWishlist } from '../store/actions/user.actions'
+import { LoginModal } from '../cmps/LoginModal'
 
 
 export function StayDetails() {
 
   const { stayId } = useParams()
   const stay = useSelector(storeState => storeState.stayModule.stay)
+  const loggedinUser = useSelector(storeState => storeState.userModule.loggedinUser)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
 
   useEffect(() => {
     loadStay(stayId)
   }, [stayId])
+
+  function isInWishlist(stayId) {
+    if (loggedinUser && loggedinUser.wishlist) {
+      return loggedinUser.wishlist.includes(stayId)
+    }
+    return false
+  }
 
   async function onAddStayMsg(stayId) {
     try {
@@ -40,10 +53,25 @@ export function StayDetails() {
     }
   }
 
+  function onHeartClick(ev) {
+    if (loggedinUser) {
+      updateWishlist(stay._id)
+    } else {
+      setIsModalOpen(true)
+    }
+  }
+
+  const isWishlist = isInWishlist(stayId)
   return (
-    stay && <section className="stay-details">
+    stay && <section className={`stay-details ${isWishlist ? 'wishlist' : ''}`}>
       <Link to="/">Back to list</Link>
-      <h1>{stay.name}</h1>
+      <div className='title'>
+        <h1>{stay.name}</h1>
+        <div className='heart-svg-container' onClick={onHeartClick}>
+          <SvgIcon iconName={"heart"} />
+          {isWishlist ? 'Saved' : 'Save'}
+        </div>
+      </div>
 
       <StayImgs stay={stay} />
 
@@ -86,6 +114,9 @@ export function StayDetails() {
           <StayOrder stay={stay} />
         </div>
       </div>
+
+      <LoginModal show={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
     </section>
   )
 }

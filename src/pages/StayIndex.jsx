@@ -75,11 +75,6 @@ export function StayIndex() {
         }
     }
 
-    function onDisplayStay(stay) {
-        console.log(stay);
-
-        navigate(`/stay/${stay._id}`)
-    }
 
     return (
         <main className="stay-index">
@@ -91,9 +86,8 @@ export function StayIndex() {
             {/* <StayFilter filterBy={filterBy} setFilterBy={setFilterBy} /> */}
             <StayList
                 stays={stays}
-                onDisplayStay={onDisplayStay}
-                onRemoveStay={onRemoveStay}
-                onUpdateStay={onUpdateStay} />
+                onRemoveStay={onRemoveStay} 
+                onUpdateStay={onUpdateStay}/>
         </main>
     )
 }

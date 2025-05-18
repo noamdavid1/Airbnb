@@ -6,6 +6,7 @@ import { StayDetails } from './pages/StayDetails.jsx'
 
 import { AppHeader } from './cmps/AppHeader'
 import { AppFooter } from './cmps/AppFooter'
+import { Wishlist } from './pages/Wishlist.jsx'
 
 
 export function RootCmp() {
@@ -17,6 +18,7 @@ export function RootCmp() {
                 <Routes>
                     <Route path="/" element={<StayIndex />} />
                     <Route path="stay/:stayId" element={<StayDetails />} />   
+                    <Route path="wishlist" element={<Wishlist />} />   
                 </Routes>
             </main>
             <AppFooter />

@@ -11,7 +11,7 @@ export async function loadUsers() {
         store.dispatch({ type: LOADING_START })
         const users = await userService.getUsers()
         console.log("load users ", users);
-        
+
         store.dispatch({ type: SET_USERS, users })
     } catch (err) {
         console.log('UserActions: err in loadUsers', err)
@@ -37,7 +37,7 @@ export async function login(credentials) {
             loggedinUser
         })
         // console.log("user action login", {credentials}, {user});
-        
+
         // socketService.login(user._id)
         return loggedinUser
     } catch (err) {
@@ -83,5 +83,18 @@ export async function loadUser(userId) {
     } catch (err) {
         showErrorMsg('Cannot load user')
         console.log('Cannot load user', err)
+    }
+}
+export async function updateWishlist(stayId) {
+    try {
+        const user = await userService.updateWishlist(stayId)
+        //// ------------- check if there is other option
+        store.dispatch({
+            type: SET_USER,
+            loggedinUser: user
+        })
+    } catch (err) {
+        showErrorMsg('Cannot addStayToWishlist')
+        console.log('Cannot addStayToWishlist', err)
     }
 }
