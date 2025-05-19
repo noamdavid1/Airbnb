@@ -1,15 +1,19 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import TextField from '@mui/material/TextField'
-// import { setFilterBy } from "../../store/actions/stay.actions"
 import dayjs from 'dayjs'
 import { Anywhere } from "./Anywhere"
 import { AnyWeek } from "./AnyWeek"
 import { AddGuests } from "./AddGuests"
 import { useSelector } from "react-redux"
+import SvgIcon from '../SvgIcon'
 
+function ModalWrapper({ type, children }) {
+    return (
+        <section className={`modal-wrapper ${type}`}>{children}</section>
+    )
+}
 
-export function SearchBar() {
+export function SearchBar({ initialModalType = '' }) {
 
     const navigate = useNavigate()
 
@@ -23,6 +27,12 @@ export function SearchBar() {
     const [selectedCity, setSelectedCity] = useState(null);
 
     const filterBy = useSelector(storeState => storeState.stayModule.filterBy)
+
+    useEffect(() => {
+        if (initialModalType) {
+            setModalType(initialModalType)
+        }
+    }, [initialModalType])
 
     const handleClick = (type) => {
         setModalType(prev => prev === type ? '' : type)
@@ -66,6 +76,7 @@ export function SearchBar() {
         })
     }
 
+
     return (
         <section className="search-bar">
             <div className="search-bar-text" onClick={() => handleClick('where')}>
@@ -83,20 +94,6 @@ export function SearchBar() {
                     readOnly
                 />
             </div>
-            {/* <TextField
-                label="Where"
-                variant="outlined"
-                fullWidth
-                value={
-                    selectedCity
-                        ? `${selectedCity.city}, ${selectedCity.country}`
-                        : draftFilterBy.location || ''
-                }
-                onClick={() => handleClick('where')}
-                InputProps={{
-                    readOnly: true,
-                }}
-            /> */}
             <div className="search-bar-text" onClick={() => handleClick('check-in')}>
                 <span className="title">Check in</span>
                 <input
@@ -129,48 +126,46 @@ export function SearchBar() {
                 />
             </div>
             <div className="search-icon-div" onClick={onSubmitFilter}>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    height="12"
-                    width="12"
-                    stroke="currentColor"
-                    strokeWidth="5.33"
-                    aria-hidden="true"
-                    role="presentation"
-                    focusable="false"
-                >
-                    <path d="M13 24a11 11 0 1 0 0-22 11 11 0 0 0 0 22zm8-3 9 9" fill="none" />
-                </svg>
+                <SvgIcon iconName={"searchIcon"} />
             </div>
 
-            <div className="search-bar-modal">
-                {modalType === 'where' && (
+            {modalType === 'where' && (
+                <ModalWrapper modalType={modalType}>
                     <Anywhere
+                        onClose={() => setModalType('')}
                         selectedCity={selectedCity}
                         onSelect={(cityObj) => {
                             setSelectedCity(cityObj)
                             setDraftFilterBy(prev => ({
                                 ...prev,
-                                location: cityObj.city  // שומר רק את שם העיר, כפי שהיה
+                                location: cityObj.city
                             }))
-                            setModalType('')
+                            setModalType('check-in')
                         }}
                     />
-                )}
-                {/* {modalType === 'where' && <Anywhere onClose={() => setModalType('')} />} */}
-                {/* {modalType === 'check-in' && <AnyWeek onClose={() => setModalType('')} />} */}
-                {modalType === 'check-in' && (
+                </ModalWrapper>
+            )}
+
+            {modalType === 'check-in' && (
+                <ModalWrapper modalType={modalType}>
                     <AnyWeek
-                        onClose={() => setModalType('')}
+                        onClose={() => setModalType('who')}
                         onSetDates={onSetDates}
                         checkInDate={draftFilterBy.checkIn ? dayjs(draftFilterBy.checkIn) : null}
                         checkOutDate={draftFilterBy.checkOut ? dayjs(draftFilterBy.checkOut) : null}
                     />
-                )}
-                {modalType === 'who' && <AddGuests onClose={() => setModalType('')} onSetGuests={onSetGuests} defaultAdults={0} />}
-            </div>
+                </ModalWrapper>
+            )}
+
+            {modalType === 'who' && (
+                <ModalWrapper modalType={modalType}>
+                    <AddGuests
+                        onClose={() => setModalType('')}
+                        onSetGuests={onSetGuests}
+                        defaultAdults={0}
+                    />
+                </ModalWrapper>
+            )}
         </section>
     )
 }

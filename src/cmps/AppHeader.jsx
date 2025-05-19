@@ -12,6 +12,10 @@ import { LoginSignup } from './LoginSignup';
 export function AppHeader() {
 	const [isScrolled, setIsScrolled] = useState(false)
 	const [isExpanded, setIsExpanded] = useState(false)
+	const [initialModalType, setInitialModalType] = useState('')
+
+	const loggedinUser = useSelector(storeState => storeState.userModule.loggedinUser)
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -22,13 +26,10 @@ export function AppHeader() {
 		return () => window.removeEventListener('scroll', handleScroll)
 	}, [])
 
-	const handleExpandSearch = () => {
+	const handleExpandSearch = (type = '') => {
+		setInitialModalType(type)
 		setIsExpanded(true)
 	}
-
-
-	const loggedinUser = useSelector(storeState => storeState.userModule.loggedinUser)
-	const navigate = useNavigate()
 
 	async function onLogout() {
 		try {
@@ -95,7 +96,7 @@ export function AppHeader() {
 					{isScrolled && !isExpanded ? (
 						<SearchBarScroll onExpandSearch={handleExpandSearch} />
 					) : (
-						<SearchBar />
+						<SearchBar initialModalType={initialModalType} />
 					)}
 				</div>
 
@@ -119,24 +120,3 @@ export function AppHeader() {
 		</header>
 	)
 }
-
-// 	return (
-// 		<header className="app-header full">
-// 			<nav className="header-nav">
-// 				<div className="header-left">
-// 					<NavLink to="/" className="logo">
-// 						<img src={logo} alt="app logo" />
-// 					</NavLink>
-// 				</div>
-
-// 				<div className="header-center">
-// 					<SearchBarScroll />
-// 				</div>
-
-// 				<div className="header-right">
-// 					{/* אפשר להוסיף כאן תפריט משתמש, אייקונים וכו׳ */}
-// 				</div>
-// 			</nav>
-// 		</header>
-// 	)
-// }
