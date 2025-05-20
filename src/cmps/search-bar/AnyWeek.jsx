@@ -1,28 +1,50 @@
-import * as React from 'react'
-import dayjs from 'dayjs'
-import TextField from '@mui/material/TextField'
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
-import { DatePicker } from '@mui/x-date-pickers/DatePicker'
+import React, { useState, useEffect, useRef } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import dayjs from 'dayjs';
 
-export function AnyWeek({ checkInDate, checkOutDate, onSetDates, onClose }) {
+export function AnyWeek({ onSetDates, onClose }) {
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+
+  const modalRef = useRef()
+
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (modalRef.current && !modalRef.current.contains(event.target)) {
+          onClose()
+        }
+      }
+      document.addEventListener('mousedown', handleClickOutside)
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside)
+      }
+    }, [onClose])
+
+
+  const handleChange = (dates) => {
+    const [start, end] = dates;
+    setStartDate(start);
+    setEndDate(end);
+  
+    if (onSetDates) {
+      onSetDates(start ? dayjs(start) : null, end ? dayjs(end) : null);
+
+      if (start && end) onClose();
+    }
+  };
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <div style={{ display: 'flex', gap: '1rem', padding: '1rem', background: 'white', borderRadius: '1rem' }}>
-        <DatePicker
-          label="Check-in"
-          value={checkInDate}
-          onChange={(newValue) => onSetDates(newValue, checkOutDate)}
-        />
-        <DatePicker
-          label="Check-out"
-          value={checkOutDate}
-          onChange={(newValue) => onSetDates(checkInDate, newValue)}
-          minDate={checkInDate || dayjs()}
-        />
-        <button onClick={onClose}>Close</button>
-      </div>
-    </LocalizationProvider>
-  )
+    <div ref={modalRef} className="any-week-picker">
+      <DatePicker
+        selected={startDate}
+        onChange={handleChange}
+        startDate={startDate}
+        endDate={endDate}
+        selectsRange
+        monthsShown={2}
+        inline
+      />
+    </div>
+  );
 }

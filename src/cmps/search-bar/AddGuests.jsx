@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Typography, IconButton } from '@mui/material'
-import { Add, Remove } from '@mui/icons-material'
+import { Typography } from '@mui/material'
+import SvgIcon from '../SvgIcon'
 
 export function AddGuests({ onClose, onSetGuests, defaultAdults = 0 }) {
   const [adults, setAdults] = useState(defaultAdults)
@@ -51,17 +51,34 @@ export function AddGuests({ onClose, onSetGuests, defaultAdults = 0 }) {
 
     const isRemoveDisabled = value <= min
 
+    const getHelperText = (label) => {
+      switch (label) {
+        case 'Adults':
+          return 'Ages 13 or above'
+        case 'Children':
+          return 'Ages 2–12'
+        case 'Infants':
+          return 'Under 2'
+        case 'Pets':
+          return 'Bringing a service animal?'
+        default:
+          return ''
+      }
+    }
     return (
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '12px 0' }}>
-        <Typography>{label}</Typography>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '12px 0'}}>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <Typography>{label}</Typography>
+          <div style={{ fontSize: '12px', color: '#717171' }}>{getHelperText(label)}</div>
+        </div>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <IconButton onClick={handleRemove} style={iconButtonStyle(isRemoveDisabled)}>
-            <Remove />
-          </IconButton>
+          <div className='minus-svg-container' onClick={handleRemove} style={iconButtonStyle(isRemoveDisabled)}>
+            <SvgIcon iconName={"minus"} />
+          </div>
           <span style={{ margin: '0 12px', minWidth: '16px', textAlign: 'center' }}>{value}</span>
-          <IconButton onClick={handleAdd} style={iconButtonStyle(false)}>
-            <Add />
-          </IconButton>
+          <div className='plus-svg-container' onClick={handleAdd} style={iconButtonStyle(false)}>
+            <SvgIcon iconName={"plus"} />
+          </div>
         </div>
       </div>
     )
@@ -70,15 +87,7 @@ export function AddGuests({ onClose, onSetGuests, defaultAdults = 0 }) {
   const minAdults = (children > 0 || infants > 0 || pets > 0) ? 1 : 0
 
   return (
-    <div ref={modalRef} style={{
-      position: 'absolute',
-      backgroundColor: '#fff',
-      padding: '16px',
-      border: '1px solid #ccc',
-      borderRadius: '12px',
-      width: '300px',
-      zIndex: 999
-    }}>
+    <div ref={modalRef}>
       <GuestCounter label="Adults" value={adults} setValue={setAdults} min={minAdults} />
       <GuestCounter label="Children" value={children} setValue={setChildren} requireAdult />
       <GuestCounter label="Infants" value={infants} setValue={setInfants} max={5} requireAdult />

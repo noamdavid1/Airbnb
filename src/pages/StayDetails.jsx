@@ -75,25 +75,6 @@ export function StayDetails() {
 
       <StayImgs stay={stay} />
 
-      {/* <div>{stay.roomType} in {stay.loc.address}</div>
-      <div className='stay-info'>
-        <div>{stay.bedrooms} bedrooms</div> *
-        <div>{stay.bathrooms} bathrooms</div> *
-      </div>
-
-      <StayAmenities stayAmenities={stay.amenities} />
-
-      <ReviewList
-        reviews={stay.reviews}
-        onRemoveReview={onRemoveReview} />
-
-      {stay && <div>
-        <h3>{stay.vendor}</h3>
-        <h4>${stay.price}</h4>
-        <pre> {JSON.stringify(stay, null, 2)} </pre>
-      </div>
-      }
-      <button onClick={() => { onAddStayMsg(stay._id) }}>Add stay msg</button> */}
       <div className="stay-details-layout">
         <div className="stay-info-left">
           <div>{stay.roomType} in {stay.loc.address}</div>

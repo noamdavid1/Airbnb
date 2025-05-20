@@ -46,7 +46,7 @@ async function _initializeCities() {
     if (!cities) {
         const res = await fetch('/data/cities.json')
         if (!res.ok) throw new Error(`Failed to fetch: ${res.statusText}`)
-        stays = await res.json()
+        cities = await res.json()
         saveToStorage(CITIES_LIST, cities)
     }
 }
