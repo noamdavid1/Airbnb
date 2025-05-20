@@ -1,0 +1,20 @@
+.mini-stay-preview {
+    height: 150px;
+    width: 150px;
+}
+
+
+.order-status{
+    font-weight: bold;
+}
+.order-status.pending{
+    color: yellow;
+}
+
+.order-status.rejected{
+    color: red;
+}
+
+.order-status.accepted{
+    color: green;
+}

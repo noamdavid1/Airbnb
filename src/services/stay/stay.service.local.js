@@ -51,7 +51,6 @@ async function _initializeCities() {
     }
 }
 
-
 async function _createStays() {
     let stays = loadFromStorage(STORAGE_KEY)
     if (!stays) {
@@ -61,6 +60,7 @@ async function _createStays() {
         saveToStorage(STORAGE_KEY, stays) // שמירת הנתונים ב-localStorage
     }
 }
+
 function getStayCategories() {
     const stays = loadFromStorage(STORAGE_KEY) || [];
 

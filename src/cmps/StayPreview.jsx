@@ -99,7 +99,7 @@ export function StayPreview({ stay }) {
                             type="button"
                             onClick={(e) => handleArrowClick(e, onClickHandler)}
                             className="control-arrow control-prev"
-                            style={{ backgroundColor: 'white', color: 'red', 'text-align': 'center' }}
+                            style={{ backgroundColor: 'transparent', color: 'white', 'text-align': 'center' }}
                         // 
                         >
                             ‹
@@ -113,6 +113,7 @@ export function StayPreview({ stay }) {
                             type="button"
                             onClick={(e) => handleArrowClick(e, onClickHandler)}
                             className="control-arrow control-next"
+                            style={{ backgroundColor: 'transparent', color: 'white', 'text-align': 'center' }}
                         >
                             ›
                         </button>

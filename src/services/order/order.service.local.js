@@ -1,8 +1,10 @@
 import { storageService } from '../async-storage.service.js'
 import { userService } from '../user/user.service.local.js'
-import { makeId } from '../util.service.js'
+import { loadFromStorage, makeId, saveToStorage } from '../util.service.js'
 
 const ORDER_KEY = 'orderDB'
+
+_createOrders()
 
 export const orderService = {
   addOrder,
@@ -12,12 +14,23 @@ export const orderService = {
   saveOrder
 }
 
-function query() {
+async function query(filterBy = { user: 'host' }) {
   const user = userService.getLoggedinUser()
-  if (!user) return Promise.reject('Not logged in')
-  return storageService.query(ORDER_KEY).then(orders =>
-    orders.filter(order => order.userId === user._id)
-  )
+  if (!user) return []
+
+  let orders = await storageService.query(ORDER_KEY)
+
+  // if (!user) return Promise.reject('Not logged in')
+  if (filterBy.user === 'guest') {
+    orders = orders.filter(order => order.user._id === user._id)
+  } else if (filterBy.user === 'host') {
+    let hostStays = await stayService.query()
+    hostStays = hostStays.filter(stay => stay.host._id === user._id)
+    let hostStayIds = hostStays.map(hostStay => hostStay._id)
+    orders = orders.filter(order => hostStayIds.includes(order.stayId))
+  }
+
+  return orders
 }
 
 function getOrder(orderId) {
@@ -34,17 +47,19 @@ function saveOrder(order) {
     : storageService.post(ORDER_KEY, order)
 }
 
-async function addOrder({ stayId, from, to, guests }) {
+async function addOrder({ stayId, from, to, price, guests }) {
   const user = userService.getLoggedinUser()
   if (!user) throw new Error('User must be logged in to place order')
 
   const order = {
     _id: makeId(),
     stayId,
-    userId: user._id,
+    user,
     createdAt: Date.now(),
     from,
     to,
+    price,
+    status: 'pending',
     guests: {
       adults: guests.adults || 1,
       children: guests.children || 0,
@@ -54,4 +69,14 @@ async function addOrder({ stayId, from, to, guests }) {
   }
 
   return storageService.post(ORDER_KEY, order)
+}
+
+async function _createOrders() {
+  let orders = loadFromStorage(ORDER_KEY)
+  if (!orders) {
+    const res = await fetch('/data/order.json') // keep in local 
+    if (!res.ok) throw new Error(`Failed to fetch: ${res.statusText}`)
+    orders = await res.json()
+    saveToStorage(ORDER_KEY, orders) // שמירת הנתונים ב-localStorage
+  }
 }

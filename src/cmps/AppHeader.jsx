@@ -82,6 +82,10 @@ export function AppHeader() {
 		navigate('/wishlist')
 	}
 
+	function onHostOrdersClick() {
+		navigate('/hosting/order')
+	}
+
 	return (
 		<header className="app-header full">
 			<nav className="header-nav">
@@ -112,6 +116,9 @@ export function AppHeader() {
 
 					<button className='wishlists' onClick={onWishlistsClick}>
 						Wishlists
+					</button>
+					<button className='host-orders' onClick={onHostOrdersClick}>
+						View Orders
 					</button>
 					{/* אפשר להוסיף כאן תפריט משתמש, אייקונים וכו׳ */}
 				</div>

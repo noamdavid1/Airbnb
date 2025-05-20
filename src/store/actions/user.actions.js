@@ -94,7 +94,17 @@ export async function updateWishlist(stayId) {
             loggedinUser: user
         })
     } catch (err) {
-        showErrorMsg('Cannot addStayToWishlist')
-        console.log('Cannot addStayToWishlist', err)
+        showErrorMsg('Cannot updateWishlist')
+        console.log('Cannot updateWishlist', err)
+    }
+}
+
+export async function getUserById(userId) {
+    try {
+    const user = await userService.getById(userId)
+    return user
+    }catch (err) {
+        showErrorMsg('Cannot getUserById')
+        console.log('Cannot getUserById', err)
     }
 }
