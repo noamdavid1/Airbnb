@@ -14,18 +14,18 @@ export const orderService = {
   saveOrder
 }
 
-async function query(filterBy = { user: 'host' }) {
-  const user = userService.getLoggedinUser()
-  if (!user) return []
+async function query(userType) {
+  const loggedinUser = userService.getLoggedinUser()
+  if (!loggedinUser) return []
 
   let orders = await storageService.query(ORDER_KEY)
 
   // if (!user) return Promise.reject('Not logged in')
-  if (filterBy.user === 'guest') {
-    orders = orders.filter(order => order.user._id === user._id)
-  } else if (filterBy.user === 'host') {
+  if (userType === 'guest') {    
+    orders = orders.filter(order => order.user._id === loggedinUser._id)
+  } else if (userType === 'host') {
     let hostStays = await stayService.query()
-    hostStays = hostStays.filter(stay => stay.host._id === user._id)
+    hostStays = hostStays.filter(stay => stay.host._id === loggedinUser._id)
     let hostStayIds = hostStays.map(hostStay => hostStay._id)
     orders = orders.filter(order => hostStayIds.includes(order.stayId))
   }

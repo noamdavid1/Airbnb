@@ -5,6 +5,7 @@ import { loadStays } from "../store/actions/stay.actions"
 import { MiniStayPreview } from "../cmps/MiniStayPreview"
 import { loadOrders, updateOrder } from "../store/actions/order.actions"
 import { getUserById } from "../store/actions/user.actions"
+import { convertDateToString } from "../services/util.service"
 
 export function HostOrders() {
     const [view, setView] = useState('dashboard')
@@ -22,7 +23,7 @@ export function HostOrders() {
 
     useEffect(() => {
         loadStays()
-        loadOrders()
+        loadOrders('host')
 
         // const loadOrders = async () => {
         //     try {
@@ -38,14 +39,6 @@ export function HostOrders() {
     useEffect(() => {
         console.log(stays);
     }, [stays])
-
-    function convertDate(date) {
-        console.log(date);
-        const dateObject = new Date(date)
-        let a = dateObject.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
-        console.log({ a })
-        return a
-    }
 
     function getStay(stayId) {
         return stays.find(stay => stay._id === stayId)
@@ -72,7 +65,7 @@ export function HostOrders() {
             {<section>
                 <h1>dashboard</h1>
             </section>}
-            {isOrdersDisplayed() && <section className="host-orders">
+            {isOrdersDisplayed() && <section className="host-actions">
                 <h1>{`Welcome back, ${loggedinUser.fullname}`}</h1>
                 <h2>Orders</h2>
                 <table>
@@ -91,7 +84,7 @@ export function HostOrders() {
                         {orders.map(order => (
                             <tr key={order._id}>
                                 <td>{order.user.fullname}</td>
-                                <td>{convertDate(order.from)} - {convertDate(order.to)}</td>
+                                <td>{convertDateToString(order.from)} - {convertDateToString(order.to)}</td>
                                 <td className="mini-stay-preview">
                                     <MiniStayPreview stay={getStay(order.stayId)} />
                                 </td>
