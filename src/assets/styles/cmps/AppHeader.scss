@@ -17,6 +17,77 @@
 	.header-center,
 	.header-right {
 		flex: 1;
+
+		.menu-wrapper {
+			position: relative;
+			display: flex;
+			border-radius: 50%;
+
+			.loggedinUser-button {
+				color: white;
+				background-color: $clr7;
+				border-radius: 50%;
+				height: 40px;
+				width: 40px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.menu-button {
+				color: $clr7;
+				background-color: $gray6;
+				border-radius: 50%;
+				height: 40px;
+				width: 40px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				&:hover {
+					box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+				}
+
+				&:active {
+					transform: scale(calc(42 / 40));
+
+					.button-icon {
+						// transform: scale(1.111);
+					}
+				}
+			}
+
+			.dropdown-menu {
+				position: absolute;
+				top: 120%;
+				right: 0;
+				background-color: white;
+				border: 1px solid #e4e4e4;
+				border-radius: 16px;
+				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+				padding: 10px 0;
+				width: 240px;
+				padding: 8px 0;
+				z-index: 1000;
+			}
+
+			.dropdown-menu ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			.dropdown-menu li {
+				padding: 12px 20px;
+				font-size: 14px;
+				color: $clr7;
+				cursor: pointer;
+			}
+
+			.dropdown-menu li:hover {
+				background-color: #f7f7f7;
+			}
+		}
 	}
 
 	.header-left {

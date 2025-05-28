@@ -4,20 +4,24 @@ import { SearchBar } from './search-bar/SearchBar'
 import { SearchBarScroll } from './search-bar/SearchBarScroll';
 
 // import { useSearchParams, useNavigate } from 'react-router-dom'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { login, logout, signup } from '../store/actions/user.actions';
 import { LoginSignup } from './LoginSignup';
-import SvgIcon from './SvgIcon'
 // import { UserMenu } from './UserMenu';
 
+import SvgIcon from './SvgIcon';
+import { LoginModal } from './LoginModal';
 
 export function AppHeader() {
 	const [isScrolled, setIsScrolled] = useState(false)
 	const [isExpanded, setIsExpanded] = useState(false)
 	const [initialModalType, setInitialModalType] = useState('')
 	// const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
 
+	const menuRef = useRef(null)
 	const loggedinUser = useSelector(storeState => storeState.userModule.loggedinUser)
 	const navigate = useNavigate()
 
@@ -26,8 +30,20 @@ export function AppHeader() {
 			setIsScrolled(window.scrollY > 50)
 			if (window.scrollY <= 50) setIsExpanded(false)
 		}
+
+		const handleClickOutside = (event) => {
+			if (menuRef.current && !menuRef.current.contains(event.target)) {
+				setIsMenuOpen(false);
+			}
+		}
+
+		document.addEventListener('click', handleClickOutside)
 		window.addEventListener('scroll', handleScroll)
-		return () => window.removeEventListener('scroll', handleScroll)
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll)
+			document.removeEventListener('click', handleClickOutside);
+		}
 	}, [])
 
 	const handleExpandSearch = (type = '') => {
@@ -35,9 +51,9 @@ export function AppHeader() {
 		setIsExpanded(true)
 	}
 
-	// function toggleUserMenu() {
-	// 	setIsUserMenuOpen(prev => !prev)
-	// }
+	const toggleMenu = () => {
+		setIsMenuOpen((prev) => !prev)
+	}
 
 	async function onLogout() {
 		try {
@@ -49,29 +65,29 @@ export function AppHeader() {
 		}
 	}
 
-	async function onLogin(credentials) {
-		console.log(credentials)
-		try {
-			login(credentials)
-			// setLoggedinUser(user)
-		} catch (err) {
-			console.log('Cannot login :', err)
-			showErrorMsg(`Cannot login`)
-		}
-	}
+	// async function onLogin(credentials) {
+	// 	console.log(credentials)
+	// 	try {
+	// 		login(credentials)
+	// 		// setLoggedinUser(user)
+	// 	} catch (err) {
+	// 		console.log('Cannot login :', err)
+	// 		showErrorMsg(`Cannot login`)
+	// 	}
+	// }
 
-	async function onSignup(credentials) {
-		console.log(credentials)
-		try {
-			signup(credentials)
-			// setLoggedinUser(user)
-			showSuccessMsg(`Welcome ${user.fullname}`)
-		} catch (err) {
-			console.log('Cannot signup :', err)
-			showErrorMsg(`Cannot signup`)
-		}
-		// add signup
-	}
+	// async function onSignup(credentials) {
+	// 	console.log(credentials)
+	// 	try {
+	// 		signup(credentials)
+	// 		// setLoggedinUser(user)
+	// 		showSuccessMsg(`Welcome ${user.fullname}`)
+	// 	} catch (err) {
+	// 		console.log('Cannot signup :', err)
+	// 		showErrorMsg(`Cannot signup`)
+	// 	}
+	// 	// add signup
+	// }
 
 	async function onLogout() {
 		console.log('logout');
@@ -91,9 +107,26 @@ export function AppHeader() {
 		navigate('/wishlist')
 	}
 
+	function onHostOrdersClick() {
+		navigate('/hosting/order')
+	}
+
+	function onGuestOrdersClick() {
+		navigate('/trips')
+	}
+
+	const handleLoginClick = () => {
+		setIsLoginModalOpen(true)
+	}
+
+	function getFirstLetterUpper(string) {
+		if (!string) return '';
+		return string.charAt(0).toUpperCase();
+	}
+
 	return (
 		<header className="app-header full">
-			<nav className="header-nav">
+			<nav className="header-nav main-container">
 				<div className="header-left">
 					<NavLink to="/" className="logo">
 						<img src={logo} alt="app logo" />
@@ -110,18 +143,27 @@ export function AppHeader() {
 
 				<div className="header-right">
 
-					<section className="login-signup-container">
-						{!loggedinUser && <LoginSignup onLogin={onLogin} onSignup={onSignup} />}
+					<div className="menu-wrapper" ref={menuRef}>
+						{loggedinUser && <button className='loggedinUser-button'>
+							{getFirstLetterUpper(loggedinUser.fullname)}
+						</button>}
+						<button className='menu-button' onClick={toggleMenu}>
+							<SvgIcon className="button-icon" iconName={"menu"} />
+						</button>
 
-						{loggedinUser && <div className="user-preview">
-							<h3>Hello {loggedinUser.fullname}</h3>
-							<button onClick={onLogout}>Logout</button>
+						{isMenuOpen && <div class="dropdown-menu" id="dropdownMenu">
+							<ul>
+								{!loggedinUser && <li onClick={handleLoginClick}>Log in or sign up</li>}
+								{loggedinUser && (
+									<>	<li onClick={onWishlistsClick}>Wishlists</li>
+										<li onClick={onGuestOrdersClick}>Trips</li>
+										<li onClick={onHostOrdersClick}>View Orders</li>
+										<li onClick={onLogout}>Log out</li>
+									</>)}
+								<LoginModal show={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
+							</ul>
 						</div>}
-					</section>
-
-					<button className='wishlists' onClick={onWishlistsClick}>
-						Wishlists
-					</button>
+					</div>
 					{/* אפשר להוסיף כאן תפריט משתמש, אייקונים וכו׳ */}
 					{/* <button className='host-button'>become a host</button>
 					<SvgIcon iconName={"earth"} />

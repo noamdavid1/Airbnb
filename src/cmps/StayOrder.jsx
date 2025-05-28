@@ -28,8 +28,10 @@ export function StayOrder({ stay }) {
         stayId: stay._id,
         from: dates.from,
         to: dates.to,
+        price: totalPrice,
         guests,
       })
+      // console.log("order added succefuly");
       showSuccessMsg('Reservation successful!')
     } catch (err) {
       showErrorMsg('Failed to reserve stay.')

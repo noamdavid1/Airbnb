@@ -1,13 +1,15 @@
 
 import { useNavigate } from 'react-router-dom';
 import { StayPreview } from './StayPreview'
+import { useLocation } from "react-router";
 
 export function StayList({ stays, onRemoveStay, onUpdateStay }) {
     
     const navigate = useNavigate()
+    const {search} = useLocation()
 
     function onDisplayStay(stay) {        
-        navigate(`/stay/${stay._id}`)
+        navigate(`/stay/${stay._id}${search}`)
     }
 
     return <section>
