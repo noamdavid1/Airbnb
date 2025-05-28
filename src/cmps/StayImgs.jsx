@@ -1,7 +1,9 @@
 export function StayImgs({ stay }) {
     return stay && (
         <section className="stay-imgs">
-            <img className="stay-img img1" src={stay.imgUrls[0]} alt="Main" />
+            <div className="left-img">
+                <img className="stay-img img1" src={stay.imgUrls[0]} alt="Main" />
+            </div>
             <div className="stay-imgs-right">
                 <img className="stay-img img2" src={stay.imgUrls[1]} alt="2" />
                 <img className="stay-img img3" src={stay.imgUrls[2]} alt="3" />

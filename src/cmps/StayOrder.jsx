@@ -13,7 +13,6 @@ export function StayOrder({ stay }) {
   const pricePerNight = stay.price
   const cleaningFee = 30
   const serviceFee = 25
-  const tax = 40
 
   const nightsCount =
     dates.from && dates.to
@@ -21,7 +20,7 @@ export function StayOrder({ stay }) {
       : 0
 
   const totalPrice =
-    pricePerNight * nightsCount + cleaningFee + serviceFee + tax
+    pricePerNight * nightsCount + cleaningFee + serviceFee
 
   async function onReserve() {
     try {
@@ -61,41 +60,6 @@ export function StayOrder({ stay }) {
       <div className="price-per-night">
         <span className="price">${pricePerNight}</span> night
       </div>
-      {/* <div className="check-dates">
-        <div
-          className="search-bar-text"
-          onClick={() => handleClick('check-in')}
-        >
-          <span className="title">Check in</span>
-          <input
-            type="text"
-            className="search-bar-input"
-            placeholder="Add dates"
-            value={formatDate(dates.from)}
-            readOnly
-          />
-        </div>
-
-        <div
-          className="search-bar-text"
-          onClick={() => handleClick('check-out')}
-        >
-          <span className="title">Check out</span>
-          <input
-            type="text"
-            className="search-bar-input"
-            placeholder="Add dates"
-            value={formatDate(dates.to)}
-            readOnly
-          />
-        </div>
-      </div>
-      <div className="search-bar-text guests" onClick={() => handleClick('guests')}>
-        <span className="title">Guests</span>
-        <span className="value">
-          {getGuestSummary(guests) || 'Add guests'}
-        </span>
-      </div> */}
       <div className="date-and-guests">
         <div className="check-dates">
           <div
@@ -177,11 +141,7 @@ export function StayOrder({ stay }) {
           <span>Airbnb service fee</span>
           <span>${serviceFee}</span>
         </div>
-        <div className="row">
-          <span>Tax</span>
-          <span>${tax}</span>
-        </div>
-        <hr />
+        <hr className='order-hr' />
         <div className="row total">
           <span>Total</span>
           <span>${totalPrice}</span>

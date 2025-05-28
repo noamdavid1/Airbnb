@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route } from 'react-router'
+import { Routes, Route, useLocation  } from 'react-router'
 
 import { StayIndex } from './pages/StayIndex.jsx'
 import { StayDetails } from './pages/StayDetails.jsx'
@@ -9,9 +9,13 @@ import { AppFooter } from './cmps/AppFooter'
 import { Wishlist } from './pages/Wishlist.jsx'
 
 
+
 export function RootCmp() {
+
+    const location = useLocation()
+    const isStayDetails = location.pathname.startsWith('/stay/')
     return (
-        <div className="main-container">
+        <div className={`main-container ${isStayDetails ? 'stay-layout' : ''}`}>
             <AppHeader />
             {/* <UserMsg /> */}
             <main>

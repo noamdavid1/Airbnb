@@ -3,4 +3,13 @@
     grid-template-columns: auto auto;
     grid-template-rows: repeat(5, auto);
     width: fit-content;
+    h2{
+        font-size: 22px;
+        font-weight: 500;
+        color: rgb(34, 34, 34) ;
+    }
+    li{
+        display: flex;
+        gap: 17px;
+    }
 }

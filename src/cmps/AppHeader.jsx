@@ -8,11 +8,15 @@ import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { login, logout, signup } from '../store/actions/user.actions';
 import { LoginSignup } from './LoginSignup';
+import SvgIcon from './SvgIcon'
+// import { UserMenu } from './UserMenu';
+
 
 export function AppHeader() {
 	const [isScrolled, setIsScrolled] = useState(false)
 	const [isExpanded, setIsExpanded] = useState(false)
 	const [initialModalType, setInitialModalType] = useState('')
+	// const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
 
 	const loggedinUser = useSelector(storeState => storeState.userModule.loggedinUser)
 	const navigate = useNavigate()
@@ -30,6 +34,10 @@ export function AppHeader() {
 		setInitialModalType(type)
 		setIsExpanded(true)
 	}
+
+	// function toggleUserMenu() {
+	// 	setIsUserMenuOpen(prev => !prev)
+	// }
 
 	async function onLogout() {
 		try {
@@ -115,6 +123,13 @@ export function AppHeader() {
 						Wishlists
 					</button>
 					{/* אפשר להוסיף כאן תפריט משתמש, אייקונים וכו׳ */}
+					{/* <button className='host-button'>become a host</button>
+					<SvgIcon iconName={"earth"} />
+					
+					<button className="menu-button" onClick={toggleUserMenu}>
+						<SvgIcon iconName={"burgerMenu"} />
+					</button> */}
+					{/* {isUserMenuOpen && <UserMenu onClose={() => setIsUserMenuOpen(false)} />} */}
 				</div>
 			</nav>
 		</header>

@@ -1,125 +1,214 @@
-// .stay-details {
-//     &.wishlist {
-//         .title {
-//             .heart-svg-container {
-//                 i {
-//                     svg {
-//                         fill: $heartClr;
-//                         stroke: $heartClr;
-//                     }
-//                 }
-//             }
-//         }
-//     }
-
-//     .title {
-//         position: relative;
-
-//         .heart-svg-container {
-//             right: 0;
-//             display: flex;
-//             flex-direction: row;
-//             position: absolute;
-//             border-bottom: 2px solid black;
-
-//             i {
-//                 svg {
-//                     fill: none;
-//                     stroke: $clr7;
-//                     height: 16px;
-//                     width: 16px;
-//                 }
-//             }
-
-//             &:hover {
-//                 cursor: pointer;
-//             }
-//         }
-//     }
-
-// }
-
-// .stay-details-layout {
-//     display: flex;
-//     gap: 2rem;
-//     margin-top: 2rem;
-// }
-
-
-// .stay-info-left {
-//     flex: 2;
-// }
-
-// .stay-info-right {
-//     flex: 1;
-//     position: sticky;
-//     top: 100px;
-//     align-self: flex-start;
-//     border: 1px solid #ddd;
-//     padding: 1.5rem;
-//     border-radius: 12px;
-//     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-//     background-color: white;
-// }
-
 .stay-details {
-    &.wishlist {
-      .title {
-        .heart-svg-container {
-          i {
-            svg {
-              fill: $heartClr;
-              stroke: $heartClr;
-            }
+  &.wishlist {
+    .title {
+      .heart-svg-container {
+        i {
+          svg {
+            fill: $heartClr;
+            stroke: $heartClr;
           }
         }
       }
     }
-  
-    .title {
-      position: relative;
-  
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+
+    h1 {
+      font-size: 26px;
+      line-height: 30px;
+      font-weight: 400 !important;
+      color: #222222;
+    }
+
+    .title-actions {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+
+      .share-btn {
+        right: 67px;
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid rgb(34, 34, 34);
+        margin-left: 4px;
+        color: #222222;
+        background-color: #FFFFFF;
+        font-size: 14px;
+        line-height: 18px;
+        padding: 8px;
+        border-radius: 8px;
+        border: none;
+        font-weight: 500;
+
+        &:hover {
+          background-color: #fbf8f8;
+        }
+      }
+
       .heart-svg-container {
         right: 0;
         display: flex;
         flex-direction: row;
-        position: absolute;
-        border-bottom: 2px solid black;
-  
+        color: #222222;
+        background-color: #FFFFFF;
+        font-size: 14px;
+        line-height: 18px;
+        border-bottom: 1px solid rgb(34, 34, 34);
+        margin-left: 4px;
+        padding: 8px;
+        border-radius: 8px;
+        border: none;
+        font-weight: 500;
+
         i {
           svg {
             fill: none;
             stroke: $clr7;
+            margin-top: 1px;
+            margin-bottom: 1px;
             height: 16px;
             width: 16px;
           }
         }
-  
+
         &:hover {
           cursor: pointer;
+          background-color: #fbf8f8;
         }
       }
     }
-  
-    .stay-details-layout {
-      display: flex;
-      gap: 2rem;
-      margin-top: 2rem;
-  
-      .stay-info-left {
-        flex: 2;
+  }
+
+  .stay-details-layout {
+    display: flex;
+    gap: 2rem;
+
+    .stay-info-left {
+      flex: 2;
+
+      .simple-details {
+        padding-top: 32px;
+        padding-bottom: 32px;
+
+        .saty-loc {
+          font-weight: 600;
+          font-size: 22px;
+          color: rgb(34, 34, 34);
+          margin-bottom: 4px;
+        }
+
+        .saty-info {
+          display: flex;
+          color: rgb(34, 34, 34);
+          font-size: 16px;
+          font-weight: 400;
+        }
+
+        .raiting-info {
+          display: flex;
+          align-items: center;
+          margin-top: 8px;
+          font-weight: 600;
+          font-size: 16px;
+
+
+          .star-svg {
+            svg {
+              width: 8px;
+              height: 8px;
+              fill: rgb(34, 34, 34);
+              stroke: none;
+              stroke-width: 1px;
+              display: block;
+              margin-right: 4px;
+            }
+
+          }
+
+          .rating {
+            text-decoration: none;
+            color: rgb(34, 34, 34);
+            padding: 0px;
+          }
+
+          .review-count {
+            text-decoration: underline solid rgb(34, 34, 34);
+            cursor: pointer;
+            color: rgb(34, 34, 34);
+            padding: 0px;
+          }
+        }
       }
-  
-      .stay-info-right {
-        flex: 1;
-        position: sticky;
-        top: 100px;
-        align-self: flex-start;
-        border: 1px solid #ddd;
-        padding: 1.5rem;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        background-color: white;
+
+      .divider {
+        border: none;
+        border-bottom: 1px solid #ddd;
+        margin: 24px 0;
       }
+      .host-details {
+        h2 {
+          font-size: 16px;
+          font-weight: 600;
+          color:  rgb(34, 34, 34);
+          margin-bottom:4px ;
+        }
+      
+        p{
+          font-size: 16px;
+          color: rgb(106, 106, 106);
+        }
+      }
+      .divider2{
+        border: none;
+        border-bottom: 1px solid #ddd;
+        margin-top: 24px;
+        margin-bottom: 32px;
+      }
+      .div2row{
+        display: flex;
+        gap: 32px;
+
+        .div2-style{
+          h3{
+            font-size: 14px;
+            color: rgb(34, 34, 34);
+            font-weight: 600;
+          }
+          p{
+            font-size: 14px;
+            color: rgb(106, 106, 106);
+          }
+        }
+      }
+      .divider3{
+        border: none;
+        border-bottom: 1px solid #ddd;
+        margin-top: 32px;
+        margin-bottom: 48px;
+      }
+      .divider4{
+        border: none;
+        border-bottom: 1px solid #ddd;
+        margin: 48px 0;
+      }
+
+    }
+
+    .stay-info-right {
+      flex: 1;
+      position: sticky;
+      top: 100px;
+      align-self: flex-start;
+      border: 1px solid #ddd;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background-color: white;
     }
   }
+}

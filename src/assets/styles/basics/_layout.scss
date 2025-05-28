@@ -2,13 +2,25 @@
     display: grid;
     grid-template-columns: 40px 1fr 40px;
 
-    > * {
+    >* {
         grid-column: 2;
 
         &.full {
             grid-column: 1 / -1;
         }
     }
+    &.stay-layout {
+        display: grid;
+        grid-template-columns: 285px 1fr 285px;
+      
+        @media (min-width: 768px) {
+          grid-template-columns: 285px 1fr 285px;
+        }
+      
+        @media (min-width: 1200px) {
+          grid-template-columns: 285px 1fr 285px;
+        }
+      }
 
     // @include for-narrow-layout {
     //     grid-template-columns: 

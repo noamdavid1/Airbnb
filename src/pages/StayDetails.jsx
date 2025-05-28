@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -21,11 +21,33 @@ export function StayDetails() {
   const stay = useSelector(storeState => storeState.stayModule.stay)
   const loggedinUser = useSelector(storeState => storeState.userModule.loggedinUser)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const orderRef = useRef()
 
 
   useEffect(() => {
     loadStay(stayId)
   }, [stayId])
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const orderEl = orderRef.current
+      if (!orderEl) return
+
+      const scrollY = window.scrollY
+      const startY = 400
+      const maxY = document.body.scrollHeight - 800
+
+      if (scrollY < startY) {
+        orderEl.style.transform = `translateY(0px)`
+      } else if (scrollY < maxY) {
+        orderEl.style.transform = `translateY(${scrollY - startY}px)`
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   function isInWishlist(stayId) {
     if (loggedinUser && loggedinUser.wishlist) {
@@ -64,12 +86,18 @@ export function StayDetails() {
   const isWishlist = isInWishlist(stayId)
   return (
     stay && <section className={`stay-details ${isWishlist ? 'wishlist' : ''}`}>
-      <Link to="/">Back to list</Link>
+      {/* <Link to="/">Back to list</Link> */}
       <div className='title'>
         <h1>{stay.name}</h1>
-        <div className='heart-svg-container' onClick={onHeartClick}>
-          <SvgIcon iconName={"heart"} />
-          {isWishlist ? 'Saved' : 'Save'}
+        <div className='title-actions'>
+          <div className='share-btn'>
+            <SvgIcon iconName={"share"} />
+            Share
+          </div>
+          <div className='heart-svg-container' onClick={onHeartClick}>
+            <SvgIcon iconName={"heart"} />
+            {isWishlist ? 'Saved' : 'Save'}
+          </div>
         </div>
       </div>
 
@@ -77,13 +105,56 @@ export function StayDetails() {
 
       <div className="stay-details-layout">
         <div className="stay-info-left">
-          <div>{stay.roomType} in {stay.loc.address}</div>
-          <div className='stay-info'>
-            <div>{stay.bedrooms} bedrooms</div>
-            <div>{stay.bathrooms} bathrooms</div>
+          <div className='simple-details'>
+            <div className='saty-loc'>{stay.roomType} in {stay.loc.address}</div>
+            <div className='stay-info'>
+              {stay.bedrooms} bedrooms
+              {stay.bathrooms} bathrooms
+            </div>
+            <div className='raiting-info'>
+              <div className='star-svg'><SvgIcon iconName={"star2"} /></div>
+              <span className='rating'>{Number.isInteger(stay.rating) ? stay.rating.toFixed(1) : stay.rating}·</span>
+              <span className='review-count'>{stay.reviews.length} reviews</span>
+            </div>
           </div>
+          <hr className="divider" />
+          <div className="host-details">
+            <h2>Hosted by {stay.host.fullname}</h2>
+            {stay.host.superhost &&
+              <p>
+                Superhost ·
+              </p>
+            }
+            <p> 7 years hosting</p>
+          </div>
+          <hr className="divider2" />
+
+          <div className='div2row'>
+            <SvgIcon iconName={"key"} />
+            <div className='div2-style'>
+              <h3>great check-in experience</h3>
+              <p>Recent guests loved the smooth start to this stay.</p>
+            </div>
+          </div>
+          <div className='div2row'>
+            <SvgIcon iconName={"coffee"} />
+            <div className='div2-style'>
+              <h3>At-home coffee</h3>
+              <p>Start your morning right with the espresso machine.</p>
+            </div>
+          </div>
+          <div className='div2row'>
+            <SvgIcon iconName={"cancellation"} />
+            <div className='div2-style'>
+              <h3>Free cancellation before Nov 6</h3>
+              <p>Get a full refund if you change your mind.</p>
+            </div>
+          </div>
+          <hr className="divider3" />
+
 
           <StayAmenities stayAmenities={stay.amenities} />
+          <hr className="divider4" />
 
           <ReviewList
             reviews={stay.reviews}
@@ -91,7 +162,7 @@ export function StayDetails() {
           />
         </div>
 
-        <div className="stay-info-right">
+        <div className="stay-info-right" ref={orderRef}>
           <StayOrder stay={stay} />
         </div>
       </div>
