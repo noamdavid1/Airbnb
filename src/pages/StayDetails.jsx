@@ -13,6 +13,7 @@ import { StayOrder } from '../cmps/StayOrder'
 import SvgIcon from '../cmps/SvgIcon'
 import { updateWishlist } from '../store/actions/user.actions'
 import { LoginModal } from '../cmps/LoginModal'
+import { StayDescription } from '../cmps/StayDescription'
 
 
 export function StayDetails() {
@@ -22,6 +23,7 @@ export function StayDetails() {
   const loggedinUser = useSelector(storeState => storeState.userModule.loggedinUser)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const orderRef = useRef()
+  const reviewsRef = useRef()
 
 
   useEffect(() => {
@@ -29,19 +31,42 @@ export function StayDetails() {
   }, [stayId])
 
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const orderEl = orderRef.current
-      if (!orderEl) return
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const orderEl = orderRef.current
+  //     if (!orderEl) return
 
+  //     const scrollY = window.scrollY
+  //     const startY = 400
+  //     const maxY = document.body.scrollHeight - 800
+
+  //     if (scrollY < startY) {
+  //       orderEl.style.transform = `translateY(0px)`
+  //     } else if (scrollY < maxY) {
+  //       orderEl.style.transform = `translateY(${scrollY - startY}px)`
+  //     }
+  //   }
+
+  //   window.addEventListener('scroll', handleScroll)
+  //   return () => window.removeEventListener('scroll', handleScroll)
+  // }, [])
+
+  useEffect(() => {
+    const orderEl = orderRef.current
+    const reviewsEl = reviewsRef.current
+    if (!orderEl || !reviewsEl) return
+
+    const handleScroll = () => {
       const scrollY = window.scrollY
       const startY = 400
-      const maxY = document.body.scrollHeight - 800
-
+      const reviewsY = reviewsEl.getBoundingClientRect().top + window.scrollY
+      const maxY = reviewsY - orderEl.offsetHeight - 210
       if (scrollY < startY) {
         orderEl.style.transform = `translateY(0px)`
       } else if (scrollY < maxY) {
         orderEl.style.transform = `translateY(${scrollY - startY}px)`
+      } else {
+        orderEl.style.transform = `translateY(${maxY - startY}px)`
       }
     }
 
@@ -56,15 +81,15 @@ export function StayDetails() {
     return false
   }
 
-  async function onAddStayMsg(stayId) {
-    try {
-      await addStayMsg(stayId, 'bla bla ' + parseInt(Math.random() * 10))
-      showSuccessMsg(`Stay msg added`)
-    } catch (err) {
-      showErrorMsg('Cannot add stay msg')
-    }
+  // async function onAddStayMsg(stayId) {
+  //   try {
+  //     await addStayMsg(stayId, 'bla bla ' + parseInt(Math.random() * 10))
+  //     showSuccessMsg(`Stay msg added`)
+  //   } catch (err) {
+  //     showErrorMsg('Cannot add stay msg')
+  //   }
 
-  }
+  // }
 
   async function onRemoveReview(reviewId) {
     try {
@@ -108,13 +133,12 @@ export function StayDetails() {
           <div className='simple-details'>
             <div className='saty-loc'>{stay.roomType} in {stay.loc.address}</div>
             <div className='stay-info'>
-              {stay.bedrooms} bedrooms
-              {stay.bathrooms} bathrooms
+              {stay.bedrooms} bedrooms · {stay.bathrooms} bathrooms
             </div>
             <div className='raiting-info'>
               <div className='star-svg'><SvgIcon iconName={"star2"} /></div>
-              <span className='rating'>{Number.isInteger(stay.rating) ? stay.rating.toFixed(1) : stay.rating}·</span>
-              <span className='review-count'>{stay.reviews.length} reviews</span>
+              <span className='rating'>{Number.isInteger(stay.rating) ? stay.rating.toFixed(1) : stay.rating} · </span>
+              <span className='review-count'> {stay.reviews.length} reviews</span>
             </div>
           </div>
           <hr className="divider" />
@@ -152,19 +176,24 @@ export function StayDetails() {
           </div>
           <hr className="divider3" />
 
+          <StayDescription />
+
+
 
           <StayAmenities stayAmenities={stay.amenities} />
-          <hr className="divider4" />
-
-          <ReviewList
-            reviews={stay.reviews}
-            onRemoveReview={onRemoveReview}
-          />
         </div>
 
         <div className="stay-info-right" ref={orderRef}>
           <StayOrder stay={stay} />
         </div>
+      </div>
+      {/* <hr className="divider4" /> */}
+      <div ref={reviewsRef}>
+        <ReviewList
+          reviews={stay.reviews}
+          onRemoveReview={onRemoveReview}
+          stay={stay}
+        />
       </div>
 
       <LoginModal show={isModalOpen} onClose={() => setIsModalOpen(false)} />

@@ -19,14 +19,6 @@ export function CategoryFilter({ filterBy }) {
     navigate({ search: params.toString() }) // StayIndex תעדכן את filterBy
   }
 
-  // function changeFilter(type) {
-  //     const newFilter = {
-  //         ...filterBy,
-  //         category: type
-  //     }
-  //     setFilterBy(newFilter)
-  // }
-
   const responsive = {
     allScreens: {
       breakpoint: { max: 3000, min: 0 },
@@ -37,13 +29,13 @@ export function CategoryFilter({ filterBy }) {
 
   const CustomLeftArrow = ({ onClick }) => (
     <button onClick={onClick} className="custom-arrow left">
-      <SvgIcon iconName={"arrowLeft"} />
+      <SvgIcon iconName={"arrow-left"} />
     </button>
   );
 
   const CustomRightArrow = ({ onClick }) => (
     <button onClick={onClick} className="custom-arrow right">
-      <SvgIcon iconName={"arrowRight"} />
+      <SvgIcon iconName={"arrow-right"} />
     </button>
   );
 

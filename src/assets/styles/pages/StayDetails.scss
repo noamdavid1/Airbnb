@@ -35,17 +35,22 @@
         display: flex;
         flex-direction: row;
         border-bottom: 1px solid rgb(34, 34, 34);
+        text-decoration: underline solid rgb(34, 34, 34);
         margin-left: 4px;
         color: #222222;
         background-color: #FFFFFF;
         font-size: 14px;
         line-height: 18px;
-        padding: 8px;
         border-radius: 8px;
         border: none;
         font-weight: 500;
+        gap:7px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+      
 
         &:hover {
+          cursor: pointer;
           background-color: #fbf8f8;
         }
       }
@@ -59,11 +64,12 @@
         font-size: 14px;
         line-height: 18px;
         border-bottom: 1px solid rgb(34, 34, 34);
+        text-decoration: underline solid rgb(34, 34, 34);
         margin-left: 4px;
-        padding: 8px;
         border-radius: 8px;
         border: none;
         font-weight: 500;
+        gap: 4px;
 
         i {
           svg {
@@ -176,6 +182,7 @@
         .div2-style{
           h3{
             font-size: 14px;
+            line-height: 20px;
             color: rgb(34, 34, 34);
             font-weight: 600;
           }
@@ -191,12 +198,6 @@
         margin-top: 32px;
         margin-bottom: 48px;
       }
-      .divider4{
-        border: none;
-        border-bottom: 1px solid #ddd;
-        margin: 48px 0;
-      }
-
     }
 
     .stay-info-right {
@@ -209,6 +210,11 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       background-color: white;
+    }
+    .divider4{
+      border: none;
+      border-bottom: 1px solid #ddd;
+      margin: 48px 0;
     }
   }
 }

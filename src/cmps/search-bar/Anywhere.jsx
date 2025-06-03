@@ -1,7 +1,4 @@
-import * as React from 'react'
 import { useState, useEffect, useRef } from 'react'
-import { TextField, Avatar, Box, List, ListItem, ListItemAvatar, ListItemText } from '@mui/material'
-
 
 const cities = [
   {
@@ -59,13 +56,10 @@ const cities = [
     iconImg: "/cityIcon/rio-de-janeiro.png"
   }
 ]
-
-export function Anywhere({ selectedCity, onSelect, onClose}) {
-  const [searchTerm, setSearchTerm] = useState('')
+export function Anywhere({ searchTerm, selectedCity, onSelect, onClose }) {
   const [filteredCities, setFilteredCities] = useState(cities)
   const [selected, setSelected] = useState(selectedCity ? selectedCity.city : '')
-
-   const modalRef = useRef()
+  const modalRef = useRef()
 
   useEffect(() => {
     const filtered = cities.filter(city =>
@@ -74,67 +68,40 @@ export function Anywhere({ selectedCity, onSelect, onClose}) {
     setFilteredCities(filtered)
   }, [searchTerm])
 
+  // useEffect(() => {
+  //   const handleClickOutside = (event) => {
+  //     if (modalRef.current && !modalRef.current.contains(event.target)) {
+  //       onClose()
+  //     }
+  //   }
+  //   document.addEventListener('mousedown', handleClickOutside)
+  //   return () => {
+  //     document.removeEventListener('mousedown', handleClickOutside)
+  //   }
+  // }, [onClose])
+
   const handleSelectCity = (city) => {
     setSelected(city.city)
     onSelect && onSelect(city)
   }
-  
-    useEffect(() => {
-      const handleClickOutside = (event) => {
-        if (modalRef.current && !modalRef.current.contains(event.target)) {
-          onClose()
-        }
-      }
-      document.addEventListener('mousedown', handleClickOutside)
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside)
-      }
-    }, [onClose])
 
   return (
-    <Box
-    ref={modalRef}
-      sx={{
-        width: 300,
-        maxHeight: 300,
-        overflowY: 'auto',
-        bgcolor: 'background.paper',
-        borderRadius: 1,
-        boxShadow: 3,
-        p: 1,
-      }}
-    >
-      <TextField
-        fullWidth
-        size="small"
-        placeholder="Search city"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        sx={{ mb: 1 }}
-      />
-      <List>
+    <div ref={modalRef} className="anywhere-modal">
+      <ul className="city-list">
         {filteredCities.map((city) => (
-          <ListItem
+          <li
             key={city.city}
-            selected={selected === city.city}
+            className={`city-item ${selected === city.city ? 'selected' : ''}`}
             onClick={() => handleSelectCity(city)}
-            sx={{ borderRadius: 1 }}
           >
-            <ListItemAvatar>
-              <Avatar
-                src={city.iconImg}
-                alt={city.city}
-                variant="square"
-                sx={{ width: 56, height: 56, borderRadius: 2}}
-              />
-            </ListItemAvatar>
-            <ListItemText
-              primary={`${city.city}, ${city.country}`}
-              secondary={city.phrase}
-            />
-          </ListItem>
+            <img className="city-icon" src={city.iconImg} />
+            <div className="city-info">
+              <div className="city-name">{city.city}, {city.country}</div>
+              <div className="city-phrase">{city.phrase}</div>
+            </div>
+          </li>
         ))}
-      </List>
-    </Box>
+      </ul>
+    </div>
   )
 }

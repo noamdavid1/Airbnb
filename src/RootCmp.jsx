@@ -19,7 +19,7 @@ export function RootCmp() {
     const isStayDetails = location.pathname.startsWith('/stay/')
     return (
         <div className={`main-container ${isStayDetails ? 'stay-layout' : ''}`}>
-            <AppHeader />
+            <AppHeader/>
             {/* <UserMsg /> */}
             <main>
                 <Routes>
