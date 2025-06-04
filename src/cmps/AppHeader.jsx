@@ -1,29 +1,26 @@
-import { NavLink, useNavigate } from 'react-router-dom';
-import logo from '../assets/img/newLogo.jpeg';
+import { NavLink, useLocation } from 'react-router-dom';
+import logo from '../../public/logo.png'
 import { SearchBar } from './search-bar/SearchBar'
 import { SearchBarScroll } from './search-bar/SearchBarScroll';
-
-// import { useSearchParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
-import { login, logout, signup } from '../store/actions/user.actions';
-import { LoginSignup } from './LoginSignup';
-// import { UserMenu } from './UserMenu';
 
 import SvgIcon from './SvgIcon';
-import { LoginModal } from './LoginModal';
+import { UserMenu } from './UserMenu';
 
 export function AppHeader() {
 	const [isScrolled, setIsScrolled] = useState(false)
 	const [isExpanded, setIsExpanded] = useState(false)
 	const [initialModalType, setInitialModalType] = useState('')
-	// const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
 
 	const menuRef = useRef(null)
+	const location = useLocation();
+	const isWishlistPage = location.pathname === '/wishlist';
+	
+	const isStayDetails = location.pathname.startsWith('/stay/');
+
 	const loggedinUser = useSelector(storeState => storeState.userModule.loggedinUser)
-	const navigate = useNavigate()
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -55,70 +52,6 @@ export function AppHeader() {
 		setIsMenuOpen((prev) => !prev)
 	}
 
-	async function onLogout() {
-		try {
-			await logout()
-			// navigate('/')
-			showSuccessMsg(`Bye now`)
-		} catch (err) {
-			showErrorMsg('Cannot logout')
-		}
-	}
-
-	// async function onLogin(credentials) {
-	// 	console.log(credentials)
-	// 	try {
-	// 		login(credentials)
-	// 		// setLoggedinUser(user)
-	// 	} catch (err) {
-	// 		console.log('Cannot login :', err)
-	// 		showErrorMsg(`Cannot login`)
-	// 	}
-	// }
-
-	// async function onSignup(credentials) {
-	// 	console.log(credentials)
-	// 	try {
-	// 		signup(credentials)
-	// 		// setLoggedinUser(user)
-	// 		showSuccessMsg(`Welcome ${user.fullname}`)
-	// 	} catch (err) {
-	// 		console.log('Cannot signup :', err)
-	// 		showErrorMsg(`Cannot signup`)
-	// 	}
-	// 	// add signup
-	// }
-
-	async function onLogout() {
-		console.log('logout');
-		try {
-			logout()
-			navigate('/')
-			// setLoggedinUser(null)
-		} catch (err) {
-			console.log('can not logout');
-		}
-		// add logout
-	}
-
-	// console.log({ loggedinUser });
-
-	function onWishlistsClick() {
-		navigate('/wishlist')
-	}
-
-	function onHostOrdersClick() {
-		navigate('/hosting/order')
-	}
-
-	function onGuestOrdersClick() {
-		navigate('/trips')
-	}
-
-	const handleLoginClick = () => {
-		setIsLoginModalOpen(true)
-	}
-
 	function getFirstLetterUpper(string) {
 		if (!string) return '';
 		return string.charAt(0).toUpperCase();
@@ -126,20 +59,25 @@ export function AppHeader() {
 
 	return (
 		<header className="app-header full">
-			<nav className="header-nav main-container">
+			<nav className={`header-nav main-container ${isStayDetails ? 'stay-layout' : ''} ${((isScrolled && !isExpanded) || isWishlistPage || isStayDetails) ? 'scrolled' : ''}`}>
 				<div className="header-left">
 					<NavLink to="/" className="logo">
-						<img src={logo} alt="app logo" />
+						<div className='logo-div'>
+							<img src={logo} alt="app logo" />
+							staybnb
+						</div>
+
 					</NavLink>
 				</div>
+				{!isWishlistPage &&
+					<div className={"header-center"}>
 
-				<div className="header-center">
-					{isScrolled && !isExpanded ? (
-						<SearchBarScroll onExpandSearch={handleExpandSearch} />
-					) : (
-						<SearchBar initialModalType={initialModalType} />
-					)}
-				</div>
+						{!isExpanded && (isScrolled || isStayDetails) ? (
+							<SearchBarScroll onExpandSearch={handleExpandSearch} />
+						) : (
+							<SearchBar initialModalType={initialModalType} />
+						)}
+					</div>}
 
 				<div className="header-right">
 
@@ -151,27 +89,9 @@ export function AppHeader() {
 							<SvgIcon className="button-icon" iconName={"menu"} />
 						</button>
 
-						{isMenuOpen && <div class="dropdown-menu" id="dropdownMenu">
-							<ul>
-								{!loggedinUser && <li onClick={handleLoginClick}>Log in or sign up</li>}
-								{loggedinUser && (
-									<>	<li onClick={onWishlistsClick}>Wishlists</li>
-										<li onClick={onGuestOrdersClick}>Trips</li>
-										<li onClick={onHostOrdersClick}>View Orders</li>
-										<li onClick={onLogout}>Log out</li>
-									</>)}
-								<LoginModal show={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
-							</ul>
-						</div>}
+						{isMenuOpen && <UserMenu onClose={() => setIsMenuOpen(false)} />
+						}
 					</div>
-					{/* אפשר להוסיף כאן תפריט משתמש, אייקונים וכו׳ */}
-					{/* <button className='host-button'>become a host</button>
-					<SvgIcon iconName={"earth"} />
-					
-					<button className="menu-button" onClick={toggleUserMenu}>
-						<SvgIcon iconName={"burgerMenu"} />
-					</button> */}
-					{/* {isUserMenuOpen && <UserMenu onClose={() => setIsUserMenuOpen(false)} />} */}
 				</div>
 			</nav>
 		</header>

@@ -1,0 +1,53 @@
+.stay-description {
+    margin-bottom: 2rem;
+  
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+  
+    p {
+      white-space: pre-line;
+    }
+  
+    .btn-show-more {
+      margin-top: 0.5rem;
+      background: none;
+      border: none;
+      color: #222;
+      font-weight: bold;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+  }
+  
+  .btn-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
