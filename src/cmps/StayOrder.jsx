@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { AnyWeek } from './search-bar/AnyWeek'
 import { AddGuests } from './search-bar/AddGuests'
-import { orderService } from '../services/order/order.service.local.js'
+import { orderService } from '../services/order/index.js'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import dayjs from 'dayjs'
 
@@ -23,9 +23,10 @@ export function StayOrder({ stay }) {
     pricePerNight * nightsCount + cleaningFee + serviceFee
 
   async function onReserve() {
+    // console.log("on reserve")
     try {
       await orderService.addOrder({
-        stayId: stay._id,
+        stay,
         from: dates.from,
         to: dates.to,
         price: totalPrice,

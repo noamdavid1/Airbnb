@@ -1,11 +1,14 @@
-export function MiniStayPreview({ stay }) {
+export function MiniStayPreview({ miniStay }) {
 
-    if (!stay) return <div>loading..</div>
+    if (!miniStay) return <div>loading..</div>
 
     return (
-        <article className={'mini-stay-preview'}>
-            <h2>{stay.loc?.city}</h2>
-            <img src={stay.imgUrls[0]} alt="Slide 1" />
-        </article>
+        <div className="mini-stay-preview">
+            <img src={miniStay.imgUrls[0]} alt={miniStay.name} />
+            <div className="stay-info">
+                <h4>{miniStay.name}</h4>
+                <p>{miniStay.city}, {miniStay.country}</p>
+            </div>
+        </div>
     )
 }

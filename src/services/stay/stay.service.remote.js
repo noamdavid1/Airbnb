@@ -1,20 +1,21 @@
-// import { httpService } from '../http.service'
+import { httpService } from '../http.service'
 
 export const stayService = {
     query,
     getById,
     save,
     remove,
-    addStayMsg
+    addStayMsg,
+    removeStayReview
 }
 
-async function query(filterBy = { txt: '', price: 0 }) {
-    console.log("stayService remote query");
-    // return httpService.get(`stay`, filterBy)
+async function query(filterBy = {}) {
+    console.log("----stayService remote query", filterBy);
+    return await httpService.get(`stay`, filterBy)
 }
 
 function getById(stayId) {
-    // return httpService.get(`stay/${stayId}`)
+    return httpService.get(`stay/${stayId}`)
 }
 
 async function remove(stayId) {
@@ -33,4 +34,13 @@ async function save(stay) {
 async function addStayMsg(stayId, txt) {
     // const savedMsg = await httpService.post(`stay/${stayId}/msg`, {txt})
     // return savedMsg
+}
+
+async function getStayReviews(stayId, review) {
+    // const savedMsg = await httpService.post(`stay/${stayId}/msg`, {txt})
+    // return savedMsg
+}
+
+async function removeStayReview(stayId, reviewId) {
+    return await httpService.delete(`stay/${stayId}/review/${reviewId}`)
 }

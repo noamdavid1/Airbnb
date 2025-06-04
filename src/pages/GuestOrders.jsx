@@ -9,39 +9,21 @@ import { convertDateToString } from "../services/util.service"
 
 export function GuestOrders() {
     const orders = useSelector(storeState => storeState.orderModule.orders)
-    const stays = useSelector(storeState => storeState.stayModule.stays)
-
     const loggedinUser = useSelector(storeState => {
-
         if (!storeState.userModule.loggedinUser) {
             return { fullname: 'No user logged in' }
         }
         return storeState.userModule.loggedinUser
-
     })
 
     useEffect(() => {
-        loadStays()
-        loadOrders('guest')
+        loadOrders({userType: 'guest'})
     }, [])
-
-    useEffect(() => {
-        console.log(stays);
-    }, [stays])
-
-    function getStay(stayId) {
-        return stays.find(stay => stay._id === stayId)
-    }
 
     function updateOrderStatus(order, status) {
         // console.log("order to update", order, status);
         order.status = status
         updateOrder(order)
-    }
-
-    function getHostName(stayId) {
-        const stay = getStay(stayId).host.fullname
-        return stay?.host?.fullname ?? ''
     }
 
     return (
@@ -65,9 +47,9 @@ export function GuestOrders() {
                     {orders.map(order => (
                         <tr key={order._id}>
                             <td className="mini-stay-preview">
-                                <MiniStayPreview stay={getStay(order.stayId)} />
+                                <MiniStayPreview stay={order.stay} />
                             </td>
-                            <td>{getHostName(order.stayId)}</td>
+                            <td>{order.host.fullname}</td>
                             <td>{convertDateToString(order.from)} - {convertDateToString(order.to)}</td>
                             <td>${order.price}</td>
                             <td className={`order-status ${order.status}`}>{order.status}</td>

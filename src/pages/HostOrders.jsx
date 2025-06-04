@@ -6,11 +6,12 @@ import { MiniStayPreview } from "../cmps/MiniStayPreview"
 import { loadOrders, updateOrder } from "../store/actions/order.actions"
 import { getUserById } from "../store/actions/user.actions"
 import { convertDateToString } from "../services/util.service"
+import { MiniUser } from "../cmps/MiniUser"
+import { useNavigate } from "react-router-dom"
 
 export function HostOrders() {
-    const [view, setView] = useState('dashboard')
+    const navigate = useNavigate()
     const orders = useSelector(storeState => storeState.orderModule.orders)
-    const stays = useSelector(storeState => storeState.stayModule.stays)
 
     const loggedinUser = useSelector(storeState => {
 
@@ -18,31 +19,11 @@ export function HostOrders() {
             return { fullname: 'No user logged in' }
         }
         return storeState.userModule.loggedinUser
-
     })
 
     useEffect(() => {
-        loadStays()
-        loadOrders('host')
-
-        // const loadOrders = async () => {
-        //     try {
-        //         const orders = await orderService.query(); // now it's the actual data
-        //         console.log('Resolved orders:', orders);
-        //         setOrders(orders);
-        //     } catch (err) {
-        //         console.error('Failed to load orders:', err);
-        //     }
-        // };
+        loadOrders({ userType: 'host' })
     }, [])
-
-    useEffect(() => {
-        console.log(stays);
-    }, [stays])
-
-    function getStay(stayId) {
-        return stays.find(stay => stay._id === stayId)
-    }
 
     function updateOrderStatus(order, status) {
         // console.log("order to update", order, status);
@@ -50,61 +31,64 @@ export function HostOrders() {
         updateOrder(order)
     }
 
-    function isOrdersDisplayed() {
-        return (view === 'orders' && orders && orders.length)
+    function getNumberOfGuests(guests) {
+        return guests.adults + guests.children + guests.infants
     }
+
+    function onStayClick(stay) {
+        navigate(`/stay/${stay._id}`)
+    }
+
     return (
-        <>
-            <header>
-                <nav>
-                    <button onClick={() => setView('orders')}>Orders</button>
-                    <button onClick={() => setView('dashboard')}>Dashboard</button>
-                </nav>
-            </header>
-
-            {<section>
-                <h1>dashboard</h1>
-            </section>}
-            {isOrdersDisplayed() && <section className="host-actions">
-                <h1>{`Welcome back, ${loggedinUser.fullname}`}</h1>
+        <section className="host-orders">
+            <div className="orders-table-wrapper">
                 <h2>Orders</h2>
-                <table>
-                    {/* <caption>Orders</caption> */}
-                    <thead>
-                        <tr>
-                            <th>GUEST</th>
-                            <th>DATES</th>
-                            <th>STAY</th>
-                            <th>PAYMENT</th>
-                            <th>STATUS</th>
-                            <th>ACTION</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {orders.map(order => (
-                            <tr key={order._id}>
-                                <td>{order.user.fullname}</td>
-                                <td>{convertDateToString(order.from)} - {convertDateToString(order.to)}</td>
-                                <td className="mini-stay-preview">
-                                    <MiniStayPreview stay={getStay(order.stayId)} />
-                                </td>
-                                <td>${order.price}</td>
-                                <td className={`order-status ${order.status}`}>{order.status}</td>
-                                <td>
-                                    {order.status === 'pending' &&
-                                        <div className="host-response">
-                                            <button onClick={() => updateOrderStatus(order, 'accepted')}>ACCEPT</button>
-                                            <button onClick={() => updateOrderStatus(order, 'rejected')}>REJECT</button>
-                                        </div>
-                                    }
-                                </td>
+                <div className="table-container">
+                    <table>
+                        {/* <caption>Orders</caption> */}
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Booker</th>
+                                <th className="stay-col">Stay</th>
+                                <th>Dates</th>
+                                <th>Guests</th>
+                                {/* <th>Price/night</th> */}
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th className="actions-cell">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {orders.map(order => (
+                                <tr key={order._id}>
+                                    <td>{convertDateToString(order.createdAt)}</td>
+                                    <td>
+                                        <MiniUser miniUser={order.guest} />
+                                    </td>
+                                    <td className="stay-col" onClick={() => onStayClick(order.stay)}>
+                                        <MiniStayPreview miniStay={order.stay} />
+                                    </td>
+                                    <td>{convertDateToString(order.from)} - {convertDateToString(order.to)}</td>
+                                    <td>{getNumberOfGuests(order.guests)}</td>
+                                    <td>${order.price}</td>
+                                    <td className={`status-badge order-status ${order.status}`}>{order.status}</td>
+                                    <td className="actions-cell">
+                                        {order.status === 'pending' &&
+                                            <div className="action-buttons">
+                                                <button className="action-button approve-btn" onClick={() => updateOrderStatus(order, 'accepted')}>Approve</button>
+                                                <button className="action-button reject-btn" onClick={() => updateOrderStatus(order, 'rejected')}>Reject</button>
+                                            </div>
+                                        }
+                                    </td>
+                                </tr>)
+                            )}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
 
-                            </tr>)
-                        )}
-                    </tbody>
-                </table>
-            </section>}
-        </>
 
     )
 

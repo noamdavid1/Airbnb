@@ -12,7 +12,8 @@ export function Wishlist() {
         console.log("loggedinUser.wishlist", loggedinUser.wishlist);
 
         const filterBy = {
-            wishlist: loggedinUser.wishlist
+            // wishlist: loggedinUser.wishlist
+            wishlist: true
         }
         loadStays(filterBy)
     }, [])

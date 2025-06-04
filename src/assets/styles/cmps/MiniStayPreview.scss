@@ -1,0 +1,81 @@
+// .mini-stay-preview {
+//   max-width: 100%; /* Let it grow with the cell */
+//   padding: 0.5rem;
+//   display: flex;
+//   align-items: center;
+//   gap: 0.5rem;
+//   background-color: white;
+//   border-radius: 12px;
+//   /* remove overflow: hidden */
+// }
+
+// .stay-info {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 4px;
+//   white-space: normal;
+//   overflow: visible;
+// }
+
+// .stay-info h4 {
+//   white-space: normal;
+//   overflow: visible;
+//   text-overflow: unset;
+//   max-width: unset;
+// }
+
+// .stay-info p {
+//   white-space: normal;
+//   overflow: visible;
+// }
+
+
+.mini-stay-preview {
+  display: flex;
+  align-items: center;
+//   gap: 12px;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 12px;
+//   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  max-width: 200px;
+//   overflow: hidden;
+}
+
+.mini-stay-preview img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+//   flex-shrink: 0;
+}
+
+.stay-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stay-info h4 {
+  margin: 0;
+//   font-size: 0.95rem;
+font-size: 15.2px;
+  font-weight: 600;
+  color: $clr7;
+}
+.stay-info h4 {
+    //   font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 270px; 
+//  white-space: normal;
+//   word-break: break-word;
+}
+
+.stay-info p {
+  margin: 0;
+  font-size: 15.2px;
+  color: $clr7;
+}

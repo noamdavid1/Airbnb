@@ -1,3 +1,4 @@
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -11,41 +12,71 @@
   z-index: 1000;
 }
 
-h1 {
-  font-size: 16px;
-  text-align: center;
+.modal-header {
+  position: relative;
+  // height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0;
+  // height: 56px;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 24px;
+
+  h1 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+    color: #222;
+  }
+
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #222;
+    position: relative;
+    z-index: 2;
+    padding: 0;
+    margin: 0;
+  }
+
+  .header-spacer {
+    width: 24px; // Balances the close button's width
+  }
 }
 
 .modal-content {
   background-color: white;
-  padding: 30px;
+  padding: 0;
   border-radius: 32px;
   width: 568px;
   text-align: center;
   position: relative;
-}
-
-.close-button {
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  font-size: 24px;
-  padding-bottom: 24px;
-  cursor: pointer;
-  padding: 0;
+  padding: 24px;
 }
 
 .welcome-title {
   font-size: 22px;
   line-height: 26px;
   font-weight: 500;
-  // padding: 32px;
   text-align: start;
   padding: 0;
-  padding-top: 10px;
+  padding-top: 32px;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
   width: 100%;
   padding: 12px;
   font-size: 16px;
@@ -67,6 +98,7 @@ input[type="text"] {
   line-height: 20px;
   font-weight: 500;
   cursor: pointer;
+  margin: 16px 0 0;
 }
 
 .switch-to-signup {

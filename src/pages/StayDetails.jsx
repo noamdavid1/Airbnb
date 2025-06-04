@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
-import { loadStay, addStayMsg } from '../store/actions/stay.actions'
+import { loadStay, addStayMsg, removeStay, removeStayReview } from '../store/actions/stay.actions'
 import { StayImgs } from '../cmps/StayImgs'
 import { StayAmenities } from '../cmps/StayAmenities'
 import { removeReview } from '../store/actions/review.actions'
@@ -68,7 +68,9 @@ export function StayDetails() {
 
   async function onRemoveReview(reviewId) {
     try {
-      await removeReview(reviewId)
+      console.log({stayId}, {reviewId});
+      
+      await removeStayReview(stayId, reviewId)
       showSuccessMsg('Review removed')
     } catch (err) {
       showErrorMsg('Cannot remove')

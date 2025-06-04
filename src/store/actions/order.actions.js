@@ -2,12 +2,12 @@
 
 import { store } from '../store'
 import { ADD_ORDER, REMOVE_ORDER, SET_ORDERS, UPDATE_ORDER } from '../reducers/order.reducer'
-import { orderService } from '../../services/order/order.service.local'
+import { orderService } from '../../services/order'
 // import { SET_SCORE } from '../reducers/user.reducer'
 
-export async function loadOrders(userType) {
+export async function loadOrders(filterBy) {
 	try {		
-		const orders = await orderService.query(userType)
+		const orders = await orderService.query(filterBy)
 		store.dispatch({ type: SET_ORDERS, orders })
 	} catch (err) {
 		console.log('OrderActions: err in loadOrders', err)
