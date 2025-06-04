@@ -1,7 +1,9 @@
 
-import { ReviewPreview } from './ReviewPreview.jsx'
+import { useState } from 'react';
+import { ReviewPreview } from './ReviewPreview.jsx';
+import SvgIcon from './SvgIcon.jsx';
 
-export function ReviewList({ reviews, onRemoveReview }) {
+// export function ReviewList({ reviews, onRemoveReview }) {
     
 //     return <section>
 //         {reviews && reviews.length ? <ul className="list review-list">
@@ -26,9 +28,7 @@ export function ReviewList({ reviews, onRemoveReview }) {
 //     </section>
 // }
 
-import { useState } from 'react';
-import { ReviewPreview } from './ReviewPreview.jsx';
-import SvgIcon from './SvgIcon.jsx';
+
 
 export function ReviewList({ reviews, onRemoveReview, stay }) {
     const [showAll, setShowAll] = useState(false);
