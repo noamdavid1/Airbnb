@@ -23,6 +23,7 @@ window.cs = stayService
 
 async function query(filterBy = {  category: '', location: '', guests: '' }) {
     try  {
+        // console.log('query localServ service');
         let stays  = await storageService.query(STORAGE_KEY)
 
         if (filterBy.category) {

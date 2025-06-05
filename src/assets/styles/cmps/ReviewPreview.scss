@@ -7,16 +7,51 @@
 		grid-column: 1;
 	}
 
-	.review-by {
-		margin-block-end: 1em;
+	.review-header {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		.review-by {
+			margin-block-end: 1em;
+		}
+
+		.review-info {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			flex-direction: row;
+			margin-left: 0;
+
+			.review-date {
+				font-weight: 500;
+				font-size: 14px;
+				color: #717171; // optional Airbnb-style grey
+				margin: 0;
+			}
+
+			.star-row {
+
+				display: flex;
+				flex-direction: row;
+				gap: 1px;
+
+			}
+
+		}
 	}
 
 	.review-txt {
-		grid-column: 1 / 3;
-		padding: 0.2em;
-		background-color: $gray2;
-
-		color: $gray1;
-		font-size: 0.7em;
+		// grid-column: 1 / 3;
+		// padding: 0.2em;
+		// background-color: $gray2;
+		// color: $gray1;
+		// font-size: 0.7em;
+		// color: green;
+		font-weight: 400;
+		background-color: white;
+		padding: 0;
 	}
+
+
 }

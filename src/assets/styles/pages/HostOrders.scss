@@ -1,20 +1,290 @@
-.mini-stay-preview {
-    height: 150px;
-    width: 150px;
+
+.host-table-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: fit-content;
+    margin: 0 auto;
+    overflow-x: auto;
+    padding-bottom: 80px;
 }
 
-
-.order-status{
-    font-weight: bold;
-}
-.order-status.pending{
-    color: yellow;
-}
-
-.order-status.rejected{
-    color: red;
+.host-table-wrapper h2 {
+//   margin-bottom: 24px;
+//   padding-left: 1rem;
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 64px;
+    margin-bottom: 16px;
+  padding: 0;
 }
 
-.order-status.accepted{
-    color: green;
+table {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  max-width: 100%;
+    font-size: 15px;
+  color: #222;
 }
+
+thead th {
+  text-align: left;
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 14px;
+  color: #717171;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+}
+
+tbody td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+  vertical-align: middle;
+}
+
+.action-buttons .approve-btn {
+  background-color: #00aa6c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.action-buttons .reject-btn {
+  background-color: #dddddd;
+  color: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.order-status {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.order-status.pending {
+  color: #ff9800;
+}
+
+.order-status.accepted {
+  color: #4caf50;
+}
+
+.order-status.cancelled,
+.order-status.rejected {
+  color: #f44336;
+}
+
+.stay-col {
+  white-space: nowrap;
+  width: auto;
+  max-width: 300px;         // optional safety cap
+}
+
+.user-col {
+    max-width: 500px;
+}
+
+td img {
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+tbody tr:hover {
+  background-color: #fafafa;
+  transition: background-color 0.2s ease;
+}
+
+.action-col {
+  text-align: right;
+  padding-right: 0; // removes extra space if needed
+  vertical-align: middle;
+}
+
+.action-button {
+    padding: 0;
+    margin: 0;
+}
+// .table-wrapper {
+
+// }
+// th,
+// td {
+//   padding: 1rem; // this is the important value
+// }
+
+
+// .orders-table-wrapper {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-start; // aligns <h2> left
+//   height: 1000px;
+//     width: 100%;
+//   overflow: visible;
+// }
+
+// .table-container {
+//   overflow: visible;
+//   max-height: unset;   
+//   position: relative;     
+//   // overflow-y: auto;
+//   width: 100%;
+// //   position: relative;
+//   display: flex;
+//   justify-content: center;
+// }
+// h2{
+//     margin-top: 64px;
+//     margin-bottom: 64px;
+//     // position: absolute;
+
+// }
+// table {
+// //   width: 100%;
+//   margin-left: auto;
+//   margin-right: auto;
+//   width: fit-content; 
+//   max-width: 100%;
+// // width: fit-content;
+//   table-layout: auto;
+//   border-collapse: collapse;
+//   border-spacing: 0 0.5rem;
+//   font-size: 0.95rem;
+//   text-align: left;
+//     table-layout: auto; /* important */
+//     margin: 0 auto;
+// }
+
+// table th,
+// table td {
+// //   padding: 0.1rem 0.1rem; /* or even less */
+// padding: 0;
+// }
+
+// thead th {
+//     // position: sticky;
+//     // top:0;
+//     // background-color: white;
+//     // z-index: 1;
+//   color: $font-grey;
+//   font-weight: 500;
+//   padding: 1rem;
+//   border-bottom: 1px solid #ddd;
+//   vertical-align: middle;
+// }
+
+// tbody td {
+//     // color: $font-grey;
+//     // font-weight: 600;
+//   background: #fff;
+//   padding: 1rem;
+//   border-bottom: 1px solid #eee;
+//   vertical-align: middle;
+// }
+
+// // table td:last-child,
+// // table th:last-child {
+// //   text-align: right;
+// // }
+
+// // tbody tr:hover {
+// //   background-color: #fafafa;
+// // }
+
+// // .mini-stay-preview {
+// //   max-width: 200px;
+// // }
+
+// .status-badge {
+//   text-transform: capitalize;
+//   font-weight: bold;
+// }
+
+// .status-badge.pending {
+//   color: #ff9800;
+// }
+
+// .status-badge.accepted {
+//   color: #4caf50;
+// }
+
+// .status-badge.rejected {
+//   color: #f44336;
+// }
+
+// .action-buttons {
+//       display: inline-flex;
+//   gap: 0.2rem;
+//   justify-content: flex-end;
+//   flex-direction: row;
+//   margin: 0;
+//   padding: 0;
+
+// }
+
+// .actions-cell {
+//   text-align: right;
+//   padding-right: 0;
+// //   vertical-align: middle;
+// }
+// .action-button {
+//     padding: 0;
+//     margin: 0;
+// }
+// .approve-btn {
+//   background-color: #00aa6c;
+//   color: white;
+//   border: none;
+//   padding: 0.5rem 1rem;
+//   border-radius: 8px;
+//   cursor: pointer;
+// }
+
+// .reject-btn {
+//   background-color: #dddddd;
+//   color: #333;
+//   border: none;
+//   padding: 0.5rem 1rem;
+//   border-radius: 8px;
+//   cursor: pointer;
+// }
+
+// .mini-stay-preview {
+//     height: 150px;
+//     width: 150px;
+// }
+
+// .stay-col {
+//   width: 400px; /* or more */
+//   max-width: 500px;
+
+//   width: 280px; /* or try 300px, adjust to your needs */
+//   max-width: 100%;
+//   overflow: visible;
+//   white-space: normal;
+
+//   white-space: nowrap;
+//   border-bottom: none;
+
+
+// .order-status{
+//     font-weight: bold;
+// }
+// .order-status.pending{
+//     color: yellow;
+// }
+
+// .order-status.rejected{
+//     color: red;
+// }
+
+// .order-status.accepted{
+//     color: green;
+// }

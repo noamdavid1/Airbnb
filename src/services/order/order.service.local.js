@@ -14,16 +14,16 @@ export const orderService = {
   saveOrder
 }
 
-async function query(userType) {
+async function query(filterBy) {
   const loggedinUser = userService.getLoggedinUser()
   if (!loggedinUser) return []
 
   let orders = await storageService.query(ORDER_KEY)
 
   // if (!user) return Promise.reject('Not logged in')
-  if (userType === 'guest') {    
+  if (filterBy.userType === 'guest') {    
     orders = orders.filter(order => order.user._id === loggedinUser._id)
-  } else if (userType === 'host') {
+  } else if (filterBy.userType === 'host') {
     let hostStays = await stayService.query()
     hostStays = hostStays.filter(stay => stay.host._id === loggedinUser._id)
     let hostStayIds = hostStays.map(hostStay => hostStay._id)
@@ -47,13 +47,13 @@ function saveOrder(order) {
     : storageService.post(ORDER_KEY, order)
 }
 
-async function addOrder({ stayId, from, to, price, guests }) {
+async function addOrder({ stay, from, to, price, guests }) {
   const user = userService.getLoggedinUser()
   if (!user) throw new Error('User must be logged in to place order')
 
   const order = {
     _id: makeId(),
-    stayId,
+    stay,
     user,
     createdAt: Date.now(),
     from,

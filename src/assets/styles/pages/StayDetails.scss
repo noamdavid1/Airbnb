@@ -1,11 +1,13 @@
 .stay-details {
   &.wishlist {
     .title {
-      .heart-svg-container {
-        i {
-          svg {
-            fill: $heartClr;
-            stroke: $heartClr;
+      .title-actions {
+        .heart-svg-container {
+          i {
+            svg {
+              fill: $heartClr;
+              stroke: $heartClr;
+            }
           }
         }
       }
@@ -44,10 +46,10 @@
         border-radius: 8px;
         border: none;
         font-weight: 500;
-        gap:7px;
+        gap: 7px;
         padding-top: 1px;
         padding-bottom: 1px;
-      
+
 
         &:hover {
           cursor: pointer;
@@ -156,43 +158,49 @@
         border-bottom: 1px solid #ddd;
         margin: 24px 0;
       }
+
       .host-details {
         h2 {
           font-size: 16px;
           font-weight: 600;
-          color:  rgb(34, 34, 34);
-          margin-bottom:4px ;
+          color: rgb(34, 34, 34);
+          margin-bottom: 4px;
         }
-      
-        p{
+
+        p {
           font-size: 16px;
           color: rgb(106, 106, 106);
+          font-size: 14px;
         }
       }
-      .divider2{
+
+      .divider2 {
         border: none;
         border-bottom: 1px solid #ddd;
         margin-top: 24px;
         margin-bottom: 32px;
       }
-      .div2row{
+
+      .div2row {
         display: flex;
         gap: 32px;
 
-        .div2-style{
-          h3{
+        .div2-style {
+          h3 {
             font-size: 14px;
             line-height: 20px;
             color: rgb(34, 34, 34);
             font-weight: 600;
           }
-          p{
+
+          p {
             font-size: 14px;
             color: rgb(106, 106, 106);
           }
         }
       }
-      .divider3{
+
+      .divider3 {
         border: none;
         border-bottom: 1px solid #ddd;
         margin-top: 32px;
@@ -206,12 +214,14 @@
       top: 100px;
       align-self: flex-start;
       border: 1px solid #ddd;
-      padding: 1.5rem;
+      // padding: 1.5rem;
+      margin-top: 32px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       background-color: white;
     }
-    .divider4{
+
+    .divider4 {
       border: none;
       border-bottom: 1px solid #ddd;
       margin: 48px 0;

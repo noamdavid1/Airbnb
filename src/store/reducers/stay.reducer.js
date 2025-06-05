@@ -5,6 +5,7 @@ export const ADD_STAY = 'ADD_STAY'
 export const UPDATE_STAY = 'UPDATE_STAY'
 export const ADD_STAY_MSG = 'ADD_STAY_MSG'
 export const SET_FILTER = 'SET_FILTER'
+export const REMOVE_STAY_REVIEW = 'REMOVE_STAY_REVIEW'
 
 const initialState = {
     stays: [],
@@ -50,6 +51,12 @@ export function stayReducer(state = initialState, action) {
             console.log('reducer:', newState.filterBy)
             break
 
+        case REMOVE_STAY_REVIEW:
+            const stayWithoutReview = state.stays.find(stay => stay._id === action.stayId)
+            stayWithoutReview.reviews = stayWithoutReview.reviews.filter(review => review.reviewId !== action.reviewId)
+            stays = state.stays.map(stay => stay._id !== action.stayId ? stay : stayWithoutReview)
+            newState = { ...state, stays }
+            break
         // case SET_FILTER:
         //     newState = {...state, filterBy: { ...action.filterBy }}
         //     console.log('reducer:', newState.filterBy)

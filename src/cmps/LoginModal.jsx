@@ -47,18 +47,22 @@ export function LoginModal({ show, onClose }) {
         }
         }>
             <div className="modal-content" onClick={e => e.stopPropagation()}>
-
-                <header>
+                <div className="modal-header">
+                    <button className="close-button" onClick={closeModal}>&times;</button>
+                    <h1>Log in or sign up</h1>
+                    <span className="header-spacer" /> {/* Just a blank spacer to center the title */}
+                </div>
+                {/* <header>
                     <span className="close-button" onClick={closeModal}>&times;</span>
                     <h1>Log in or sign up</h1>
 
-                </header>
+                </header> */}
 
-                <hr style={{ border: '1px solid black' }} />
+                {/* <hr style={{ border: '0.1px solid #ddd' }} /> */}
                 <p className="welcome-title">Welcome to Staybnb</p>
                 {isSignup && <input type="text" placeholder="Fullname" value={credentials.fullname} name="fullname" onChange={handleChange} />}
                 <input type="text" placeholder="Username" value={credentials.username} name="username" onChange={handleChange} />
-                <input type="text" placeholder="Password" value={credentials.password} name="password" onChange={handleChange} />
+                <input type="password" placeholder="Password" value={credentials.password} name="password" onChange={handleChange} />
                 <button className="submit-btn" onClick={onSubmit}>{isSignup ? 'Sign up' : 'Log in'}</button>
                 <div style={{
                     display: 'flex',

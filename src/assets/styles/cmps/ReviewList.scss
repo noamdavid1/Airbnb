@@ -1,13 +1,19 @@
 // .review-section {
-    
+
 // }
+.review-section {
+    .btn-show-more {
+        margin-bottom: 80px;
+        margin-left: 0;
+    }
+}
 
 .rating-header {
     display: flex;
     align-items: center;
     gap: 0.3em;
     font-size: 1.2em;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 0.5em;
 
     .star-list-svg svg {
@@ -38,6 +44,7 @@
 
     .actions {
         grid-column: 2;
+
         button {
             margin: 0;
             background: none;

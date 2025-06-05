@@ -55,7 +55,7 @@ export function StayPreview({ stay }) {
                             onClick={(e) => handleArrowClick(e, onClickHandler)}
                             className="arrow arrow-prev"
                         >
-                            <SvgIcon iconName={"arrowLeft"} />  
+                            <SvgIcon iconName={"arrow-left"} />  
                         </button>
                     )
                 }

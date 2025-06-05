@@ -18,8 +18,8 @@ function getDefaultFilter() {
       category: ''
     }
 }
-const service = local
-// const service = VITE_LOCAL === 'true' ? local : remote
+// const service = local
+const service = VITE_LOCAL === 'true' ? local : remote
 export const stayService = { getEmptyStay, getDefaultFilter, ...service }
 
 // Easy access to this service from the dev tools console

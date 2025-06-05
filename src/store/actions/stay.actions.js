@@ -4,6 +4,7 @@ import { ADD_STAY, REMOVE_STAY, SET_STAYS, SET_STAY, UPDATE_STAY, ADD_STAY_MSG, 
 
 export async function loadStays(filterBy) {
     try {
+        // console.log("loadStays")
         const stays = await stayService.query(filterBy)
         store.dispatch(getCmdSetStays(stays))
     } catch (err) {
@@ -66,6 +67,17 @@ export async function addStayMsg(stayId, txt) {
     }
 }
 
+export async function removeStayReview(stayId, reviewId) {
+    try {
+        const msg = await stayService.removeStayReview(stayId, reviewId)
+        store.dispatch(getCmdAddStayMsg(msg))
+        return msg
+    } catch (err) {
+        console.log('Cannot add stay msg', err)
+        throw err
+    }
+}
+
 export function setFilterBy(filterBy) {
     console.log('filter action:', filterBy)
     store.dispatch({ type: SET_FILTER, filterBy })
@@ -107,6 +119,14 @@ function getCmdAddStayMsg(msg) {
     return {
         type: ADD_STAY_MSG,
         msg
+    }
+}
+
+function getCmdRemoveStayReview(stayId, reviewId) {
+    return {
+        type: ADD_STAY_MSG,
+        stayId,
+        reviewId
     }
 }
 

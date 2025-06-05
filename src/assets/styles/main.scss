@@ -21,6 +21,7 @@
 @import "pages/ReviewIndex";
 @import "pages/StayDetails";
 @import "pages/HostOrders.scss";
+@import "pages/GuestOrders.scss";
 // @import "pages/UserDetails";
 // @import "pages/TaskDetails";
 // @import "pages/LoginSignup";
@@ -51,3 +52,6 @@
 @import "cmps/search-bar/AnyWeek.scss";
 @import "cmps/search-bar/AddGuests.scss";
 @import "cmps/search-bar/ModalWrapper.scss";
+@import "cmps/MiniStayPreview.scss";
+@import "cmps/MiniUser.scss";
+
