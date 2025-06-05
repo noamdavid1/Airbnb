@@ -1,14 +1,29 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { AnyWeek } from './search-bar/AnyWeek'
 import { AddGuests } from './search-bar/AddGuests'
 import { orderService } from '../services/order/index.js'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import dayjs from 'dayjs'
 
-export function StayOrder({ stay }) {
+export function StayOrder({ stay , searchParams}) {
   const [modalType, setModalType] = useState('')
   const [dates, setDates] = useState({ from: null, to: null })
   const [guests, setGuests] = useState({ adults: 1, children: 0, infants: 0, pets: 0 })
+
+ useEffect(() => {
+  const checkIn = searchParams.get('checkIn')
+  const checkOut = searchParams.get('checkOut')
+
+  if (checkIn && checkOut) {
+    const from = new Date(checkIn)
+    const to = new Date(checkOut)
+
+    if (!isNaN(from) && !isNaN(to)) {
+      setDates({ from, to })
+    }
+  }
+}, [searchParams])
+
 
   const pricePerNight = stay.price
   const cleaningFee = 30
@@ -23,7 +38,23 @@ export function StayOrder({ stay }) {
     pricePerNight * nightsCount + cleaningFee + serviceFee
 
   async function onReserve() {
-    // console.log("on reserve")
+    const { from, to } = dates
+    const totalGuests = guests.adults + guests.children
+    
+    if (!from || !to) {
+      showErrorMsg('Please select check-in and check-out dates.')
+      return
+    }
+  
+    if (from >= to) {
+      showErrorMsg('Check-out must be after check-in.')
+      return
+    }
+    if (totalGuests === 0) {
+      showErrorMsg('Please select at least one guest.')
+      return
+    }
+  
     try {
       await orderService.addOrder({
         stay,
@@ -32,7 +63,6 @@ export function StayOrder({ stay }) {
         price: totalPrice,
         guests,
       })
-      // console.log("order added succefuly");
       showSuccessMsg('Reservation successful!')
     } catch (err) {
       showErrorMsg('Failed to reserve stay.')

@@ -1,10 +1,18 @@
 .app-header {
-	// padding: 1rem 2rem;
 	background-color: white;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	position: sticky;
 	top: 0;
 	z-index: 100;
+	transition: min-height 0.3s ease;
+
+	&.expanded {
+		min-height: 193px;
+	  }
+	
+	  &.collapsed {
+		min-height: 102px;
+	  }
 
 	.header-nav {
 		display: flex;
@@ -18,7 +26,7 @@
 
 	}
 	.header-nav.stay-layout{
-		padding: 8px 285px;
+		padding: 8px 277px;
 	}
 
 	.header-left,

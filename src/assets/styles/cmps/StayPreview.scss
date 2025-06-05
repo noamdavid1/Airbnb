@@ -26,22 +26,11 @@
         padding-bottom: 8px;
     }
 
-    span {
-        // font-family:cereal-regular-lite;
-    }
-
     h2 {
         // font-family:cereal-regular-lite;
         color: $gray5;
     }
 
-    h1 {
-        // font-family:cereal-regular-lite;
-    }
-
-    p {
-        // font-family:cereal-regular-lite;
-    }
 
     img {
         // border-radius: 10px;
@@ -59,8 +48,8 @@
         position: absolute;
         top: 12px;
         right: 12px;
-        svg {
-        }
+        // svg {
+        // }
         &:hover {
             transform: scale(1.08);
             cursor: pointer;
@@ -77,8 +66,8 @@
         color: $clr7;
         align-items: center;
         gap: 4px;
-        svg {
-        }
+        // svg {
+        // }
     }
 
     &.wishlist {

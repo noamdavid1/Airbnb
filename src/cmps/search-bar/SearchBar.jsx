@@ -4,16 +4,10 @@ import dayjs from 'dayjs'
 import { Anywhere } from "./Anywhere"
 import { AnyWeek } from "./AnyWeek"
 import { AddGuests } from "./AddGuests"
-import { useSelector } from "react-redux"
 import SvgIcon from '../SvgIcon'
+import { ModalWrapper } from "./ModalWarpper"
 
-function ModalWrapper({ type, children }) {
-    return (
-        <section className={`modal-wrapper ${type}`}>{children}</section>
-    )
-}
-
-export function SearchBar({ initialModalType = '' }) {
+export function SearchBar({ initialModalType = '', filterBy}) {
 
     const navigate = useNavigate()
 
@@ -28,7 +22,6 @@ export function SearchBar({ initialModalType = '' }) {
     const [activeTab, setActiveTab] = useState('Homes')
     const [searchTerm, setSearchTerm] = useState('')
 
-    // const filterBy = useSelector(storeState => storeState.stayModule.filterBy)
 
     const tabRefs = {
         Homes: useRef(null),
@@ -43,9 +36,13 @@ export function SearchBar({ initialModalType = '' }) {
         }
     }, [initialModalType])
 
+    // const handleClick = (type) => {
+    //     setModalType(prev => prev === type ? '' : type)
+    // }
+
     const handleClick = (type) => {
-        setModalType(prev => prev === type ? '' : type)
-    }
+        setModalType(type)
+      }
 
     const handleChange = ({ target }) => {
         const field = target.name
@@ -54,9 +51,10 @@ export function SearchBar({ initialModalType = '' }) {
     }
 
     const onSubmitFilter = () => {
+        const newFilter = {...filterBy, ...draftFilterBy}
         const params = new URLSearchParams()
-        for (const key in draftFilterBy) {
-            if (draftFilterBy[key]) params.set(key, draftFilterBy[key])
+        for (const key in newFilter) {
+            if (newFilter[key]) params.set(key, newFilter[key])
         }
         navigate({ search: params.toString() })
     }
@@ -97,6 +95,7 @@ export function SearchBar({ initialModalType = '' }) {
         }
         return {}
     }
+
     return (
         <section className="search-bar-sec">
             <div className="header-tabs-wrapper">
@@ -150,6 +149,7 @@ export function SearchBar({ initialModalType = '' }) {
                         />
                     </div>
                 </div>
+                <span className="sep-modal">|</span>
                 <div className="wrapper check-in">
                     <div className="search-bar-text check-in" onClick={() => handleClick('check-in')}>
                         <span className="title">Check in</span>
@@ -162,6 +162,7 @@ export function SearchBar({ initialModalType = '' }) {
                         />
                     </div>
                 </div>
+                <span className="sep-modal">|</span>
                 <div className="wrapper check-out">
                     <div className="search-bar-text" onClick={() => handleClick('check-out')}>
                         <span className="title">Check out</span>
@@ -174,6 +175,7 @@ export function SearchBar({ initialModalType = '' }) {
                         />
                     </div>
                 </div>
+                <span className="sep-modal">|</span>
                 <div className="wrapper who">
                     <div className="search-bar-text" onClick={() => handleClick('who')}>
                         <span className="title">Who</span>
@@ -184,8 +186,8 @@ export function SearchBar({ initialModalType = '' }) {
                             value={draftFilterBy.guests}
                             onChange={handleChange}
                             readOnly
-                        />
-                    </div>
+                        /> 
+                    </div> 
                     <div className="search-icon-div" onClick={onSubmitFilter}>
                         <SvgIcon iconName={"search-icon"} />
                     </div>
@@ -193,7 +195,7 @@ export function SearchBar({ initialModalType = '' }) {
 
 
                 {modalType === 'where' && (
-                    <ModalWrapper modalType={modalType}>
+                    <ModalWrapper type={modalType}>
                         <Anywhere
                             searchTerm={searchTerm}
                             onClose={() => setModalType('')}
@@ -212,9 +214,9 @@ export function SearchBar({ initialModalType = '' }) {
                 )}
 
                 {modalType === 'check-in' && (
-                    <ModalWrapper modalType={modalType}>
+                    <ModalWrapper type={modalType}>
                         <AnyWeek
-                            // onClose={() => setModalType('')}
+                            onClose={() => setModalType('')}
                             onSetDates={onSetDates}
                             checkInDate={draftFilterBy.checkIn ? dayjs(draftFilterBy.checkIn) : null}
                             checkOutDate={draftFilterBy.checkOut ? dayjs(draftFilterBy.checkOut) : null}
@@ -223,7 +225,7 @@ export function SearchBar({ initialModalType = '' }) {
                 )}
 
                 {modalType === 'who' && (
-                    <ModalWrapper modalType={modalType}>
+                    <ModalWrapper type={modalType}>
                         <AddGuests
                             onClose={() => setModalType('')}
                             onSetGuests={onSetGuests}

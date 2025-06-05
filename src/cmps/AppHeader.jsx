@@ -21,27 +21,59 @@ export function AppHeader() {
 	const isStayDetails = location.pathname.startsWith('/stay/');
 
 	const loggedinUser = useSelector(storeState => storeState.userModule.loggedinUser)
+	const filterBy = useSelector(storeState => storeState.stayModule.filterBy)
+
+	// useEffect(() => {
+	// 	const handleScroll = () => {
+	// 		setIsScrolled(window.scrollY > 50)
+	// 		if (window.scrollY <= 50) setIsExpanded(false)
+	// 	}
+
+	// 	const handleClickOutside = (event) => {
+	// 		if (menuRef.current && !menuRef.current.contains(event.target)) {
+	// 			setIsMenuOpen(false);
+	// 		}
+	// 	}
+
+	// 	document.addEventListener('click', handleClickOutside)
+	// 	window.addEventListener('scroll', handleScroll)
+
+	// 	return () => {
+	// 		window.removeEventListener('scroll', handleScroll)
+	// 		document.removeEventListener('click', handleClickOutside);
+	// 	}
+	// }, [])
 
 	useEffect(() => {
 		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 50)
-			if (window.scrollY <= 50) setIsExpanded(false)
-		}
-
+			const scrollY = window.scrollY;
+	
+			// אם לא במצב סקורל, והסקרול עבר 60 => הפוך ל־scrolled
+			if (!isScrolled && scrollY > 60) {
+				setIsScrolled(true);
+			}
+			// אם כן במצב סקורל, אבל חזר למטה מתחת ל־40 => חזור ללא-סקורל
+			else if (isScrolled && scrollY < 40) {
+				setIsScrolled(false);
+				setIsExpanded(false); // סגור את ההרחבה אם חוזרים למעלה
+			}
+		};
+	
 		const handleClickOutside = (event) => {
 			if (menuRef.current && !menuRef.current.contains(event.target)) {
 				setIsMenuOpen(false);
 			}
-		}
-
-		document.addEventListener('click', handleClickOutside)
-		window.addEventListener('scroll', handleScroll)
-
+		};
+	
+		document.addEventListener('click', handleClickOutside);
+		window.addEventListener('scroll', handleScroll);
+	
 		return () => {
-			window.removeEventListener('scroll', handleScroll)
+			window.removeEventListener('scroll', handleScroll);
 			document.removeEventListener('click', handleClickOutside);
-		}
-	}, [])
+		};
+	}, [isScrolled]);
+	
 
 	const handleExpandSearch = (type = '') => {
 		setInitialModalType(type)
@@ -58,7 +90,7 @@ export function AppHeader() {
 	}
 
 	return (
-		<header className="app-header full">
+		<header className={`app-header full ${isExpanded ? 'expanded' : 'collapsed'}`}>
 			<nav className={`header-nav main-container ${isStayDetails ? 'stay-layout' : ''} ${((isScrolled && !isExpanded) || isWishlistPage || isStayDetails) ? 'scrolled' : ''}`}>
 				<div className="header-left">
 					<NavLink to="/" className="logo">
@@ -75,7 +107,7 @@ export function AppHeader() {
 						{!isExpanded && (isScrolled || isStayDetails) ? (
 							<SearchBarScroll onExpandSearch={handleExpandSearch} />
 						) : (
-							<SearchBar initialModalType={initialModalType} />
+							<SearchBar initialModalType={initialModalType} filterBy={filterBy} />
 						)}
 					</div>}
 

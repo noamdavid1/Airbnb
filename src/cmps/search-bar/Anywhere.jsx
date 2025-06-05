@@ -11,7 +11,7 @@ const cities = [
     city: "Montreal",
     country: "Canada",
     phrase: "Charming French-Canadian city",
-    iconImg: "http://res.cloudinary.com/dmtlr2viw/image/upload/v1663437045/dmquvficldi8ssfdlrrx.jpg"
+    iconImg: "/cityIcon/Amsterdam.png"
   },
   {
     city: "Porto",
@@ -41,7 +41,7 @@ const cities = [
     city: "Hong Kong",
     country: "Hong Kong",
     phrase: "Vibrant urban skyline",
-    iconImg: "http://res.cloudinary.com/dmtlr2viw/image/upload/v1663436867/yocip4igdbruuh2grzpf.jpg"
+    iconImg: "/cityIcon/Bucharest.png"
   },
   {
     city: "Sydney",
@@ -62,23 +62,28 @@ export function Anywhere({ searchTerm, selectedCity, onSelect, onClose }) {
   const modalRef = useRef()
 
   useEffect(() => {
-    const filtered = cities.filter(city =>
-      city.city.toLowerCase().includes(searchTerm.toLowerCase())
-    )
-    setFilteredCities(filtered)
+    if (searchTerm) {
+      setFilteredCities(cities)
+    } else {
+      const filtered = cities.filter(city =>
+        city.city.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+      setFilteredCities(filtered)
+    }
   }, [searchTerm])
 
-  // useEffect(() => {
-  //   const handleClickOutside = (event) => {
-  //     if (modalRef.current && !modalRef.current.contains(event.target)) {
-  //       onClose()
-  //     }
-  //   }
-  //   document.addEventListener('mousedown', handleClickOutside)
-  //   return () => {
-  //     document.removeEventListener('mousedown', handleClickOutside)
-  //   }
-  // }, [onClose])
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        onClose()
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [onClose])
 
   const handleSelectCity = (city) => {
     setSelected(city.city)

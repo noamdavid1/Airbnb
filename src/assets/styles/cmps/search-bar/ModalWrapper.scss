@@ -1,0 +1,31 @@
+.modal-wrapper {
+    position: absolute;
+    top: 100%;
+    margin-top: 0.75rem;
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    touch-action: none;
+    overscroll-behavior: contain;
+    overflow-y: auto;
+}
+
+.modal-wrapper.where{
+    position: absolute;
+    left: 0;
+    width: 50%;
+    
+}
+
+.modal-wrapper.check-in,
+.modal-wrapper.check-out{
+    width: 100%;
+    height: fit-content;
+}
+
+.modal-wrapper.who{
+    position: absolute;
+    right: 0;
+    width: 50%;
+}

@@ -9,6 +9,7 @@ export function CategoryFilter({ filterBy }) {
   const typeCategory = stayService.getStayCategories()
   const navigate = useNavigate()
 
+  const itemsPerPage = 17;
 
   function changeFilter(type) {
     const newFilter = { ...filterBy, category: type }
@@ -16,27 +17,28 @@ export function CategoryFilter({ filterBy }) {
     for (const key in newFilter) {
       if (newFilter[key]) params.set(key, newFilter[key])
     }
-    navigate({ search: params.toString() }) // StayIndex תעדכן את filterBy
+    navigate({ search: params.toString() })
   }
 
   const responsive = {
     allScreens: {
       breakpoint: { max: 3000, min: 0 },
-      items: 14,
-      slidesToSlide: 1,
+      items: itemsPerPage,
+      slidesToSlide: itemsPerPage,
     }
   };
 
+
   const CustomLeftArrow = ({ onClick }) => (
-    <button onClick={onClick} className="custom-arrow left">
-      <SvgIcon iconName={"arrow-left"} />
-    </button>
+      <button onClick={onClick} className="custom-arrow left">
+        <SvgIcon iconName={"arrow-left"} />
+      </button>
   );
 
   const CustomRightArrow = ({ onClick }) => (
-    <button onClick={onClick} className="custom-arrow right">
-      <SvgIcon iconName={"arrow-right"} />
-    </button>
+      <button onClick={onClick} className="custom-arrow right">
+        <SvgIcon iconName={"arrow-right"} />
+      </button>
   );
 
 
