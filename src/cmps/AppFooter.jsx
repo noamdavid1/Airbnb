@@ -4,7 +4,7 @@ export function AppFooter() {
 
 	return (
 		<footer className="app-footer full">
-			<p>Coffeerights &copy; 2024</p>
+			<p>Coffeerights &copy; 2025</p>
             
             {import.meta.env.VITE_LOCAL ? 
                 <span className="local-services">Local Services</span> : 

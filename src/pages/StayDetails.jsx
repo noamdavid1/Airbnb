@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
@@ -24,6 +24,8 @@ export function StayDetails() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const orderRef = useRef()
   const reviewsRef = useRef()
+  const location = useLocation()
+  const searchParams = new URLSearchParams(location.search)
 
 
   useEffect(() => {
@@ -184,7 +186,7 @@ export function StayDetails() {
         </div>
 
         <div className="stay-info-right" ref={orderRef}>
-          <StayOrder stay={stay} />
+          <StayOrder stay={stay} searchParams= {searchParams} />
         </div>
       </div>
       {/* <hr className="divider4" /> */}

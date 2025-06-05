@@ -21,7 +21,7 @@ export const stayService = {
 window.cs = stayService
 
 
-async function query(filterBy = {  category: '', txt: '', price: 0 }) {
+async function query(filterBy = {  category: '', location: '', guests: '' }) {
     try  {
         let stays  = await storageService.query(STORAGE_KEY)
 
@@ -29,6 +29,17 @@ async function query(filterBy = {  category: '', txt: '', price: 0 }) {
             console.log('service, query, filter type:', filterBy.category);
             stays = stays.filter(stay => (Array.isArray(stay.categories) && stay.categories.includes(filterBy.category)))
         }
+
+        if (filterBy.location) {
+            console.log('service, query, filter type:', filterBy.location);
+            stays = stays.filter(stay => (stay.loc.city === filterBy.location))
+        }
+
+        if (filterBy.guests) {
+            console.log('service, query, filter type:', filterBy.guests);
+            stays = stays.filter(stay => (stay.maxGuests >= filterBy.guests))
+        }
+
 
         if (filterBy.wishlist) {
             stays = stays.filter(stay => filterBy.wishlist.includes(stay._id))

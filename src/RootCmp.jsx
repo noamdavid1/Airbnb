@@ -20,7 +20,6 @@ export function RootCmp() {
     return (
         <div className={`main-container ${isStayDetails ? 'stay-layout' : ''}`}>
             <AppHeader/>
-            {/* <UserMsg /> */}
             <main>
                 <Routes>
                     <Route path="/" element={<StayIndex />} />
@@ -29,7 +28,7 @@ export function RootCmp() {
                     <Route path="/hosting/order" element={<HostOrders />} />   
                     <Route path="/trips" element={<GuestOrders />} />   
                 </Routes>
-                {/* <UserMsg /> */}
+                <UserMsg />
             </main>
             <AppFooter />
         </div>

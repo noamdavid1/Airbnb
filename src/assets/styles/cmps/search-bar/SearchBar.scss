@@ -1,208 +1,160 @@
-		.header-tabs-wrapper {
-			width: 100%;
-			display: flex;
-			justify-content: center;
-		}
-
-		.header-tabs {
-			position: relative;
-			display: flex;
-			justify-content: center;
-			margin-bottom: 16px;
-			margin-top: 28px;
-			padding: 0 46px;
-
-			.tab-btn {
-				background: none;
-				border: none;
-				font-size: 16px;
-				font-weight: 600;
-				cursor: pointer;
-				color: #717171;
-				display: flex;
-				align-items: center;
-				padding: 0;
-				gap: 0px;
-
-				.tab-icon {
-					width: 85px;
-					height: 40px;
-
-					.tab-img {
-						width: 100%;
-						height: 100%;
-						object-fit: cover;
-					}
-				}
-
-				&.active {
-					color: black;
-					font-weight: 600;
-				}
-			}
-
-			.tab-underline {
-				position: absolute;
-				bottom: -2px;
-				height: 2px;
-				background-color: black;
-				transition: all 0.3s ease;
-			}
-		}
-
-		.search-bar {
-			display: flex;
-			justify-content: flex-start;
-			position: relative;
-			align-items: center;
-
-			gap: 5px;
-			padding: 0.35rem 1rem;
-			border: 1px solid var(--grey);
-			border-radius: 2rem;
-			box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
-			background-color: white;
-			max-width: none;
-			box-sizing: border-box;
-			flex-wrap: nowrap;
-
-		}
-
-		.search-bar:hover {
-			box-shadow: 0 1px 2px rgb(0 0 0 / 15%), 0 4px 12px rgb(0 0 0 / 10%);
-			background-color: #f1f1f1;
-			transition: all 0.2s;
-			cursor: pointer;
-		}
+.search-bar-sec {
+	position: relative;
+}
 
 
+.header-tabs-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
 
-		.wrapper.where,
-		.wrapper.who {
-			width: 278px;
-			height: 66px;
-			flex: 0 0 auto;
-			display: flex;
-			align-items: center;
-		}
+.header-tabs {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 16px;
+	margin-top: 28px;
+	padding: 0 46px;
 
-		.wrapper.check-in,
-		.wrapper.check-out {
-			width: 139px;
-			height: 66px;
-			flex: 0 0 auto;
-		}
+	.tab-btn {
+		background: none;
+		border: none;
+		font-size: 16px;
+		font-weight: 600;
+		cursor: pointer;
+		color: #717171;
+		display: flex;
+		align-items: center;
+		padding: 0;
+		gap: 0px;
 
-		.search-bar-text {
-			font-weight: 600;
-			font-size: 14px;
-			border-right: 1px solid var(--grey);
-			padding: 0.5rem;
-			display: flex;
-			flex-direction: column;
-		}
+		.tab-icon {
+			width: 85px;
+			height: 40px;
 
-		.search-bar-text.anywhere {
-			width: 141px;
-			height: 48px;
-		}
-
-		.search-bar-text.any-week {
-			width: 90px;
-			height: 48px;
-		}
-
-		.search-bar-text.add-guests {
-			width: 108px;
-			height: 48px;
-		}
-
-		.search-bar-input {
-			// all: unset;
-			// font-weight: 400;
-			// font-size: 0.8rem;
-			// color: #717171;
-			// padding-left: 0.2rem;
-			// white-space: nowrap;
-			// overflow: hidden;
-			// text-overflow: ellipsis;
-			// overflow-y: auto;
-			border: none;
-			outline: none;
-			padding: 12px 16px;
-			width: 100%;
-			border-radius: 8px;
-			background-color: #f7f7f7;
-			color: #222;
-		}
-
-		.search-icon-div {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background-color: #FF385C;
-			padding: 0.5rem;
-			border-radius: 50%;
-			color: white;
-			width: 2rem;
-			height: 2rem;
-		}
-
-		.modal-wrapper {
-			position: absolute;
-			top: 100%;
-			margin-top: 0.75rem;
-			padding: 1em 1.5em;
-			background-color: white;
-			border-radius: 2rem;
-			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-			z-index: 10;
-			touch-action: none;
-			overscroll-behavior: contain;
-			overflow-y: auto;
-
-			&.where {
-				left: 0;
-				width: 50%;
-			}
-
-			&.check-in,
-			&.check-out {
+			.tab-img {
 				width: 100%;
-				height: fit-content;
-			}
-
-			&.who {
-				right: 0;
-				width: 50%;
+				height: 100%;
+				object-fit: cover;
 			}
 		}
 
-		// .any-week-picker {
-		// 	.react-datepicker {
-		// 		font-family: inherit;
-		// 		border: none;
-		// 		display: flex;
-		// 		justify-content: center;
-		// 		gap: 1rem;
-		// 	}
+		&.active {
+			color: black;
+			font-weight: 600;
+		}
+	}
 
-		// 	.react-datepicker__month-container {
-		// 		background-color: white;
-		// 		border-radius: 1rem;
-		// 		box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-		// 	}
+	.tab-underline {
+		position: absolute;
+		bottom: -2px;
+		height: 2px;
+		background-color: black;
+		transition: all 0.3s ease;
+	}
+}
 
-		// 	.react-datepicker__day--selected,
-		// 	.react-datepicker__day--in-range,
-		// 	.react-datepicker__day--range-start,
-		// 	.react-datepicker__day--range-end {
-		// 		background-color: #FF385C;
-		// 		color: white;
-		// 	}
+.search-bar {
+	display: flex;
+	justify-content: flex-start;
+	position: relative;
+	align-items: center;
 
-		// 	.react-datepicker__day--keyboard-selected {
-		// 		background-color: #ddd;
-		// 		color: black;
-		// 	}
-		// }
+	gap: 5px;
+	padding: 0.35rem 1rem;
+	border: 1px solid var(--grey);
+	border-radius: 2rem;
+	box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+	background-color: white;
+	max-width: none;
+	box-sizing: border-box;
+	flex-wrap: nowrap;
+
+	.sep-modal{
+		border: none;
+		color: #e4e2e2;;
+		height: auto;
+    	// border-top: 1px solid #eee;
+    	margin: 0;
+	}
+
+}
+
+.search-bar:hover {
+	box-shadow: 0 1px 2px rgb(0 0 0 / 15%), 0 4px 12px rgb(0 0 0 / 10%);
+	background-color: #f1f1f1;
+	transition: all 0.2s;
+	cursor: pointer;
+}
+
+.wrapper.where,
+.wrapper.who {
+	width: 278px;
+	height: 66px;
+	flex: 0 0 auto;
+	display: flex;
+	align-items: center;
+}
+
+.wrapper.check-in,
+.wrapper.check-out {
+	width: 139px;
+	height: 66px;
+	flex: 0 0 auto;
+}
+
+.search-bar-text {
+	font-weight: 600;
+	font-size: 14px;
+	border-right: 1px solid var(--grey);
+	padding: 0.5rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.search-bar-text.anywhere {
+	width: 141px;
+	height: 48px;
+}
+
+.search-bar-text.any-week {
+	width: 90px;
+	height: 48px;
+}
+
+.search-bar-text.add-guests {
+	width: 108px;
+	height: 48px;
+}
+
+.search-bar-input {
+	// all: unset;
+	// font-weight: 400;
+	// font-size: 0.8rem;
+	// color: #717171;
+	// padding-left: 0.2rem;
+	// white-space: nowrap;
+	// overflow: hidden;
+	// text-overflow: ellipsis;
+	// overflow-y: auto;
+	border: none;
+	outline: none;
+	padding: 12px 16px;
+	width: 100%;
+	border-radius: 8px;
+	background-color: #f7f7f7;
+	color: #222;
+}
+
+.search-icon-div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #FF385C;
+	padding: 0.5rem;
+	border-radius: 50%;
+	color: white;
+	width: 2rem;
+	height: 2rem;
+}

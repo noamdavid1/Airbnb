@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Typography } from '@mui/material'
 import SvgIcon from '../SvgIcon'
 
 export function AddGuests({ onClose, onSetGuests, defaultAdults = 0 }) {
@@ -31,14 +30,6 @@ export function AddGuests({ onClose, onSetGuests, defaultAdults = 0 }) {
     onSetGuests?.({ adults, children, infants, pets })
   }, [adults, children, infants, pets])
 
-  const iconButtonStyle = (disabled) => ({
-    border: '1px solid #ccc',
-    borderRadius: '50%',
-    padding: '5px',
-    opacity: disabled ? 0.3 : 1,
-    pointerEvents: disabled ? 'none' : 'auto'
-  })
-
   const GuestCounter = ({ label, value, setValue, min = 0, max = 10, requireAdult = false }) => {
     const handleAdd = () => {
       if (requireAdult && adults === 0) setAdults(1)
@@ -48,8 +39,6 @@ export function AddGuests({ onClose, onSetGuests, defaultAdults = 0 }) {
     const handleRemove = () => {
       setValue(prev => Math.max(min, prev - 1))
     }
-
-    const isRemoveDisabled = value <= min
 
     const getHelperText = (label) => {
       switch (label) {
@@ -66,31 +55,38 @@ export function AddGuests({ onClose, onSetGuests, defaultAdults = 0 }) {
       }
     }
     return (
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '12px 0'}}>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <Typography>{label}</Typography>
-          <div style={{ fontSize: '12px', color: '#717171' }}>{getHelperText(label)}</div>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <div className='minus-svg-container' onClick={handleRemove} style={iconButtonStyle(isRemoveDisabled)}>
-            <SvgIcon iconName={"minus"} />
-          </div>
-          <span style={{ margin: '0 12px', minWidth: '16px', textAlign: 'center' }}>{value}</span>
-          <div className='plus-svg-container' onClick={handleAdd} style={iconButtonStyle(false)}>
-            <SvgIcon iconName={"plus"} />
-          </div>
-        </div>
-      </div>
-    )
+            <div className="guest-counter">
+              <div className="guest-label">
+                <div className="guest-title">{label}</div>
+                <div className="guest-subtitle">{getHelperText(label)}</div>
+              </div>
+              <div className="guest-controls">
+                <button
+                  className={`counter-btn ${value <= min ? 'disabled' : ''}`}
+                  onClick={handleRemove}
+                  disabled={value <= min}
+                >
+                  <SvgIcon iconName="minus" />
+                </button>
+                <span className="guest-value">{value}</span>
+                <button className="counter-btn" onClick={handleAdd}>
+                  <SvgIcon iconName="plus" />
+                </button>
+              </div>
+            </div>
+          )
   }
 
   const minAdults = (children > 0 || infants > 0 || pets > 0) ? 1 : 0
 
   return (
-    <div ref={modalRef}>
+    <div ref={modalRef} className="add-guests-modal">
       <GuestCounter label="Adults" value={adults} setValue={setAdults} min={minAdults} />
+      <hr className='guest-hr'/>
       <GuestCounter label="Children" value={children} setValue={setChildren} requireAdult />
+      <hr className='guest-hr'/>
       <GuestCounter label="Infants" value={infants} setValue={setInfants} max={5} requireAdult />
+      <hr className='guest-hr'/>
       <GuestCounter label="Pets" value={pets} setValue={setPets} requireAdult />
     </div>
   )

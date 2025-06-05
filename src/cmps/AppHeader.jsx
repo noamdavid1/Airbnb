@@ -21,6 +21,7 @@ export function AppHeader() {
 	const isStayDetails = location.pathname.startsWith('/stay/');
 
 	const loggedinUser = useSelector(storeState => storeState.userModule.loggedinUser)
+	const filterBy = useSelector(storeState => storeState.stayModule.filterBy)
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -75,7 +76,7 @@ export function AppHeader() {
 						{!isExpanded && (isScrolled || isStayDetails) ? (
 							<SearchBarScroll onExpandSearch={handleExpandSearch} />
 						) : (
-							<SearchBar initialModalType={initialModalType} />
+							<SearchBar initialModalType={initialModalType} filterBy={filterBy} />
 						)}
 					</div>}
 
