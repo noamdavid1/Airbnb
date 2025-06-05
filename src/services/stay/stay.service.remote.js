@@ -10,6 +10,9 @@ export const stayService = {
 }
 
 async function query(filterBy = {}) {
+    if(filterBy.wishlist){
+        filterBy.wishlist = true
+    }
     console.log("----stayService remote query", filterBy);
     return await httpService.get(`stay`, filterBy)
 }
