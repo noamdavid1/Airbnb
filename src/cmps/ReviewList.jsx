@@ -4,7 +4,7 @@ import { ReviewPreview } from './ReviewPreview.jsx';
 import SvgIcon from './SvgIcon.jsx';
 
 // export function ReviewList({ reviews, onRemoveReview }) {
-    
+
 //     return <section>
 //         {reviews && reviews.length ? <ul className="list review-list">
 //             <div className='raiting-list'>
@@ -32,11 +32,11 @@ import SvgIcon from './SvgIcon.jsx';
 
 export function ReviewList({ reviews, onRemoveReview, stay }) {
     const [showAll, setShowAll] = useState(false);
-    const visibleReviews = showAll ? reviews : reviews.slice(0, 6); 
-
+    const visibleReviews = showAll ? reviews : reviews.slice(0, 6);
+    // console.log({ reviews })
     return (
         <section className="review-section">
-            <hr className='hr-reviewlist'/>
+            <hr className='hr-reviewlist' />
             {reviews && reviews.length ? (
                 <>
                     <div className='rating-header'>
@@ -47,21 +47,22 @@ export function ReviewList({ reviews, onRemoveReview, stay }) {
                         <span className='review-count'> {stay.reviews.length} reviews</span>
                     </div>
 
-                    <hr className='hr-reviewlist'/>
+                    <hr className='hr-reviewlist' />
 
                     <ul className="review-list">
                         {visibleReviews.map(review => (
                             <li key={review.reviewId}>
                                 <ReviewPreview review={review} />
                                 <div className="actions">
-                                    <button onClick={() => onRemoveReview(review.reviewId)}>x</button>
+                                    {/* <button onClick={() => onRemoveReview(review.reviewId)}>x</button> */}
                                 </div>
                             </li>
                         ))}
                     </ul>
 
                     {!showAll && reviews.length > 6 && (
-                        <button className="show-more-btn" onClick={() => setShowAll(true)}>
+                        <button className="btn-show-more" onClick={() => setShowAll(true)}>
+                            {/* <button className="show-more-btn" onClick={() => setShowAll(true)}></button> */}
                             Show more reviews
                         </button>
                     )}

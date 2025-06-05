@@ -1,19 +1,29 @@
 .mini-user-preview {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  width: 100px; /* optional: adjust size */
-}
-
-.avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%; /* round image */
-  object-fit: cover;
-}
-
-.user-info h4 {
-  margin-top: 8px;
-  font-size: 14px;
-  text-align: center;
+  
+  gap:12px;
+  width: 100%;
+  overflow: visible;
+  // width: 100px; /* optional: adjust size */
+  .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* round image */
+    object-fit: cover;
+  }
+  
+  .user-info {
+    margin-top: 8px;
+    font-size: 14px;
+    text-align: start;
+    .fullname {
+      font-weight: 500;
+    }
+  
+    .user-extra-info{
+      font-weight: 400;
+    }
+  }
 }

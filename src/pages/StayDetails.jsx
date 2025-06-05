@@ -14,6 +14,7 @@ import SvgIcon from '../cmps/SvgIcon'
 import { updateWishlist } from '../store/actions/user.actions'
 import { LoginModal } from '../cmps/LoginModal'
 import { StayDescription } from '../cmps/StayDescription'
+import { MiniUser } from '../cmps/MiniUser'
 
 
 export function StayDetails() {
@@ -93,8 +94,8 @@ export function StayDetails() {
 
   async function onRemoveReview(reviewId) {
     try {
-      console.log({stayId}, {reviewId});
-      
+      console.log({ stayId }, { reviewId });
+
       await removeStayReview(stayId, reviewId)
       showSuccessMsg('Review removed')
     } catch (err) {
@@ -139,19 +140,22 @@ export function StayDetails() {
             </div>
             <div className='raiting-info'>
               <div className='star-svg'><SvgIcon iconName={"star2"} /></div>
-              <span className='rating'>{Number.isInteger(stay.rating) ? stay.rating.toFixed(1) : stay.rating} · </span>
-              <span className='review-count'> {stay.reviews.length} reviews</span>
+              <span className='rating'>{Number.isInteger(stay.rating) ? stay.rating.toFixed(1) : stay.rating} ·{'\u00A0'}</span>
+              <span className='review-count'>{stay.reviews.length} reviews</span>
             </div>
           </div>
           <hr className="divider" />
           <div className="host-details">
-            <h2>Hosted by {stay.host.fullname}</h2>
-            {stay.host.superhost &&
-              <p>
-                Superhost ·
-              </p>
-            }
-            <p> 7 years hosting</p>
+            <MiniUser miniUser={stay.host} namePrefix={"Hosted by"}>
+              <>
+                {stay.host.superhost &&
+                  <p>
+                    Superhost ·
+                  </p>
+                }
+                <p> 7 years hosting</p>
+              </>
+            </MiniUser>
           </div>
           <hr className="divider2" />
 
@@ -178,10 +182,10 @@ export function StayDetails() {
           </div>
           <hr className="divider3" />
 
-          <StayDescription />
+          <StayDescription fullDescription={stay.summary} />
 
 
-
+          <hr className="divider2" />
           <StayAmenities stayAmenities={stay.amenities} />
         </div>
 

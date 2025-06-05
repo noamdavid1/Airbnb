@@ -5,6 +5,8 @@ export function StayAmenities({ stayAmenities }) {
 
     const amenitiesToShow = stayAmenities.slice(0, 10)
 
+    console.log(stayAmenities);
+    
     // useState
 
     // useEffect(() => {
@@ -57,6 +59,6 @@ export function StayAmenities({ stayAmenities }) {
             )}
         </ul>
 
-        <h4 onClick={onDisplayAllAmenities}>Show all {stayAmenities.length} amenities</h4>
+        <button className="btn-show-more" onClick={onDisplayAllAmenities}>Show all {stayAmenities.length} amenities</button>
     </section>
 }

@@ -1,15 +1,26 @@
-.stay-amenities-list {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: repeat(5, auto);
-    width: fit-content;
-    h2{
+.stay-amenities {
+    h2 {
         font-size: 22px;
         font-weight: 500;
-        color: rgb(34, 34, 34) ;
+        color: rgb(34, 34, 34);
     }
-    li{
-        display: flex;
-        gap: 17px;
+
+    .stay-amenities-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5, auto);
+        width: fit-content;
+        height: 240px;
+
+        width: 667px;
+        li {
+            display: flex;
+            gap: 17px;
+            font-size: 16px;
+        }
+    }
+
+    .btn-show-more{
+        margin-left: 0;
     }
 }

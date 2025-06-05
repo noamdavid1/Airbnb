@@ -12,7 +12,6 @@ import { useNavigate } from "react-router-dom"
 export function HostOrders() {
     const navigate = useNavigate()
     const orders = useSelector(storeState => storeState.orderModule.orders)
-
     const loggedinUser = useSelector(storeState => {
 
         if (!storeState.userModule.loggedinUser) {
@@ -32,7 +31,7 @@ export function HostOrders() {
     }
 
     function getNumberOfGuests(guests) {
-        return guests.adults + guests.children + guests.infants
+        return guests.adults + guests.children + guests.infants + guests.pets
     }
 
     function onStayClick(stay) {
@@ -41,51 +40,50 @@ export function HostOrders() {
 
     return (
         <section className="host-orders">
-            <div className="orders-table-wrapper">
+            {/* <h1>{`Welcome back, ${loggedinUser.fullname}`}</h1> */}
+            <div className="host-table-wrapper">
                 <h2>Orders</h2>
-                <div className="table-container">
-                    <table>
-                        {/* <caption>Orders</caption> */}
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Booker</th>
-                                <th className="stay-col">Stay</th>
-                                <th>Dates</th>
-                                <th>Guests</th>
-                                {/* <th>Price/night</th> */}
-                                <th>Price</th>
-                                <th>Status</th>
-                                <th className="actions-cell">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {orders.map(order => (
-                                <tr key={order._id}>
-                                    <td>{convertDateToString(order.createdAt)}</td>
-                                    <td>
-                                        <MiniUser miniUser={order.guest} />
-                                    </td>
-                                    <td className="stay-col" onClick={() => onStayClick(order.stay)}>
-                                        <MiniStayPreview miniStay={order.stay} />
-                                    </td>
-                                    <td>{convertDateToString(order.from)} - {convertDateToString(order.to)}</td>
-                                    <td>{getNumberOfGuests(order.guests)}</td>
-                                    <td>${order.price}</td>
-                                    <td className={`status-badge order-status ${order.status}`}>{order.status}</td>
-                                    <td className="actions-cell">
-                                        {order.status === 'pending' &&
-                                            <div className="action-buttons">
-                                                <button className="action-button approve-btn" onClick={() => updateOrderStatus(order, 'accepted')}>Approve</button>
-                                                <button className="action-button reject-btn" onClick={() => updateOrderStatus(order, 'rejected')}>Reject</button>
-                                            </div>
-                                        }
-                                    </td>
-                                </tr>)
-                            )}
-                        </tbody>
-                    </table>
-                </div>
+                <table>
+                    {/* <caption>Trips</caption> */}
+                    <thead>
+                        <tr>
+                            <th>DATE</th>
+                            <th>BOOKER</th>
+                            <th className="stay-col">STAY</th>
+                            <th>DATES</th>
+                            <th>GUESTS</th>
+                            {/* <th>Price/night</th> */}
+                            <th>PRICE</th>
+                            <th>STATUS</th>
+                            <th className="action-col">ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {orders.map(order => (
+                            <tr key={order._id}>
+                                <td>{convertDateToString(order.createdAt)}</td>
+                                <td>
+                                    <MiniUser miniUser={order.guest} />
+                                </td>
+                                <td className="stay-col" onClick={() => onStayClick(order.stay)}>
+                                    <MiniStayPreview miniStay={order.stay} />
+                                </td>
+                                <td>{convertDateToString(order.from)} - {convertDateToString(order.to)}</td>
+                                <td>{getNumberOfGuests(order.guests)}</td>
+                                <td>${order.price}</td>
+                                <td className={`status-badge order-status ${order.status}`}>{order.status}</td>
+                                <td className="action-col">
+                                    {order.status === 'pending' &&
+                                        <div className="action-buttons">
+                                            <button className="action-button approve-btn" onClick={() => updateOrderStatus(order, 'accepted')}>Approve</button>
+                                            <button className="action-button reject-btn" onClick={() => updateOrderStatus(order, 'rejected')}>Reject</button>
+                                        </div>
+                                    }
+                                </td>
+                            </tr>)
+                        )}
+                    </tbody>
+                </table>
             </div>
         </section>
 
